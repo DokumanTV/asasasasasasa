@@ -1,8 +1,8 @@
-                            FYUKAS BOŞ BOT ALTYAPI
- Discord Botumuzun Sitesi: <https://fyukas.glitch.me/>
+                         LinLord'S | KAYIT BOT HAZIR ALTYAPI
+ Geliştirmekte Olduğum Anka Bot'un Davet Linki : <https://discordapp.com/oauth2/authorize?client_id=677145750043361320&permissions=8&scope=bot>
  
- Discord Botumuzun Destek Sunucusu: <https://discordapp.com/invite/qpbSqJU>
+ Her Türlü Destek İçin Kişisel Dicord Hesabım : LinL๏rd#9919
  
- Discord Kod Paylaşım Sunucumuz: <https://discordapp.com/invite/qpbSqJU>
+ Youtube Kanal Linkim : <https://www.youtube.com/channel/UCgq2E56ceLGG4qxpVqGmGGQ>
 
-                            FYUKAS BOŞ BOT ALTYAPI
+                          LinLord'S | KAYIT BOT HAZIR ALTYAPI
