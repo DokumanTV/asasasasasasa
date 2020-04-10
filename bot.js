@@ -135,6 +135,3 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
-const emoji = client.emojis.get(":vega:")
-
-//
