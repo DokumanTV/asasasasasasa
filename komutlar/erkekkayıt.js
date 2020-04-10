@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
   const kayıtlı = message.guild.roles.find(r => r.id === "ERKEK ROL İD"); //buraya erkek rolünüzün id'sini koyun
   const misafir = message.guild.roles.find(r => r.id === "MİSAFİR ROL İD"); //buraya misafir rolünüzün id'sini koyun.
   const log = message.guild.channels.find(c => c.id === "KAYIT KANAL LOG İD"); //buraya kayıt log id koyun
-  const tag = "YAZMAK İSTERSENİZ TAGINIZ ( BOŞ BIRAKABİLİRSİNİZ )";
+  const tag = "∻";
   if(!message.member.roles.array().filter(r => r.id === "KAYIT SORUMLUSU ROL İD")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
@@ -19,11 +19,8 @@ exports.run = (client, message, args) => {
     c.removeRole(misafir)
     c.setNickname(`${tag} ${nick} , ${yas}`)
     const embed = new Discord.RichEmbed()
-    .setAuthor("Erkek Üye Kaydı Yapıldı!")
-    .addField(`Kaydı yapılan\n`, `${c.user.tag}`)
-    .addField(`Kaydı yapan\n`, `${message.author.tag}`)
-    .addField(`Yeni isim\n`, `${tag} ${nick} , ${yas}`)
-    .setFooter("-LinLord'S | kayıt sistemi")
+    .setAuthor("Kayıt Tamamlandı İyi ")
+    .setFooter("-VΞGA | kayıt sistemi")
     .setColor("BLUE")
     log.send(embed)
   }
