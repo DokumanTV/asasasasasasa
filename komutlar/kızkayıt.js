@@ -1,11 +1,13 @@
 const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
-  const kayıtlı = message.guild.roles.find(r => r.id === "KIZ ROL İD"); //buraya kız rolünüzün id'sini koyun
-  const misafir = message.guild.roles.find(r => r.id === "MİSAFİR ROL İD"); //buraya misafir rolünüzün id'sini koyun.
-  const log = message.guild.channels.find(c => c.id === "KAYIT KANAL LOG İD"); //buraya kayıt log id koyun
+  const kayıtlı = message.guild.roles.find(r => r.id === "698152282331676719"); //buraya kız rolünüzün id'sini koyun
+  const emoji = message.guild.roles.find(r => r.id === "698152288824590376"); //buraya kız rolünüzün id'sini koyun
+  const female = message.guild.roles.find(r => r.id === "698152288149045251"); //buraya kız rolünüzün id'sini koyun
+  const misafir = message.guild.roles.find(r => r.id === "698152284210593823"); //buraya misafir rolünüzün id'sini koyun.
+  const log = message.guild.channels.find(c => c.id === "698230121911287879"); //buraya kayıt log id koyun
   const tag = "∻";
-  if(!message.member.roles.array().filter(r => r.id === "KAYIT SORUMLUSU ROL İD")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
+  if(!message.member.roles.array().filter(r => r.id === "698152290225487892")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
     let member = message.mentions.users.first() || client.users.get(args.join(' '))
@@ -16,12 +18,14 @@ exports.run = (client, message, args) => {
       if(!nick) return message.channel.send("Bir isim girin.")
       if(!yas) return message.channel.send("Bir yaş girin.")
     c.addRole(kayıtlı)
+    c.addRole(emoji)
+    c.addRole(female)
     c.removeRole(misafir)
-    c.setNickname(`${tag} ${nick} , ${yas}`)
+    c.setNickname(`${tag} ${nick} | ${yas}`)
     const embed = new Discord.RichEmbed()
-    .setAuthor("Kayıt Tamamlandı İyi Eğlenceler Dileri.")
+    .setAuthor("Kayıt Tamamlandı İyi Eğlenceler Dileriz.")
     .setFooter("-VΞGA | kayıt sistemi")
-    .setColor("#ff00a6")
+    .setColor("WHITE")
     log.send(embed)
   }
 }

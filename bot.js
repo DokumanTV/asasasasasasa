@@ -134,3 +134,23 @@ client.on('error', e => {
 client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
+
+client.on("userUpdate", async (oldUser, newUser) => {
+  if (oldUser.username !== newUser.username) {
+    let tag = "∻"; //tagınız
+    let sunucu = "698149264492200016"; //sunucu ID
+    let kanal = "698152364808339508" //log kanal id
+    let rol = "698152280167284786"; // rol ID
+    if (newUser.username.includes(tag) && !client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
+      client.channels.get(kanal).send(`${newUser} ${tag} tagını aldığı için <@&${rol}> rolünü kazandı!`)
+      client.guilds.get(sunucu).members.get(newUser.id).addRole(rol)
+    } if (!newUser.username.includes(tag) && client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
+      client.guilds.get(sunucu).members.get(newUser.id).removeRole(rol)
+      client.channels.get(kanal).send(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
+    }
+
+  }
+})
+
+//
+
