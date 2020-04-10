@@ -15,7 +15,7 @@ const tag = "YAZMAK İSTERSENİZ TAGINIZ ( BOŞ BIRAKABİLİRSİNİZ )";
    if(!yas) return message.channel.send("Bir yaş girin.")
    c.setNickname(`${tag} ${nick} , ${yas}`)
    const embed = new Discord.RichEmbed()
-  .addField(`• Kullanıcının takma adı değiştirildi.}\``)
+  .addField(`• Kullanıcının takma adı değiştirildi.`)
   .setFooter(`Komutu kullanan yetkili : ${message.author.username}`)  
   .setThumbnail(client.user.avatarURL)
   message.channel.send(embed)
