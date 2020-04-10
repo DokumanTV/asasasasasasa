@@ -157,6 +157,8 @@ client.login(ayarlar.token);
      if (afkdkullanıcı) {
        message.channel.send(`\`${message.author.tag}\` adlı kullanıcı artık AFK değil. `)
        db.delete(`afk_${message.author.id}`)
-       
+     }
+   }
+ });
    
    
