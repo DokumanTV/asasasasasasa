@@ -135,4 +135,28 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
- client.on('message', async message)
+ client.on('message', async message => {
+   
+   let prefix = await db.fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
+   
+   let kullanıcı = message.mentions.users.first() || message.author
+   let afkdkullanıcı = await db.fetch(`afk_${message.author.id}`)
+   let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
+   let sebep = afkkullanıcı
+   
+   if (message.author.bot) return;
+   if (message.content.includes(`${prefix}afk`)) {
+     if (afkdkullanıcı) {
+       message.channel.send(`\`${message.outhor.tag}\` adlı kullanıcı artık AFK değil.`)
+       db.delete(`afk_${message.author.id}`)
+     }
+     if (afkkullanıcı) return message.channel.send(`${message.author}\` {kullanıcı.tag}\` şu anda AFK. Sebep : \`${sebep}\``)      }
+   
+   
+   if (!message.content.includes(`<@${kullanıcı.id}>`)) {
+     if (afkdkullanıcı) {
+       message.channel.send(`\`${message.author.tag}\` adlı kullanıcı artık AFK değil. `)
+       db.delete(`afk_${message.author.id}`)
+       
+   
+   
