@@ -32,7 +32,7 @@ exports.run = async (bot, message, args) => {
                 user.send(`**${message.guild.name}** adlı sunucudan **banlandınız!**\n*Sebep:* \`\`\`${reason}\`\`\``)
 
                 let embed = new Discord.RichEmbed()
-                    .setColor(0xffa300)
+                    .setColor(0xf5f3f3)
                     .setAuthor(`${user.username} adlı kişi yasaklandı!`, user.avatarURL||user.defaultAvatarURL)
                     .addField('Yasaklanan Kullanıcı', `${user.tag}-[${user.id}]`, true)
                     .addField('Yasaklayan Yetkili', `${message.author.tag}-[${message.author.id}]`, true)

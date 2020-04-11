@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
         var durm = (Durum == "online" ? ("Çevrimiçi") : (Durum == "offline" ? ("Çevrimdışı") : (Durum == "idle" ? ("Boşta") : (Durum == "dnd" ? ("Rahatsız Etmeyin") : ("Bilinmiyor/bulunamadı.")))))
       const kullanicibilgimk = new Discord.RichEmbed()
       .setAuthor(message.author.username, message.author.avatarURL)
-      .setColor(Durm)
+      .setColor(0Xf5f3f3)
       .setTimestamp()
       .addField('Ad:', message.author.username + '#' + message.author.discriminator)
       .addField('ID:', message.author.id)
