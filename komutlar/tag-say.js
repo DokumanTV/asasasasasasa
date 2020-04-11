@@ -2,13 +2,13 @@ const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
   var tagdakiler = 0;
-  let tag = "∻";
+  let tag = "♱";
   message.guild.members.forEach(member => {
     if(member.user.username.includes(tag)) {
       tagdakiler = tagdakiler+1
     }
   })
-  message.channel.send(": "  + tagdakiler + " Kişi Taga Sahip!")
+  message.channel.send(":comet:  "  + tagdakiler + " Kişi Taga Sahip!")
 };
 
 exports.conf = {
