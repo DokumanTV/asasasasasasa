@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message) => {
-   message.channel.send('``∻`` **Ailemize Hoş Geldin** :star:').then(message => {
+   message.channel.send('``♱`` **Ailemize Hoş Geldin** :star:').then(message => {
 
  });
   }

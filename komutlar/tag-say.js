@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
       tagdakiler = tagdakiler+1
     }
   })
-  message.channel.send(":vega: "  + tagdakiler + " Kişi Taga Sahip!")
+  message.channel.send(": "  + tagdakiler + " Kişi Taga Sahip!")
 };
 
 exports.conf = {
