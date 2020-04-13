@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 if (message.author.bot === true) {
   return;
 }
- if (!message.member.hasPermission("698976727929454623")) return message.channel.send(`Bu komutu kullanabilmek için "\`Mute Hammer ⚒\`" yetkisine sahip olmalısın.`);
+ if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send(`Bu komutu kullanabilmek için "\`Rolleri Yönet\`" yetkisine sahip olmalısın.`);
 
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
