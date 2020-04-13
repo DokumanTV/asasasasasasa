@@ -139,3 +139,14 @@ client.on('ready', ()=>{
 client.channels.get('698976766840012950').join()
 })
 //SES
+
+//yasaklı tag
+client.on("guildMemberAdd", member => {
+
+if(member.user.username.includes("yasaklı tag")){
+member.addRole("698976742546604093")
+member.removeRole("698976720996401205")
+member.send("**<a:uyarı:698988435888799784> Sunucumuzun Yasaklı Tagında Bulunuyorsunuz, Şüpheli Kısmına Atıldınız. <a:uyarı:698988435888799784>**")
+}
+});
+//yasaklı tag son
