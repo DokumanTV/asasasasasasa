@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
-    if (!message.member.hasPermission("698152291563470889")) return message.channel.send(`Bu komutu kullanabilmek için "\`Jail Hammer ⚒\`" yetkisine sahip olmalısın.`).then(m => m.delete(10000));
+    if (!message.member.hasPermission("698976729124831293")) return message.channel.send(`Bu komutu kullanabilmek için "\`Jail Hammer ⚒\`" yetkisine sahip olmalısın.`).then(m => m.delete(10000));
   let kullanici = message.mentions.users.first()
   if (!kullanici) return message.channel.send("Lütfen jaile atılacak kullanıcıyı etiketleyniz.");
   let rol = message.mentions.roles.first()
@@ -14,8 +14,8 @@ exports.run = async (client, message, args) => {
 message.guild.members.get(uye.id).removeRole(r) // Jaile atılan kişinin tüm rollerini alır.
  
 })
-  uye.addRole('698152304833986640') // Jaile atıldığı zaman verilecek rolün ID'sini yazınız.
-     const kanal = message.guild.channels.find(c => c.id == "698152365647331379"); 
+  uye.addRole('698976742546604093') // Jaile atıldığı zaman verilecek rolün ID'sini yazınız.
+     const kanal = message.guild.channels.find(c => c.id == "698976805641519245"); 
   
   let embed = new Discord.RichEmbed() 
   .setDescription(`${kullanici} **ADLI ÜYE JAIL'A SÜRGÜN EDİLDİ!**`) 
