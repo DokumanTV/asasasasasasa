@@ -8,7 +8,7 @@ message.channel.overwritePermissions(every, {
 })
  
 
-   message.channel.send('Sohbet kanalı ``Yazılabilir`` durumuna getirildi.\nSohbet kanalını kapatmak için ``v!kapat`` yazmanız gerekmektedir.');
+   message.channel.send('Sohbet kanalı ``Yazılabilir`` durumuna getirildi.\nSohbet kanalını kapatmak için ``!kapat`` yazmanız gerekmektedir.');
 }
  //Komut yusuf korucu tarafından hazırlanmıştır.
 exports.conf = {

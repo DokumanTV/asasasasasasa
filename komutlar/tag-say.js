@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
       tagdakiler = tagdakiler+1
     }
   })
-  message.channel.send(":comet:  "  + tagdakiler + " Kişi Taga Sahip!")
+  message.channel.send("<a:ucgenn:698988466083463188>  "  + tagdakiler + " Kişi Taga Sahip!")
 };
 
 exports.conf = {

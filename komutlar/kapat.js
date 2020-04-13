@@ -8,7 +8,7 @@ message.channel.overwritePermissions(every, {
 })
  
 
-  message.channel.send('Sohbet kanalı ``Yazılamaz`` durumuna getirildi.\nSohbet kanalını açmak için ``.aç`` yazmanız gerekmektedir.');
+  message.channel.send('Sohbet kanalı ``Yazılamaz`` durumuna getirildi.\nSohbet kanalını açmak için ``!aç`` yazmanız gerekmektedir.');
 }
 //Komut yusuf korucu tarafından hazırlanmıştır.
  
