@@ -145,3 +145,9 @@ member.send("**<a:uyarı:698988435888799784> Sunucumuzun Yasaklı Tagında Bulun
 }
 });
 //yasaklı tag son
+
+// SES
+client.on('ready', ()=>{
+client.channels.get('699928593597464586').join()
+})
+// SES 
