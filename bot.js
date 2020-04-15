@@ -135,11 +135,6 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
-client.on('ready', ()=>{
-client.channels.get('698976766840012950').join()
-})
-//SES
-
 //yasaklı tag
 client.on("guildMemberAdd", member => {
 

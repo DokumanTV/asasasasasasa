@@ -12,7 +12,7 @@ exports.run = function(client, message, args) {
     .setColor(0x11FFFF)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .addField(':warning: Uyarı :warning:', 'Mesajları silebilmem için `Mesajları Yönet` yetkisine sahip olmalıyım.')
+    .addField('<a:uyari:699930221259915335> Uyarı <a:uyari:699930221259915335>', 'Mesajları silebilmem için `Mesajları Yönet` yetkisine sahip olmalıyım.')
     return message.author.sendEmbed(botunmesajyonet);
   }
   let messagecount = parseInt(args.join(' '));
@@ -22,7 +22,7 @@ exports.run = function(client, message, args) {
     const sohbetsilindi = new Discord.RichEmbed()
     .setColor(0xf5f3f3)
     .setTimestamp()
-    .addField('Sohbet:','Temizlendi! <a:uyari:698988435888799784>')
+    .addField('Sohbet:','Temizlendi! <a:uyari:699930221259915335>')
     .addField('Yetkili:', message.author.username)
     return message.channel.sendEmbed(sohbetsilindi);
     console.log("Sohbet " + message.member + " tarafından silindi!");
