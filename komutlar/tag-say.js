@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
       tagdakiler = tagdakiler+1
     }
   })
-  message.channel.send("<a:ucgenn:698988466083463188>  "  + tagdakiler + " Kişi Taga Sahip!")
+  message.channel.send("<a:ucgenn:699930287303295066> "  + tagdakiler + " Taglı Üyemiz Var.")
 };
 
 exports.conf = {

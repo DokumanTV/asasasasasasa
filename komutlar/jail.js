@@ -14,8 +14,8 @@ exports.run = async (client, message, args) => {
 message.guild.members.get(uye.id).removeRole(r) // Jaile atılan kişinin tüm rollerini alır.
  
 })
-  uye.addRole('698976742546604093') // Jaile atıldığı zaman verilecek rolün ID'sini yazınız.
-     const kanal = message.guild.channels.find(c => c.id == "698976805641519245"); 
+  uye.addRole('699928568557338674') // Jaile atıldığı zaman verilecek rolün ID'sini yazınız.
+     const kanal = message.guild.channels.find(c => c.id == "699928628791738428");  
   
   let embed = new Discord.RichEmbed() 
   .setDescription(`${kullanici} **ADLI ÜYE JAIL'A SÜRGÜN EDİLDİ!**`) 
