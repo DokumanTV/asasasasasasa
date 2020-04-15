@@ -151,3 +151,4 @@ client.on('ready', ()=>{
 client.channels.get('699928593597464586').join()
 })
 // SES 
+
