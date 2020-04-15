@@ -141,7 +141,7 @@ client.on("guildMemberAdd", member => {
 if(member.user.username.includes("yasaklı tag")){
 member.addRole("698976742546604093")
 member.removeRole("698976720996401205")
-member.send("**<a:uyarı:698988435888799784> Sunucumuzun Yasaklı Tagında Bulunuyorsunuz, Şüpheli Kısmına Atıldınız. <a:uyarı:698988435888799784>**")
+member.send("**<a:uyari:699930221259915335> Sunucumuzun Yasaklı Tagında Bulunuyorsunuz, Şüpheli Kısmına Atıldınız. <a:uyari:699930221259915335>**")
 }
 });
 //yasaklı tag son
@@ -236,6 +236,10 @@ if (msg.content === 'selamın aleyküm') {
 
   if (msg.content === 'güle güle') {
    	msg.reply('sana da güle güle');
+  }
+  
+    if (msg.content === 'görüşürüz') {
+   	msg.reply('**kendine iyi bak.**');
   }
   
 });
