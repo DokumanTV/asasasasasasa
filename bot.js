@@ -152,3 +152,91 @@ client.channels.get('699928593597464586').join()
 })
 // SES 
 
+client.unload = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      delete require.cache[require.resolve(`./komutlar/${command}`)];
+      let cmd = require(`./komutlar/${command}`);
+      client.commands.delete(command);
+      client.aliases.forEach((cmd, alias) => {
+        if (cmd === command) client.aliases.delete(alias);
+      });
+      resolve();
+    } catch (e){
+      reject(e);
+    }
+  });
+};
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'sa') {
+    msg.reply('**Aleyküm selam**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'aq') {
+    msg.reply('**Argo Kelime Kullanma**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'sik') {
+    msg.reply('**Argo Kelime Kullanma**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'sikerim') {
+    msg.reply('**Argo Kelime Kullanma**');
+  }  
+});
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'amk') {
+    msg.reply('**Argo Kelime Kullanma**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'siktirgit') {
+    msg.reply('**Argo Kelime Kullanma**');
+  }
+if (msg.content === 'selamın aleyküm') {
+   	msg.reply('ve aleyküm selam');
+  }
+
+  if (msg.content === 'bye bye') {
+   	msg.reply('su gibi git su gibi gel');
+  }
+
+  if (msg.content === 'günaydın') {
+   	msg.reply('sana da günaydın');
+  }
+
+  if (msg.content === 'herkese günaydın') {
+   	msg.reply('yepyeni bir güne merhaba :)');
+  }
+
+  if (msg.content === 'iyi geceler') {
+   	msg.reply('sana da iyi geceler');
+  }
+
+  if (msg.content === 'sa') {
+   	msg.reply('**Sunucuda Argo Kelime Kullanma**');
+  }
+
+  if (msg.content === 'iyi akşamlar') {
+   	msg.reply('sana da iyi akşamlar');
+  }
+
+  if (msg.content === 'selamın aleyküm') {
+   	msg.reply('ve aleyküm selam');
+  }
+
+  if (msg.content === 'güle güle') {
+   	msg.reply('sana da güle güle');
+  }
+  
+});
+//
