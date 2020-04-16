@@ -244,3 +244,5 @@ if (msg.content === 'selamın aleyküm') {
   
 });
 //
+
+
