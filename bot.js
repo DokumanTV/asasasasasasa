@@ -138,9 +138,9 @@ client.login(ayarlar.token);
 //yasaklı tag
 client.on("guildMemberAdd", member => {
 
-if(member.user.username.includes("yasaklı tag")){
-member.addRole("698976742546604093")
-member.removeRole("698976720996401205")
+if(member.user.username.includes("ᵠ")){
+member.addRole("699928568557338674")
+member.removeRole("699928549188042773")
 member.send("**<a:uyari:699930221259915335> Sunucumuzun Yasaklı Tagında Bulunuyorsunuz, Şüpheli Kısmına Atıldınız. <a:uyari:699930221259915335>**")
 }
 });
