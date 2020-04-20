@@ -146,12 +146,6 @@ member.send("**<a:uyari:699930221259915335> Sunucumuzun Yasaklı Tagında Bulunu
 });
 //yasaklı tag son
 
-// SES
-client.on('ready', ()=>{
-client.channels.get('699928593597464586').join()
-})
-// SES 
-
 client.unload = command => {
   return new Promise((resolve, reject) => {
     try {
