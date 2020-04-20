@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 module.exports.run = async (client, message, args) => {
   const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
-    var toplamEtiketliUyeler = message.guild.members.filter(member => member.user.username.includes("♱")).size
+    var toplamEtiketliUyeler = message.guild.members.filter(member => member.user.username.includes("金")).size
     let count = 0;
     
     for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
@@ -25,6 +25,6 @@ exports.conf = {
 
 exports.help = {
   name: 'say',
-  description: 'kullanıcıyı susturur.',
+  description: 'Sayıldı.',
   usage: 'say'
 }; 
