@@ -10,7 +10,7 @@ exports.run = (client, message) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['balık', 'balıktut', 'balık-tut'],
+  aliases: ['tagı yazar'],
   permLevel: 0
 };
 

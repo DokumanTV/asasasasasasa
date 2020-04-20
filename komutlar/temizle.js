@@ -22,7 +22,7 @@ exports.run = function(client, message, args) {
     const sohbetsilindi = new Discord.RichEmbed()
     .setColor(0xf5f3f3)
     .setTimestamp()
-    .addField('Sohbet:','Temizlendi! <a:uyari:699930221259915335>')
+    .addField('Sohbet:','Temizlendi! <a:guardtik:701865091171352688>')
     .addField('Yetkili:', message.author.username)
     return message.channel.sendEmbed(sohbetsilindi);
     console.log("Sohbet " + message.member + " tarafından silindi!");
