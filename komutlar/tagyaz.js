@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const dogrulandi = client.emojis.find(emoji => emoji.name === "kirmizimsitik");
 
 exports.run = (client, message) => {
-   message.channel.send('**仒 Ailemize Hoş Geldin** <a:mavimsitik:701864536743084194>').then(message => {
+   message.channel.send('`仒` **Ailemize Hoş Geldin** <a:mavimsitik:701864536743084194>').then(message => {
      const embed = new Discord.RichEmbed()
      message.react(dogrulandi)
  });
