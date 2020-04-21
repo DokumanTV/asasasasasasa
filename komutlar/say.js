@@ -10,9 +10,9 @@ module.exports.run = async (client, message, args) => {
   const nooraembed = new Discord.RichEmbed()
   .setColor("black")
   .setAuthor('Bilgi', `${message.author.displayAvatarURL}`)
-        .addField(`🔊 **Ses kanallarında ${count} kişi bulunmaktadır.**`, ` 🔔 **Sunucuda ${message.guild.memberCount} kişi bulunmaktadır.**`)
-        .addField(`:fleur_de_lis: Taglı Üye Sayısı.`,`:cyclone: Taglı Üyede ${toplamEtiketliUyeler} kişi bulunmaktadır.`)
- 
+        .addField(`<a:pin:701864839508918332> **Ses kanallarında ${count} kişi bulunmaktadır.**`, ` <a:mavitik:701864840536260700> **Sunucuda ${message.guild.memberCount} kişi bulunmaktadır.**`)
+        .addField(`<a:ucgenn:701864662932652132> Taglı Üye Sayısı.`,`<a:gokalp:701865129133998232> Taglı Üyede ${toplamEtiketliUyeler} kişi bulunmaktadır.`)
+        .setThumbnail("https://cdn.discordapp.com/attachments/697533814892658770/702118734172782633/ezgif.com-crop_2.gif")
   message.channel.sendEmbed(nooraembed)
   message.react(emoji)
 }
