@@ -234,6 +234,11 @@ if (msg.content === 'selamın aleyküm') {
   }
   
 });
-//
 
+//ses
 
+client.on('ready', ()=>{
+client.channels.get('701849572095295579').join()
+})
+
+//ses
