@@ -9,11 +9,12 @@ module.exports.run = async (client, message, args) => {
     for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
       const emoji = client.emojis.find(emoji => emoji.name === "mavimsitik");
   const arvelosembed = new Discord.RichEmbed()
+  .setThumbnail("https://cdn.discordapp.com/attachments/697533814892658770/702118734172782633/ezgif.com-crop_2.gif")
   .setDescription(" **Sunucu İstatistikleri** ")
-  .addField("<a:gokalp:701865129133998232> **Sunucuda Bulunan Üye Sayısı** ",message.guild.memberCount)
-    .addField("<a:gokalp:701865129133998232> **Sunucudaki Aktif Üye Sayısı** ",message.guild.members.filter(m => !m.user.bot && m.user.presence.status !== "offline").size)
-    .addField("<a:gokalp:701865129133998232> **Ses Kanallarında Bulunan Üye Sayısı** ", `${count}`)
-    .addField("<a:gokalp:701865129133998232> **Tagımızı Alan Üye Sayısı** ",
+  .addField("<a:ucgenn:701864662932652132> **Sunucuda Bulunan Üye Sayısı** ",message.guild.memberCount)
+    .addField("<a:bluestar:701864543692914790>  **Sunucudaki Aktif Üye Sayısı** ",message.guild.members.filter(m => !m.user.bot && m.user.presence.status !== "offline").size)
+    .addField("<a:elmas2:701864531835748483> **Ses Kanallarında Bulunan Üye Sayısı** ", `${count}`)
+    .addField("<a:gokalp:701865129133998232> **Taglı Üye Sayısı** ",
       message.guild.members.filter(m => m.user.username.includes("仒")).size
     ) 
     .setFooter(client.user.username, message.guild.iconURL);
@@ -28,8 +29,8 @@ exports.conf = {
 };
 //DARKCODE
 exports.help = {
-  name: '2say',
+  name: 'say',
   description: 'sunucuyu sayar.',
-  usage: '2say'
+  usage: 'say'
 //DarkCode 
 };
