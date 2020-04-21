@@ -214,10 +214,7 @@ if (msg.content === 'selamın aleyküm') {
 
   if (msg.content === 'iyi geceler') {
    	msg.reply('sana da iyi geceler');
-  }
-
-  if (msg.content === 'sa') {
-   	msg.reply('**Sunucuda Argo Kelime Kullanma**');
+    
   }
 
   if (msg.content === 'iyi akşamlar') {
