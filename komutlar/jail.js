@@ -15,7 +15,7 @@ message.guild.members.get(uye.id).removeRole(r) // Jaile atılan kişinin tüm r
  
 })
   uye.addRole('701813313650032660') // Jaile atıldığı zaman verilecek rolün ID'sini yazınız.
-     const kanal = message.guild.channels.find(c => c.id == "699928628791738428");  
+     const kanal = message.guild.channels.find(c => c.id == "702081601508606022");  
   
   let embed = new Discord.RichEmbed() 
   .setDescription(`${kullanici} **ADLI ÜYE JAIL'A SÜRGÜN EDİLDİ!**`) 
