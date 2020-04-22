@@ -21,7 +21,7 @@ const ytdl = require('ytdl-core');
 
 const app = express();
 app.get("/", (request, response) => {
-  console.log(Date.now() + "LinLord 7/24 AKTİF TUTMA İŞLEMİ BAŞARILI");
+  console.log(Date.now() + " Ping tamamdır.");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
@@ -132,6 +132,7 @@ client.on('error', e => {
 });
 
 client.login(ayarlar.token);
+
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
