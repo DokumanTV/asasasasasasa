@@ -27,10 +27,10 @@ exports.conf = {
   aliases: [],
   permLevel: 0
 };
-//DARKCODE
+//say
 exports.help = {
   name: 'say',
   description: 'sunucuyu sayar.',
   usage: 'say'
-//DarkCode 
+//say
 };
