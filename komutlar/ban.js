@@ -18,9 +18,9 @@ exports.run = async (bot, message, args) => {
             while (!uwu) {
                 const response = await message.channel.awaitMessages(neblm => neblm.author.id === message.author.id, { max: 1, time: 30000 });
                 const choice = response.first().content
-                if (choice == 'hayır' || choice == 'h') return message.channel.send('🚀 İşlem iptal **edildi.**')
+                if (choice == 'hayır' || choice == 'h') return message.channel.send('<a:guardreq:701865091875733564> İşlem iptal **edildi.**')
                 if (choice !== 'evet' && choice !== 'e') {
-                message.channel.send('❓ Lütfen sadece **evet (e)** veya **hayır (h)** ile cevap verin.')
+                message.channel.send('<a:uyari:701864662978920469> Lütfen sadece **evet (e)** veya **hayır (h)** ile cevap verin.')
                 }
                 if (choice == 'evet' || choice == 'e') uwu = true
                 }
