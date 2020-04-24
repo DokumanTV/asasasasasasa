@@ -18,6 +18,14 @@ const queue = new Map();
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
+client.conf = {
+  "token": "",
+  "pref": "!",
+  "own": "533650583215800320",
+  "oynuyor": "Wizz",
+  "durum": "dnd"
+}
+
 
 const app = express();
 app.get("/", (request, response) => {
@@ -298,25 +306,3 @@ client.on("message" , async message => {
 //AFK
 
 //
-client.on("message", async msg => {
-const db = require('quick.db');   
-    let i = db.fetch(`otobsilicia_${msg.channel.id+msg.guild.id}`)
-      if (i == undefined) {           
-          }
-        if (i == 'acik') {   
-              let kanal = db.fetch(`otobsilici_${msg.channel.id+msg.guild.id}`)
-
-          if (msg.channel.id != kanal.id) {
-  if (msg.content.length > 0) {
-
-    if(msg.author.bot === true){
-      msg.delete(3000)
-    }
-  }
-          }
-        }
-       
-  
-  })
-
-//afk
