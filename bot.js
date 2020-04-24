@@ -135,106 +135,6 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
-//yasaklı tag
-client.on("guildMemberAdd", member => {
-
-if(member.user.username.includes("ᵠ")){
-member.addRole("699928568557338674")
-member.removeRole("699928549188042773")
-member.send("**<a:uyari:699930221259915335> Sunucumuzun Yasaklı Tagında Bulunuyorsunuz, Şüpheli Kısmına Atıldınız. <a:uyari:699930221259915335>**")
-}
-});
-//yasaklı tag son
-
-client.unload = command => {
-  return new Promise((resolve, reject) => {
-    try {
-      delete require.cache[require.resolve(`./komutlar/${command}`)];
-      let cmd = require(`./komutlar/${command}`);
-      client.commands.delete(command);
-      client.aliases.forEach((cmd, alias) => {
-        if (cmd === command) client.aliases.delete(alias);
-      });
-      resolve();
-    } catch (e){
-      reject(e);
-    }
-  });
-};
-
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'sa') {
-    msg.reply('**Aleyküm selam**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'aq') {
-    msg.reply('**Argo Kelime Kullanma**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'sik') {
-    msg.reply('**Argo Kelime Kullanma**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'sikerim') {
-    msg.reply('**Argo Kelime Kullanma**');
-  }  
-});
-
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'amk') {
-    msg.reply('**Argo Kelime Kullanma**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'siktirgit') {
-    msg.reply('**Argo Kelime Kullanma**');
-  }
-if (msg.content === 'selamın aleyküm') {
-   	msg.reply('ve aleyküm selam');
-  }
-
-  if (msg.content === 'bye bye') {
-   	msg.reply('su gibi git su gibi gel');
-  }
-
-  if (msg.content === 'günaydın') {
-   	msg.reply('sana da günaydın');
-  }
-
-  if (msg.content === 'herkese günaydın') {
-   	msg.reply('yepyeni bir güne merhaba :)');
-  }
-
-  if (msg.content === 'iyi geceler') {
-   	msg.reply('sana da iyi geceler');
-    
-  }
-
-  if (msg.content === 'iyi akşamlar') {
-   	msg.reply('sana da iyi akşamlar');
-  }
-
-  if (msg.content === 'selamın aleyküm') {
-   	msg.reply('ve aleyküm selam');
-  }
-
-  if (msg.content === 'güle güle') {
-   	msg.reply('sana da güle güle');
-  }
-  
-    if (msg.content === 'görüşürüz') {
-   	msg.reply('**kendine iyi bak.**');
-  }
-  
-});
-
 //ses
 
 client.on('ready', ()=>{
@@ -243,58 +143,133 @@ client.channels.get('701849572095295579').join()
 
 //ses
 
-//AFK
-client.on("message" , async message => {
-  const msg = message;
-  if(message.content.startsWith(ayarlar.prefix+"afk")) return; 
-  /*db.set(`afkSebep_${message.author.id}_${message.guild.id}`, "Sebep Girilmemiş")
-  db.set(`afkKisi_${message.author.id}_${message.guild.id}`, message.author.id)              Bunlar Afk Komutndaki İsimler /// tmm bakalım
-  db.set(`afkAd_${message.author.id}_${message.guild.id}`, message.author.username)*/
-  
-  /*      const embed = new Discord.RichEmbed()
-      .setColor("#0080FF")
-      .setAuthor("WoxeBot" , "https://cdn.discordapp.com/avatars/605781334438445057/495a33da25bc54f9c9dd1f5883da7409.png?size=2048")
-      .setDescription(`Etiketlediğiniz Kişi Afk \n Sebep : ${sebep}`)
-      .setTimestamp()
-      .setFooter(`${message.author.username} Tarafından İstendi`)
-       message.channel.send(embed)
-       */
-  
-  let afk = message.mentions.users.first()
-  
-  const kisi = db.fetch(`afkid_${message.author.id}_${message.guild.id}`)
-  
-  const isim = db.fetch(`afkAd_${message.author.id}_${message.guild.id}`)
- if(afk){
-   const sebep = db.fetch(`afkSebep_${afk.id}_${message.guild.id}`)
-   const kisi3 = db.fetch(`afkid_${afk.id}_${message.guild.id}`)
-   if(message.content.includes(kisi3)){
-     const embed = new Discord.RichEmbed()
-      .setColor("#0080FF")
-      .setAuthor("CodAre" , "avatar")
-      .setDescription(`Etiketlediğiniz Kişi Afk \n Sebep : ${sebep}`)
-      .setTimestamp()
-      .setFooter(`${message.author.username} Tarafından İstendi`)
-       message.channel.send(embed)
-   }
- }
-  if(message.author.id === kisi){
-    const embed = new Discord.RichEmbed()
-      .setColor("#0080FF")
-      .setAuthor("CodAre" , "Avatar")
-      .setDescription(`Afk'lıktan Çıktınız`)
-      .setTimestamp()
-      .setFooter(`${message.author.username} Tarafından İstendi`)
-       message.channel.send(embed)
-   db.delete(`afkSebep_${message.author.id}_${message.guild.id}`)
-   db.delete(`afkid_${message.author.id}_${message.guild.id}`)
-   db.delete(`afkAd_${message.author.id}_${message.guild.id}`)
-    message.member.setNickname(isim)
+//sağ tık ban
+client.on("guildBanAdd", async function(guild, user) {
+  const entry = await guild
+    .fetchAuditLogs({ type: "MEMBER_BAN_ADD" })
+    .then(audit => audit.entries.first());
+  const yetkili = await guild.members.get(entry.executor.id);
+setTimeout(async () =>{
+    let logs = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'});
+    if(logs.entries.first().executor.bot) return;
     
-  }
-  
+      guild.members.get(logs.entries.first().executor.id).removeRoles(guild.members.get(logs.entries.first().executor.id).roles) ///TÜM ROLLERİNİ ALIR
+     setTimeout(()=>{ guild.members.get(logs.entries.first().executor.id).addRole("701813313650032660")/// VERİLECEK CEZALI ROL İD
+    },3000)
+const sChannel = guild.channels.find(c=> c.id ==="701827015187234938")
+const cıks = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setDescription(`<@${yetkili.id}> ${user} adlı Kişiye Sağ tık ban Atıldığı için Banlayan Kişinin Yetkileri Alındı <a:kirmizimsitik:702070532815847474>`)
+.setFooter('Developer Gökalp')
+sChannel.send(cıks)
+guild.owner.send(`EternalGUARD | ** <@${yetkili.id}> İsimili Yetkili <@${user.id}>** Adlı Kişiyi Banladı Ve Yetkilerini Aldım. <a:kirmizimsitik:702070532815847474>`)
+},2000)
+})
+//sağ tık ban
+
+client.on("roleDelete", async (role) => { //Garip Rol koruma
+  const logs = await role.guild.fetchAuditLogs({ type: 'ROLE_DELETE' }).then(audit => audit.entries.first())
+  const deleter = await role.guild.members.get(logs.executor.id);
+  if(deleter.id == "533650583215800320") return;
+  let mention = role.mentionable;
+  let hoist = role.hoist;
+  let color = role.hexColor;
+  let name = role.name;
+  let perms = role.permissions;
+  let position = role.position;
+  role.guild.owner.send(` **<@${deleter.id}> ${role.name}** Adlı Rol Silindi Ve Ben Rolü Tekrar Oluşturdum. <a:kirmizimsitik:702070532815847474>`)
+      const sChannel = role.guild.channels.find(c=> c.id ==="701827015187234938")
+const cıks = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setDescription(`**Sayın Kurucularımız <@&701811906121564170>** **<@${deleter.id}> ${role.name}** Adlı Rol Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:mavimsitik:701864536743084194>`)
+sChannel.send(cıks)
+  role.guild.createRole({
+    name: name,
+    color: color,
+    hoist: hoist,
+    position: position,
+    permissions: perms,
+    mentionable: mention
+  })
 })
 
-//AFK
+//
+
+client.on("channelDelete", async channel => {
+  const logs = await channel.guild.fetchAuditLogs({ type: 'CHANNEL_DELETE' }).then(audit => audit.entries.first())
+  const deleter = await channel.guild.members.get(logs.executor.id);
+  if(deleter.id == "533650583215800320,") return; //bu satıra kendi id'nizi yazın sizin kanal silmenizi engellemeyecektir
+  channel.clone(undefined, true, true, "Kanal silme koruması sistemi").then(async klon => {
+  channel.guild.owner.send(` **<@${deleter.id}> ${channel.name}** Adlı Kanalı Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:kirmizimsitik:702070532815847474>`)
+    await klon.setParent(channel.parent);
+    await klon.setPosition(channel.position);
+    const sChannel = channel.guild.channels.find(c=> c.id ==="701827015187234938")
+const cıks = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setDescription(`**Sayın Kurucularımız <@&701811906121564170>** **<@${deleter.id}> ${channel.name}** Adlı Kanalı Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:mavimsitik:701864536743084194>`)
+sChannel.send(cıks)
+  })
+})
+
+//
+
+///emoji koruma
+client.on("emojiDelete", 
+async function(emoji) {
+const audit = await emoji.guild.fetchAuditLogs({type: "EMOJI_DELETE"}).then(remember => remember.entries.first())
+
+const deleter = audit.executor;
+const id = audit.executor.id;
+
+if (id === client.user.id || id === emoji.guild.ownerID) return
+
+const kanal = client.channels.get("HANGI KANAL MESAJ GIDICEK IDISI")
+
+emoji.guild.members.forEach(async function(members) {
+if (members.id !== id) return
+members.roles.forEach(role => {
+if (role.hasPermission(8) || role.hasPermission("MANAGE_EMOJIS")) {
+members.removeRole(role.id)  
+}
+})
+})
+
+if (!kanal) {
+return emoji.guild.owner.send(`**Emoji Koruma Sistemi Nedeniyle <@${id}> Kullanıcısının Yetkisi Alındı! Emoji Adı: ${emoji.name} (${emoji.url})**`)
+} else {
+kanal.send(`**Emoji Koruma Sistemi Nedeniyle <@${id}> Kullanıcısının Yetkisi Alındı! Emoji Adı: ${emoji.name} (${emoji.url})**`)
+return
+}
+})
+//emoji bitiş
+
+//bot koruma
+client.on('guildMemberAdd', (member) => {
+    const guild = member.guild;
+
+
+ let sChannel = member.guild.channels.find(c => c.name === '701841871420522506')
+
+    if(member.user.bot !==true){
+
+    } 
+    else {
+    if(!sChannel){
+      member.guild.owner.send(`**Eternal koruma sistemi**
+Sunucuya bot cinsinden bir üye geldi bende güvenlik için banladım !
+Banlanan Bot: **${member.user.tag}**`)
+      .then(() => console.log(`yasaklandı ${member.displayName}`))
+    .catch(console.error);
+       member.ban(member) 
+    } else {
+    sChannel.send(`**:zap: Quantum koruma sistemi**
+Sunucuya bot cinsinden bir üye geldi bende güvenlik için banladım !
+Banlanan Bot: **${member.user.tag}**`)
+    .then(() => console.log(`yasaklandı ${member.displayName}`))
+    .catch(console.error);
+       member.ban(member) 
+    }
+  }  
+  });
 
 //
