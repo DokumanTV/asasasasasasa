@@ -18,14 +18,6 @@ const queue = new Map();
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
-client.conf = {
-  "token": "",
-  "pref": "!",
-  "own": "533650583215800320",
-  "oynuyor": "Wizz",
-  "durum": "dnd"
-}
-
 
 const app = express();
 app.get("/", (request, response) => {
