@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
       const emoji = client.emojis.find(emoji => emoji.name === "mavimsitik");
   const arvelosembed = new Discord.RichEmbed()
-  .setThumbnail("https://cdn.discordapp.com/attachments/697533814892658770/702118734172782633/ezgif.com-crop_2.gif")
+  .setThumbnail("https://cdn.discordapp.com/attachments/674701101127172099/702600804535894198/ezgif.com-crop.gif")
   .setDescription(" **Sunucu İstatistikleri** ")
   .addField("<a:ucgenn:701864662932652132> **Sunucuda Bulunan Üye Sayısı** ",message.guild.memberCount)
     .addField("<a:bluestar:701864543692914790>  **Sunucudaki Aktif Üye Sayısı** ",message.guild.members.filter(m => !m.user.bot && m.user.presence.status !== "offline").size)
