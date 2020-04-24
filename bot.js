@@ -248,7 +248,7 @@ client.on('guildMemberAdd', (member) => {
     const guild = member.guild;
 
 
- let sChannel = member.guild.channels.find(c => c.name === '701841871420522506')
+ let sChannel = member.guild.channels.find(c => c.name === 'bot-koruma')
 
     if(member.user.bot !==true){
 
@@ -262,7 +262,7 @@ Banlanan Bot: **${member.user.tag}**`)
     .catch(console.error);
        member.ban(member) 
     } else {
-    sChannel.send(`**:zap: Quantum koruma sistemi**
+    sChannel.send(`**Eternal koruma sistemi**
 Sunucuya bot cinsinden bir üye geldi bende güvenlik için banladım !
 Banlanan Bot: **${member.user.tag}**`)
     .then(() => console.log(`yasaklandı ${member.displayName}`))
