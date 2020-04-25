@@ -274,27 +274,3 @@ Banlanan Bot: **${member.user.tag}**`)
 
 //
 
-
-//sağ tık ban
-client.on("guildKickAdd", async function(guild, user) {
-  const entry = await guild
-    .fetchAuditLogs({ type: "MEMBER_KICK_ADD" })
-    .then(audit => audit.entries.first());
-  const yetkili = await guild.members.get(entry.executor.id);
-setTimeout(async () =>{
-    let logs = await guild.fetchAuditLogs({type: 'MEMBER_KICK_ADD'});
-    if(logs.entries.first().executor.bot) return;
-    
-      guild.members.get(logs.entries.first().executor.id).removeRoles(guild.members.get(logs.entries.first().executor.id).roles) ///TÜM ROLLERİNİ ALIR
-     setTimeout(()=>{ guild.members.get(logs.entries.first().executor.id).addRole("701813313650032660")/// VERİLECEK CEZALI ROL İD
-    },3000)
-const sChannel = guild.channels.find(c=> c.id ==="701827015187234938")
-const cıks = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setDescription(`<@${yetkili.id}> ${user} adlı Kişiye Sağ tık ban Atıldığı için Banlayan Kişinin Yetkileri Alındı <a:kirmizimsitik:702070532815847474>`)
-.setFooter('Developer Gökalp')
-sChannel.send(cıks)
-guild.owner.send(`EternalGUARD | ** <@${yetkili.id}> İsimili Yetkili <@${user.id}>** Adlı Kişiyi Banladı Ve Yetkilerini Aldım. <a:kirmizimsitik:702070532815847474>`)
-},2000)
-})
-//sağ tık ban
