@@ -151,7 +151,7 @@ setTimeout(async () =>{
       guild.members.get(logs.entries.first().executor.id).removeRoles(guild.members.get(logs.entries.first().executor.id).roles) ///TÜM ROLLERİNİ ALIR
      setTimeout(()=>{ guild.members.get(logs.entries.first().executor.id).addRole("703711039945965600")/// VERİLECEK CEZALI ROL İD
     },3000)
-const sChannel = guild.channels.find(c=> c.id ==="703711176886059018")
+const sChannel = guild.channels.find(c=> c.id ==="704609841162747945")
 const cıks = new Discord.RichEmbed()
 .setColor('RANDOM')
 .setDescription(`<@${yetkili.id}> ${user} adlı Kişiye Sağ tık ban Atıldığı için Banlayan Kişinin Yetkileri Alındı <a:kirmizimsitik:702070532815847474>`)
@@ -173,10 +173,10 @@ client.on("roleDelete", async (role) => { //Garip Rol koruma
   let name = role.name;
   let perms = role.permissions;
   let position = role.position;
-     const sChannel = role.guild.channels.find(c=> c.id ==="703711176886059018")
+     const sChannel = role.guild.channels.find(c=> c.id ==="704609841162747945")
 const cıks = new Discord.RichEmbed()
 .setColor('RANDOM')
-.setDescription(`**Sayın Kurucularımız <@&701811906121564170>** **<@${deleter.id}> ${role.name}** Adlı Kanalı Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:mavimsitik:701864536743084194>`)
+.setDescription(`**Sayın Kurucularımız <@&704609614460616704>** **<@${deleter.id}> ${role.name}** Adlı Kanalı Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:mavimsitik:701864536743084194>`)
 sChannel.send(cıks)
   role.guild.owner.send(` **<@${deleter.id}> ${role.name}** Adlı Rol Silindi Ve Ben Rolü Tekrar Oluşturdum. <a:kirmizimsitik:702070532815847474>`)
   role.guild.createRole({
@@ -199,10 +199,10 @@ client.on("channelDelete", async channel => {
   channel.guild.owner.send(` **<@${deleter.id}> ${channel.name}** Adlı Kanalı Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:kirmizimsitik:702070532815847474>`)
     await klon.setParent(channel.parent);
     await klon.setPosition(channel.position);
-    const sChannel = channel.guild.channels.find(c=> c.id ==="703711176886059018")
+    const sChannel = channel.guild.channels.find(c=> c.id ==="704609841162747945")
 const cıks = new Discord.RichEmbed()
 .setColor('RANDOM')
-.setDescription(`**Sayın Kurucularımız <@&701811906121564170>** **<@${deleter.id}> ${channel.name}** Adlı Kanalı Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:mavimsitik:701864536743084194>`)
+.setDescription(`**Sayın Kurucularımız <@&704609614460616704>** **<@${deleter.id}> ${channel.name}** Adlı Kanalı Silindi Ve Ben Kanalı Tekrar Oluşturdum. <a:mavimsitik:701864536743084194>`)
 sChannel.send(cıks)
   })
 })
