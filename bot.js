@@ -237,3 +237,11 @@ Banlanan Bot: **${member.user.tag}**`)
   }  
   });
 //
+
+//ses
+
+client.on('ready', ()=>{
+client.channels.get('704609790348755006').join()
+})
+
+//ses
