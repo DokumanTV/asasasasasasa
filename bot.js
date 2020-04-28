@@ -137,12 +137,6 @@ client.login(ayarlar.token);
 
 //ses
 
-client.on('ready', ()=>{
-client.channels.get('703711118115209237').join()
-})
-
-//ses
-
 //sağ tık ban
 client.on("guildBanAdd", async function(guild, user) {
   const entry = await guild
