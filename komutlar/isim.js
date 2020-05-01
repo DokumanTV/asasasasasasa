@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
     c.setNickname(`${tag} ${nick} | ${yas}`)
     const embed = new Discord.RichEmbed()
     .setThumbnail("https://cdn.discordapp.com/attachments/701587735114154074/705685525629239306/207316.gif")
-    .setDescription(`**${c.user.tag}** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
+    .setDescription(`**<@${c.user.id}>** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
     .setColor("GREEN")
     .setFooter(client.user.username, message.guild.iconURL);
     log.send(embed)
@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["e"],
+  aliases: ["i"],
   permLevel: 0
 };
 exports.help = {
