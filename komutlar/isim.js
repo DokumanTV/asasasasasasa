@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
   const log = message.guild.channels.find(c => c.id === "705783164366225480"); //buraya kayıt log id koyun
-  const tag = "★";//YAZMAK İSTERSENİZ TAGINIZ ( BOŞ BIRAKABİLİRSİNİZ )
-  const dogrulandi = client.emojis.find(emoji => emoji.name === "white_check_mark");
+  const tag = "⍭";//YAZMAK İSTERSENİZ TAGINIZ ( BOŞ BIRAKABİLİRSİNİZ )
+  const dogrulandi = client.emojis.find(emoji => emoji.name === "whitec");
   if(!message.member.roles.array().filter(r => r.id === "705785405550755902")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
@@ -16,9 +16,10 @@ exports.run = (client, message, args) => {
       if(!yas) return message.channel.send("Bir yaş girin.")
     c.setNickname(`${tag} ${nick} | ${yas}`)
     const embed = new Discord.RichEmbed()
-    .setDescription(`**${c.user.tag}** kişinin yeni adı **${tag} ${nick} , ${yas} !**`)
+    .setThumbnail("https://cdn.discordapp.com/attachments/701587735114154074/705685525629239306/207316.gif")
+    .setDescription(`**${c.user.tag}** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
     .setColor("GREEN")
-        .setFooter(client.user.username, message.guild.iconURL);
+    .setFooter(client.user.username, message.guild.iconURL);
     log.send(embed)
     message.react(dogrulandi)
   }
@@ -30,7 +31,8 @@ exports.conf = {
   permLevel: 0
 };
 exports.help = {
-  name: "nick",
+  name: "nick", 
+  name: "isim",
   description: "",
   usage: ""
 };
