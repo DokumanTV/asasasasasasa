@@ -18,8 +18,8 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setThumbnail("https://i1.wp.com/66.media.tumblr.com/30f72ffefa587233884350cb81a98f5d/tumblr_prk3voibU91xlv8m3o2_540.gif?w=605&ssl=1")
     .setDescription(` **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
+    .set
     .setColor("GREEN")
-    .setFooter(client.user.username, message.guild.iconURL);
     log.send(embed)
     message.react(dogrulandi)
   }
