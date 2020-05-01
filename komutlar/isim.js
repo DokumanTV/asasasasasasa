@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
       if(!yas) return message.channel.send("Bir yaş girin.")
     c.setNickname(`${tag} ${nick} | ${yas}`)
     const embed = new Discord.RichEmbed()
-    .setThumbnail("https://cdn.discordapp.com/attachments/701587735114154074/705685525629239306/207316.gif")
+    .setThumbnail("https://media1.giphy.com/media/BMsPZErIMa2PWnbtTt/source.gif")
     .setDescription(`**<@${c.user.id}>** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
     .setColor("GREEN")
     .setFooter(client.user.username, message.guild.iconURL);

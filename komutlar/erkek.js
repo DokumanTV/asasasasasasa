@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
     c.addRole(male)
     c.removeRole(misafir)
     const embed = new Discord.RichEmbed()
-    .setThumbnail("https://cdn.discordapp.com/attachments/701587735114154074/705685525629239306/207316.gif")
+    .setThumbnail("https://i1.wp.com/66.media.tumblr.com/30f72ffefa587233884350cb81a98f5d/tumblr_prk3voibU91xlv8m3o2_540.gif?w=605&ssl=1")
     .setDescription(` **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
     .setColor("GREEN")
     .setFooter(client.user.username, message.guild.iconURL);
