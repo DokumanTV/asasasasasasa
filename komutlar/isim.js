@@ -16,9 +16,9 @@ exports.run = (client, message, args) => {
       if(!yas) return message.channel.send("Bir yaş girin.")
     c.setNickname(`${tag} ${nick} | ${yas}`)
     const embed = new Discord.RichEmbed()
-    .setThumbnail("https://media1.giphy.com/media/BMsPZErIMa2PWnbtTt/source.gif")
+    .setThumbnail("https://media.giphy.com/media/SgBFcIje2WNkk/giphy.gif")
     .setDescription(`**<@${c.user.id}>** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
-    .setColor("GREEN")
+    .setColor("BLACK")
     .setFooter(client.user.username, message.guild.iconURL);
     log.send(embed)
     message.react(dogrulandi)
