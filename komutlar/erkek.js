@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setThumbnail("https://media0.giphy.com/media/B4jfJqiIxvU08/giphy.gif")
     .setDescription(` **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
-  .setColor("0x020525")
+    .setColor("0x020525")
     .setFooter(client.user.username, message.guild.iconURL);
     log.send(embed)
     message.react(dogrulandi)
