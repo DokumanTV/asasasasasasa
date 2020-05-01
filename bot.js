@@ -135,6 +135,24 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
+client.on("userUpdate", async (oldUser, newUser) => {
+  if (oldUser.username !== newUser.username) {
+    let tag = "★"; //tagınız
+    let sunucu = "705048913970856046"; //sunucu ID
+    let kanal = "705049276970958918" //log kanal id
+    let rol = "705049164001574953"; // rol ID
+    if (newUser.username.includes(tag) && !client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
+      client.channels.get(kanal).send(`${newUser} ${tag} tagını aldığı Ve Ailemize Katıldı !`)
+      client.guilds.get(sunucu).members.get(newUser.id).addRole(rol)
+    } if (!newUser.username.includes(tag) && client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
+      client.guilds.get(sunucu).members.get(newUser.id).removeRole(rol)
+      client.channels.get(kanal).send(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
+    }
+
+  }
+})
+
+
 
 //
 client.on('guildMemberAdd', member => {
@@ -146,7 +164,7 @@ client.on('guildMemberAdd', member => {
 
 //
 client.on("guildMemberAdd", member => {  
-  const kanal = "705049235912917012";
+  const kanal = "705854609905811536";
   let user = client.users.get(member.id);
   require("moment-duration-format");
     const kurulus = new Date().getTime() - user.createdAt.getTime();  
@@ -192,3 +210,4 @@ setTimeout(() => {
         }  
     });
 //
+
