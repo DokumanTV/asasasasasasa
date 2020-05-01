@@ -1,54 +1,56 @@
-const Discord = require('discord.js');
-exports.run = (client, message, args) => {
+const Discord = require("discord.js");
+const ms = require("ms");
 
-  if (!message.guild) {
-  const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor(0xFF0000)
-  .setTimestamp()
-  .setAuthor(message.author.username, message.author.avatarURL)
-  .addField(':warning: **Uyarı** :warning:', '`sustur` **adlı komutu özel mesajlarda kullanamazsın.**')
-  return message.author.sendEmbed(ozelmesajuyari); }
-  let guild = message.guild
-  let reason = args.slice(1).join(' ');
-  let user = message.mentions.users.first();
-  let modlog = guild.channels.find('name', '705799519891095583');
-  let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-  if (!modlog) return message.reply('`mod-log` **kanalını bulamıyorum.**').catch(console.error);
-  if (!muteRole) return message.reply('`Muted` **adlı bir rol bulamıyorum.**').catch(console.error);
-  if (reason.length < 1) return message.reply(' **Susturma sebebini Yazmadın!** ').catch(console.error);
-  if (message.mentions.users.size < 1) return message.reply(' **Kimi susturacağını Belirtmedin!** ').catch(console.error);
-  const codare = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .addField('Eylem:', 'Susturma <a:sinirligif:502208088141725696>')
-    .addField('Susturulan Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
-    .addField('Susturan Yetkili:', `${message.author.username}#${message.author.discriminator}`)
-    .addField('Susturma Sebebi', reason);
+module.exports.run = async (bot, message, args) => {
 
-  if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('Gerekli izinlere sahip değilim.').catch(console.error);
+  //sustur @üye 1s/m/h/d | 1s = 1 saniye , 1m = 1 dakika , 1h = 1 saat, 1d = 1 gün
 
-  if (message.guild.member(user).roles.has(muteRole.id)) {
-    message.guild.member(user).removeRole(muteRole).then(() => {
-      guild.channels.get(modlog.id).sendEmbed(codare).catch(console.error);
-    });
-  } else {
-    message.guild.member(user).addRole(muteRole).then(() => {
-      guild.channels.get(modlog.id).sendEmbed('705799519891095583').catch(console.error);
-    });
+  let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!tomute) return message.reply("Bu Komutu Kullanmak İçin : sustur <Kullanıcı> <Süre> Olarak Yazmalısınız.");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Hata: Geçici olarak susturmaya çalıştığınız kişi yetkili veya botun yetkisi belirttiğiniz kişiyi geçici olarak susturmaya yetmiyor.");
+let muterole = message.guild.roles.find(r => r.name === "Muted");
+
+  if(!muterole){
+    try{
+      muterole = await message.guild.createRole({
+        name: "Muted",
+        color: "#818386",
+        permissions:[]
+      })
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false,
+          CONNECT: false
+        });
+      });
+    }catch(e){
+      console.log(e.stack);
+    }
   }
+  //end of create role
+  let mutetime = args[1];
+  if(!mutetime) return message.reply("Bu komutu kullanmak için <prefixiniz>sustur @<Kullanıcı> <Süre> olarak yazmalısınız.");
 
-};
+  await(tomute.addRole(muterole.id));
+  message.reply(` <@${tomute.id}> kullanıcısı için konuşma izinleri kaldırıldı. Şu kadar süresi var; ${ms(ms(mutetime))});
+
+  setTimeout(function(){
+    tomute.removeRole(muterole.id);
+    message.channel.send(<@${tomute.id}> adlı kişinin susturulma süresi dolduğu için susturulması kaldırıldı.);
+  }, ms(mutetime));`)
+
+}
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
-  permLevel: 2
+  aliases: ['mute' ],
+  permLevel: 0
 };
 
 exports.help = {
-  name: 'mute',
-  description: 'İstediğiniz kişiyi  susturur.',
-  usage: 'mute [kullanıcı] [sebep]'
+  name: 'sustur',
+  description: 'Bir kullanıcıyı belirtilen süreyle susturur.',
+  usage: 'sustur @Kullanıcı -süre-'
 };
-//codare
