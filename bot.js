@@ -158,7 +158,7 @@ client.on("userUpdate", async (oldUser, newUser) => {
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
   let joinRole = guild.roles.find('name', 'Gotham People');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
-  member.sendMessage("<a:bluestar:705053346121121802>  Selam Sunucumuza Hoş geldin sunucumuz şuanda sadece taglı üye almaktadır aramıza katılmak için tagımızı almanız yeterli.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
+  member.sendMessage("<a:brave:705826445901037669>  Selam Sunucumuza Hoş geldin sunucumuz şuanda sadece taglı üye almaktadır aramıza katılmak için tagımızı almanız yeterli.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
 });
 
