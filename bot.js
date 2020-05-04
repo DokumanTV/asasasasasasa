@@ -135,36 +135,23 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
-client.on('userUpdate', async user => {
-  let sunucuid = " "; //Buraya sunucunuzun IDsini yazın
-  let tag = " "; //Buraya tagınızı yazın
-  let rol = " "; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
-  let channel = client.guilds.get(sunucuid).channels.find(x => x.name == 'tagrol-log'); //tagrol-log yerine kendi log kanalınızın ismini yazabilirsiniz
-  if (!tag) return;
-  if (!rol) return;
-  if (!channel) return;
-  let member = client.guilds.get(sunucuid).members.get(user.id);
-  if (!member) return;
-  if (!member.roles.has(rol)) {
-    if (member.user.username.includes(tag)) {
-      member.addRole(rol)
-      const tagalma = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setDescription(`<@${user.id}> adlı kişi, ${tag} tagını aldığından dolayı <@&${rol}> rolünü kazandı.`)
-      .setTimestamp()
-      channel.send(tagalma)
+client.on("userUpdate", async (oldUser, newUser) => {
+  if (oldUser.username !== newUser.username) {
+    let tag = "ꋹ"; //tagınız
+    let sunucu = "706848953450364948"; //sunucu ID
+    let kanal = "706876657025417317" //log kanal id
+    let rol = "706850907882782792"; // rol ID
+    if (newUser.username.includes(tag) && !client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
+      client.channels.get(kanal).send(`${newUser} ${tag} tagını aldığı Ve Ailemize Katıldı !`)
+      client.guilds.get(sunucu).members.get(newUser.id).addRole(rol)
+    } if (!newUser.username.includes(tag) && client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
+      client.guilds.get(sunucu).members.get(newUser.id).removeRole(rol)
+      client.channels.get(kanal).send(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
     }
-  }else{
-    if (!member.user.username.includes(tag)) {
-      member.removeRole(rol)
-      const tagsilme = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setDescription(`<@${user.id}> adlı kişi, ${tag} tagını sildiğinden dolayı <@&${rol}> rolünü kaybetti.`)
-      .setTimestamp()
-      channel.send(tagsilme)
-    }
+
   }
-});
+})
+
 
 
 //
@@ -188,7 +175,7 @@ if (kurulus < 1296000000) kontrol = ' <a:guardreq:706884214875750510>  **__Bu He
 if (kurulus > 1296000000) kontrol = ' <a:guardtik:706884215156899895>  **__Bu Hesap Güvenilir Gözüküyor__** <a:guardtik:706884215156899895> '
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:lvlup:706884433810292758>  Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:hpt2:706884218461880333>    **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..**  \n\n \<a:book22:706884395658903583>  <@&706851231448039514> seninle ilgilenicektir.\n\n <a:elmass:706884416269451376>  Hesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "  \n\n"  + kontrol + "   \n\n **<a:mavimsitik:706884429448216626>  ** **Tagımızı alarak ` tag yok aq ` bize destek olabilirsin.** \n\n",  new Discord.Attachment("https://ivo3d.files.wordpress.com/2015/01/vezer_speedred.gif"
+buse.send("**<a:lvlup:706884433810292758>  Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:hpt2:706884218461880333>    **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..**  \n\n \<a:book22:706884395658903583>  <@&706851231448039514> seninle ilgilenicektir.\n\n <a:elmass:706884416269451376>  Hesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "  \n\n"  + kontrol + "   \n\n **<a:mavimsitik:706884429448216626>  ** **Tagımızı alarak ` ꋹ ` bize destek olabilirsin.** \n\n",  new Discord.Attachment("https://ivo3d.files.wordpress.com/2015/01/vezer_speedred.gif"
     )
   );
 });
