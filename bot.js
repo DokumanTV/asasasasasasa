@@ -135,23 +135,36 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
-client.on("userUpdate", async (oldUser, newUser) => {
-  if (oldUser.username !== newUser.username) {
-    let tag = "★"; //tagınız
-    let sunucu = "705048913970856046"; //sunucu ID
-    let kanal = "705049276970958918" //log kanal id
-    let rol = "705049164001574953"; // rol ID
-    if (newUser.username.includes(tag) && !client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
-      client.channels.get(kanal).send(`${newUser} ${tag} tagını aldığı Ve Ailemize Katıldı !`)
-      client.guilds.get(sunucu).members.get(newUser.id).addRole(rol)
-    } if (!newUser.username.includes(tag) && client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
-      client.guilds.get(sunucu).members.get(newUser.id).removeRole(rol)
-      client.channels.get(kanal).send(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
+client.on('userUpdate', async user => {
+  let sunucuid = " "; //Buraya sunucunuzun IDsini yazın
+  let tag = " "; //Buraya tagınızı yazın
+  let rol = " "; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+  let channel = client.guilds.get(sunucuid).channels.find(x => x.name == 'tagrol-log'); //tagrol-log yerine kendi log kanalınızın ismini yazabilirsiniz
+  if (!tag) return;
+  if (!rol) return;
+  if (!channel) return;
+  let member = client.guilds.get(sunucuid).members.get(user.id);
+  if (!member) return;
+  if (!member.roles.has(rol)) {
+    if (member.user.username.includes(tag)) {
+      member.addRole(rol)
+      const tagalma = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription(`<@${user.id}> adlı kişi, ${tag} tagını aldığından dolayı <@&${rol}> rolünü kazandı.`)
+      .setTimestamp()
+      channel.send(tagalma)
     }
-
+  }else{
+    if (!member.user.username.includes(tag)) {
+      member.removeRole(rol)
+      const tagsilme = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription(`<@${user.id}> adlı kişi, ${tag} tagını sildiğinden dolayı <@&${rol}> rolünü kaybetti.`)
+      .setTimestamp()
+      channel.send(tagsilme)
+    }
   }
-})
-
+});
 
 
 //
