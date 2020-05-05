@@ -18,7 +18,6 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setDescription(`<a:ops:707298622148182046> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
     .setColor("0x42fcd7")
-    .setThumbnail("https://cdn.discordapp.com/attachments/706869122016739398/706904506016989304/vezer_speedred.gif")
     .setFooter(client.user.username, message.guild.iconURL);
     log.send(embed)
     message.react(dogrulandi)
