@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
-  const kayıtlı = message.guild.roles.find(r => r.id === "706850123078041692"); //buraya kadın rolünüzün id'sini koyun
-  const male = message.guild.roles.find(r => r.id === "706850264963088425"); //buraya kadın rolünüzün id'sini koyun
-  const misafir = message.guild.roles.find(r => r.id === "706850125082787870"); //buraya misafir rolünüzün id'sini koyun.
-  const log = message.guild.channels.find(c => c.id === "706869122016739398"); //buraya kayıt log id koyun
+  const kayıtlı = message.guild.roles.find(r => r.id === "707298299950137445"); //buraya kadın rolünüzün id'sini koyun
+  const male = message.guild.roles.find(r => r.id === "707298300943925269"); //buraya kadın rolünüzün id'sini koyun
+  const misafir = message.guild.roles.find(r => r.id === "707298304500695086"); //buraya misafir rolünüzün id'sini koyun.
+  const log = message.guild.channels.find(c => c.id === "707298334964187178"); //buraya kayıt log id koyun
   const dogrulandi = client.emojis.find(emoji => emoji.name === "bluestar");
-  if(!message.member.roles.array().filter(r => r.id === "706851231448039514")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
+  if(!message.member.roles.array().filter(r => r.id === "707298284074434640")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
     let member = message.mentions.users.first() || client.users.get(args.join(' '))
@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
     c.addRole(male)
     c.removeRole(misafir)
     const embed = new Discord.RichEmbed()
-    .setDescription(` **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
+    .setDescription(`<a:ops:707298622148182046> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
     .setColor("0xff5cf3")
     .setThumbnail("https://cdn.discordapp.com/attachments/706869122016739398/706904506016989304/vezer_speedred.gif")
     .setFooter(client.user.username, message.guild.iconURL);
