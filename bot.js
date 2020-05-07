@@ -210,12 +210,8 @@ setTimeout(() => {
         }  
     });
 //
-
-client.on("ready", async () => {
-  var channel = client.channels.get("707298363158298634"); // YAZIYOR GÖRÜNMESİNİ İSTEDİĞİNİZ KANAL İD
-  function Lewis(kod) {
-   kod.startTyping();
-  }
- Lewis(channel);
-});
+client.on("ready", () => {
+  client.channels.get("707940663555129357").join();
+   //main dosyaya atılacak
+})
 //
