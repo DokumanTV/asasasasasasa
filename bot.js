@@ -138,9 +138,9 @@ client.login(ayarlar.token);
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
     let tag = "ꋹ"; //tagınız
-    let sunucu = "706848953450364948"; //sunucu ID
-    let kanal = "706876657025417317" //log kanal id
-    let rol = "706850907882782792"; // rol ID
+    let sunucu = "707297303181918218"; //sunucu ID
+    let kanal = "707298380933496932" //log kanal id
+    let rol = "707298294929424385"; // rol ID
     if (newUser.username.includes(tag) && !client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
       client.channels.get(kanal).send(`${newUser} ${tag} tagını aldığı Ve Ailemize Katıldı !`)
       client.guilds.get(sunucu).members.get(newUser.id).addRole(rol)
@@ -211,3 +211,11 @@ setTimeout(() => {
     });
 //
 
+client.on("ready", async () => {
+  var channel = client.channels.get("707298363158298634"); // YAZIYOR GÖRÜNMESİNİ İSTEDİĞİNİZ KANAL İD
+  function Lewis(kod) {
+   kod.startTyping();
+  }
+ Lewis(channel);
+});
+//
