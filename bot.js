@@ -137,7 +137,7 @@ client.login(ayarlar.token);
 
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
-    let tag = "ꋹ"; //tagınız
+    let tag = "仒"; //tagınız
     let sunucu = "707297303181918218"; //sunucu ID
     let kanal = "707298380933496932" //log kanal id
     let rol = "707298294929424385"; // rol ID
@@ -175,7 +175,7 @@ if (kurulus < 1296000000) kontrol = ' <a:guardreq:707299041079197717>  **__Bu He
 if (kurulus > 1296000000) kontrol = '<a:guardtik:707299040982859776>  **__Bu Hesap Güvenilir Gözüküyor__** <a:guardtik:707299040982859776> '
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:volantisgreenload:707298603592319017> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n <a:ops:707298622148182046> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n <a:xbrave:707298607614656523> <@&707298284074434640> seninle ilgilenicektir. \n <a:elmas1:707302174375411713> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<a:bluestar:707299090853003307>  ** **Tagımızı alarak ` ꋹ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://ivo3d.files.wordpress.com/2015/01/vezer_speedred.gif"
+buse.send("**<a:greenload:707298603592319017> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n <a:ops:707298622148182046> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n <a:xbrave:707298607614656523> <@&707298284074434640> seninle ilgilenicektir. \n <a:elmas1:707302174375411713> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<a:bluestar:707299090853003307>  ** **Tagımızı alarak ` ꋹ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://ivo3d.files.wordpress.com/2015/01/vezer_speedred.gif"
     )
   );
 });
