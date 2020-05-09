@@ -215,3 +215,12 @@ client.on("ready", () => {
    //main dosyaya atılacak
 })
 //
+
+//oto tag
+client.on('guildMemberAdd', async member => {
+  let tag = await db.fetch(`otoTag_${member.guild.id}`)
+  let kanal = await db.fetch(`ototagK_${member.guild.id}`)
+  if (!tag) return
+  member.setNickname(tag.replace('{uye}', member.user.username))
+})
+//oto tag
