@@ -15,7 +15,7 @@ message.channel.overwritePermissions(every, {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['k','skapat','kapat'],
+  aliases: ['skapat','kapat'],
 kategori: 'sohbet',
   permLevel: 3
 };
