@@ -195,11 +195,11 @@ client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
  
   var kontrol;
-if (kurulus < 1296000000) kontrol = ' <a:guardreq:707299041079197717>  **__Bu Hesap Güvenilir Değil__** <a:guardreq:707299041079197717>  '
-if (kurulus > 1296000000) kontrol = '<a:guardtik:707299040982859776>  **__Bu Hesap Güvenilir Gözüküyor__** <a:guardtik:707299040982859776> '
+if (kurulus < 1296000000) kontrol = '<a:false:710937443490332743> **__Bu Hesap Güvenilir Değil__** <a:false:710937443490332743>'
+if (kurulus > 1296000000) kontrol = '<a:true:710931365809356861> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:710931365809356861>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:greenload:707298603592319017> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n <a:ops:707298622148182046> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n <a:xbrave:707298607614656523> <@&709432624753541181> seninle ilgilenicektir. \n <a:elmas1:707302174375411713> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<a:bluestar:707299090853003307>  ** **Tagımızı alarak ` 仒 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
+buse.send("**<a:gokalp2:710930970940932188> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:bluestar:710931362072363090> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:registerco:710931331504406618> <@&709432624753541181> seninle ilgilenicektir. \n\n <a:brave:710930953849274409> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:blueverify:710930944764411976>** **Tagımızı alarak ` 仒 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
    )
   );
 });
@@ -215,9 +215,9 @@ client.on("guildMemberAdd", member => {
    var user = member.user
    x = x.replace("birkaç saniye önce", " ")
    if(!x.includes("önce") || x.includes("sonra") ||x == " ") {
-   var rol = member.guild.roles.get("707298275291562076") ///Cezalı Rol ID'si
-   var rol = member.guild.roles.get("707298278449872907") ///Cezalı Rol ID'si
-   var kayıtsız = member.guild.roles.get("707298304500695086") ///Kayıtsız rolü ID'si
+   var rol = member.guild.roles.get("709432620609699841") ///Cezalı Rol ID'si
+   var rol = member.guild.roles.get("709432620609699841") ///Cezalı Rol ID'si
+   var kayıtsız = member.guild.roles.get("709432640801079386") ///Kayıtsız rolü ID'si
    member.addRole(rol)
 member.user.send('Hesabınız Bir Hafta Gibi Kısa Bir Sürede Açıldığı İçin Cezalıya Atıldınız, Yetkililere Bildirerek Açtırabilirsiniz.')
 setTimeout(() => {
