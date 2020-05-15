@@ -203,7 +203,6 @@ buse.send("**<a:greenload:707298603592319017> Hoşgeldin! " + member + " Seninle
    )
   );
 });
-
 //BURAYI @ROLEİD GİBİ EDİTLEYEBİLİRİSİNİZ ! 
 
 //
