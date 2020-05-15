@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
     c.addRole(male)
     c.removeRole(misafir)
     const embed = new Discord.RichEmbed()
-    .setDescription(`<a:yukleniyor:707663668325777454> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
+    .setDescription(`<a:redstar:710931008635142155> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
     .setColor("0xff5cf3")
     log.send(embed)
     message.react(dogrulandi)

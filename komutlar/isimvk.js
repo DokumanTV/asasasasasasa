@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
       if(!yas) return message.channel.send("Bir yaş girin.")
     c.setNickname(`${tag} ${nick} | ${yas}`)
     const embed = new Discord.RichEmbed()
-    .setDescription(`<a:yukleniyor:707663668325777454> **<@${c.user.id}>** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
+    .setDescription(`<a:hpt2:710930955279269949> **<@${c.user.id}>** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
     .setColor("0xf3f5a7")
     log.send(embed)
     message.react(dogrulandi)
