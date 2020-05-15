@@ -175,7 +175,7 @@ if (kurulus < 1296000000) kontrol = ' <a:guardreq:707299041079197717>  **__Bu He
 if (kurulus > 1296000000) kontrol = '<a:guardtik:707299040982859776>  **__Bu Hesap Güvenilir Gözüküyor__** <a:guardtik:707299040982859776> '
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:greenload:707298603592319017> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n <a:ops:707298622148182046> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n <a:xbrave:707298607614656523> <@&707298284074434640> seninle ilgilenicektir. \n <a:elmas1:707302174375411713> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<a:bluestar:707299090853003307>  ** **Tagımızı alarak ` 仒 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
+buse.send("**<a:greenload:707298603592319017> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n <a:ops:707298622148182046> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n <a:xbrave:707298607614656523> <@&709432624753541181> seninle ilgilenicektir. \n <a:elmas1:707302174375411713> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<a:bluestar:707299090853003307>  ** **Tagımızı alarak ` 仒 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
    )
   );
 });
