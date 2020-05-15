@@ -135,23 +135,47 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
-client.on("userUpdate", async (oldUser, newUser) => {
-  if (oldUser.username !== newUser.username) {
-    let tag = "仒"; //tagınız
-    let sunucu = "707297303181918218"; //sunucu ID
-    let kanal = "707298380933496932" //log kanal id
-    let rol = "707298294929424385"; // rol ID
-    if (newUser.username.includes(tag) && !client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
-      client.channels.get(kanal).send(`${newUser} ${tag} tagını aldığı Ve Ailemize Katıldı !`)
-      client.guilds.get(sunucu).members.get(newUser.id).addRole(rol)
-    } if (!newUser.username.includes(tag) && client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
-      client.guilds.get(sunucu).members.get(newUser.id).removeRole(rol)
-      client.channels.get(kanal).send(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
-    }
-
+client.on("userUpdate", async (old, nev) => {
+let tag = "⍫";
+let tagsıztag = "∇";
+let gchat = "709432720874406049";
+let sunucu = "709431493960925255";
+let tagrol = "709432634140262470";
+let notdefteri = [`Klasik oldu ama her şeye rağmen hayattayız yanımızda hatalarımız.`, `Size avans vermek için biraz vuruluyorum.`, `Niye küstahça bakışlara sabır ediyorum?`, `Silgiyle iz bıraktın, kalemle silinmedin.`, `Hiç bir melek ölmez ama sen bi kere dirilmedin.`, `İnsan gelir, insan geçer.`, `Amacım kötü değil, istiyordum yardım ama dönülmez akşamların ufkunda kaldım.`, `Çık hücrenden, ruhunu göster`, `Her şeyi gören sen. Göremedin mi beni?`, `Her şeyi duyan sen. Duyamadın mı beni?`, `Her şeyi bulduysan. Bulamadın mı beni?`, `Her şeyi bilen sen. Bilemedin bir beni`, `Ben olmasam bile hayat gülsün sana.`, `Kahverengi gözlerin var ama gökyüzü gibi bakıyosun.`, `Başka bir yer varsa orada tekrar görüşürüz belki yoksa da seni tanımak benim cennetimdi zaten.`, `Herkes merak içinde ölümden sonra hayat var mı diye boşuna düşünürler sanki hayat varmış gibi ölümden önce.`, `Kim benim düşmanım, kim senin dostun?`, `Bana güzel bir şey söyle - söyle kalbim dursun - beni sevdiğini söyle - varsın yalan olsun..`, `Bir gün gelir aşk biter, insafsızca terk eder. Bütün bunların ardından sadece gözyaşı kalır.`,`Senin olanın yokluğu, bir alev gibi yaktı mı hiç seni?`,`Yalanlarımız güzel, inanması zevkli.`,`Havam bozulmaya başladı yine. Gözlerim de dolmaya. Sanırım içimde bir yerlere sen yağdı gece gece...`,`Güne açan çiçekler gibiyiz, yalaaaaaaaaaaağn`];
+let xxxxxxxxx =  client.guilds.get(sunucu).members.get(nev.id).displayName;
+if (old.username === nev.username) return;
+if (nev.username.includes(tag)){
+  let qwe = xxxxxxxxx.replace(tagsıztag, tag);
+if (old.username.includes(tag)) return;
+client.guilds.get(sunucu).channels.get(gchat).send({
+  embed: { 
+   description: "<@"+ nev.id +"> " + " adlı üye tagımızı aldığı için " + "<@&" + tagrol + "> rolü verildi.",
+  footer: {
+    text: `${[notdefteri[Math.floor(Math.random() * notdefteri.lenght)]]}`
+  },
+  timestamp: new Date(),
+   color: Math.floor(Math.random() * (0xFFFFFF + 1))
+   }
+    }).catch(console.error);
+client.guilds.get(sunucu).members.get(nev.id).addRole(tagrol).catch(console.error);
+client.guilds.get(sunucu).members.get(nev.id).setNickname(qwe)
+} else {
+  let qwerty = xxxxxxxxx.replace(tag, tagsıztag);
+ if (!old.username.includes(tag)) return;
+client.guilds.get(sunucu).channels.get(gchat).send({
+  embed: {
+   description: "<@"+ nev.id +"> " + " adlı üye tagımızı çıkardığı için <@&" + tagrol + "> " + " rolü alındı.",
+  footer: {
+   text: `${[notdefteri[Math.floor(Math.random() * notdefteri.lenght)]]}`
+  },
+  timestamp: new Date(),
+    color: Math.floor(Math.random() * (0xFFFFFF + 1))
   }
-})
-
+   }).catch(console.error);
+client.guilds.get(sunucu).members.get(nev.id).removeRole(tagrol).catch(console.error);
+client.guilds.get(sunucu).members.get(nev.id).setNickname(qwerty);
+             };
+                 });
 
 
 //
