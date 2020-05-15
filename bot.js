@@ -158,13 +158,13 @@ client.on("userUpdate", async (oldUser, newUser) => {
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
   let joinRole = guild.roles.find('name', 'Teyitsiz Üye');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
-  member.sendMessage("Taglı Alımdayız Ve Yetkili Alımlarımız Açıktır.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
+  member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
 });
 
 //
 client.on("guildMemberAdd", member => {  
-  const kanal = "707298334964187178";
+  const kanal = "709432692290093156";
   let user = client.users.get(member.id);
   require("moment-duration-format");
     const kurulus = new Date().getTime() - user.createdAt.getTime();  
@@ -211,7 +211,7 @@ setTimeout(() => {
     });
 //
 client.on("ready", () => {
-  client.channels.get("707940663555129357").join();
+  client.channels.get("709432702914265128").join();
    //main dosyaya atılacak
 })
 //
