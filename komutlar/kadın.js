@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
   const kayıtlı = message.guild.roles.find(r => r.id === "709432636472295455"); //buraya kadın rolünüzün id'sini koyun
-  const male = message.guild.roles.find(r => r.id === "709432637353230396"); //buraya kadın rolünüzün id'sini koyun
+  const male = message.guild.roles.find(r => r.id === "711210032234102835"); //buraya kadın rolünüzün id'sini koyun
+  const smale = message.guild.roles.find(r => r.id === "709432637353230396"); //buraya kadın rolünüzün id'sini koyun
   const misafir = message.guild.roles.find(r => r.id === "709432640801079386"); //buraya misafir rolünüzün id'sini koyun.
   const log = message.guild.channels.find(c => c.id === "709432692290093156"); //buraya kayıt log id koyun
   const dogrulandi = client.emojis.find(emoji => emoji.name === "pembetik");
@@ -14,6 +15,7 @@ exports.run = (client, message, args) => {
     const c = message.guild.member(member)
     c.addRole(kayıtlı)
     c.addRole(male)
+    c.addRole(smale)
     c.removeRole(misafir)
     const embed = new Discord.RichEmbed()
     .setDescription(`<a:redstar:710931008635142155> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
