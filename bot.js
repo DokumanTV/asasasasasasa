@@ -137,7 +137,7 @@ client.login(ayarlar.token);
 
 client.on("userUpdate", async (old, nev) => {
 let tag = "仒";
-let tagsıztag = "亽";
+let tagsıztag = "仒";
 let gchat = "709432720874406049";
 let sunucu = "709431493960925255";
 let tagrol = "709432634140262470";
