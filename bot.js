@@ -236,3 +236,27 @@ client.on('guildMemberAdd', async member => {
 });
 //////////////ototag
 //oto tag
+// QUİCK.DBLİ VERSİYONU:
+// İltifatlar
+const iltifatlar = [
+  'Gözlerindeki saklı cenneti benden başkası fark etsin istemiyorum.',
+  'Karanlık Sende Korkuyor Neden Biliyor Musun ? Çünkü Karanlık Işıktan Korkak.',
+  'Çok Tatlısın',
+  'Sensiz Geçen Dakikaların Asırlardan Farkı Yok.',
+  'Görmediğim Zaman Korktuğum Kişi Tahmin Et Kim ? Tabi ki Sensin Böyle Bir Tatlılığı Nasıl Kaybedebilirim Diye Korkuyorum.',
+  'Gerçek Sevgiye Layıksın.',
+  'B U   K A D A R      T A T L I      O L M A Z      M I S I N ?',
+];
+// İLTİFATLARI BU ŞEKİLDE İSTEDİĞİNİZ KADAR ÇOĞALTABİLİRSİNİZ
+client.on("message", async message => {
+  if(message.channel.id !== "709432720874406049") return;
+  let codeAcademy = db.get('chatiltifat');
+  await db.add("chatiltifat", 1);
+  if(codeAcademy >= 50) { // 50 yazan yer, 50 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
+    db.delete("chatiltifat");
+    const random = Math.floor(Math.random() * ((iltifatlar).length - 1) + 1);
+    message.reply(`**${(iltifatlar)[random]}**`);
+  };
+});
+
+//
