@@ -135,47 +135,33 @@ client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
 
-client.on("userUpdate", async (old, nev) => {
-let tag = "仒";
-let tagsıztag = "仒";
-let gchat = "709432720874406049";
-let sunucu = "709431493960925255";
-let tagrol = "709432634140262470";
-let notdefteri = [`Klasik oldu ama her şeye rağmen hayattayız yanımızda hatalarımız.`, `Size avans vermek için biraz vuruluyorum.`, `Niye küstahça bakışlara sabır ediyorum?`, `Silgiyle iz bıraktın, kalemle silinmedin.`, `Hiç bir melek ölmez ama sen bi kere dirilmedin.`, `İnsan gelir, insan geçer.`, `Amacım kötü değil, istiyordum yardım ama dönülmez akşamların ufkunda kaldım.`, `Çık hücrenden, ruhunu göster`, `Her şeyi gören sen. Göremedin mi beni?`, `Her şeyi duyan sen. Duyamadın mı beni?`, `Her şeyi bulduysan. Bulamadın mı beni?`, `Her şeyi bilen sen. Bilemedin bir beni`, `Ben olmasam bile hayat gülsün sana.`, `Kahverengi gözlerin var ama gökyüzü gibi bakıyosun.`, `Başka bir yer varsa orada tekrar görüşürüz belki yoksa da seni tanımak benim cennetimdi zaten.`, `Herkes merak içinde ölümden sonra hayat var mı diye boşuna düşünürler sanki hayat varmış gibi ölümden önce.`, `Kim benim düşmanım, kim senin dostun?`, `Bana güzel bir şey söyle - söyle kalbim dursun - beni sevdiğini söyle - varsın yalan olsun..`, `Bir gün gelir aşk biter, insafsızca terk eder. Bütün bunların ardından sadece gözyaşı kalır.`,`Senin olanın yokluğu, bir alev gibi yaktı mı hiç seni?`,`Yalanlarımız güzel, inanması zevkli.`,`Havam bozulmaya başladı yine. Gözlerim de dolmaya. Sanırım içimde bir yerlere sen yağdı gece gece...`,`Güne açan çiçekler gibiyiz, yalaaaaaaaaaaağn`];
-let xxxxxxxxx =  client.guilds.get(sunucu).members.get(nev.id).displayName;
-if (old.username === nev.username) return;
-if (nev.username.includes(tag)){
-  let qwe = xxxxxxxxx.replace(tagsıztag, tag);
-if (old.username.includes(tag)) return;
-client.guilds.get(sunucu).channels.get(gchat).send({
-  embed: { 
-   description: "<@"+ nev.id +"> " + " adlı üye tagımızı aldığı için " + "<@&" + tagrol + "> rolü verildi.",
-  footer: {
-    text: `${[notdefteri[Math.floor(Math.random() * notdefteri.lenght)]]}`
-  },
-  timestamp: new Date(),
-   color: Math.floor(Math.random() * (0xFFFFFF + 1))
-   }
-    }).catch(console.error);
-client.guilds.get(sunucu).members.get(nev.id).addRole(tagrol).catch(console.error);
-client.guilds.get(sunucu).members.get(nev.id).setNickname(qwe)
-} else {
-  let qwerty = xxxxxxxxx.replace(tag, tagsıztag);
- if (!old.username.includes(tag)) return;
-client.guilds.get(sunucu).channels.get(gchat).send({
-  embed: {
-   description: "<@"+ nev.id +"> " + " adlı üye tagımızı çıkardığı için <@&" + tagrol + "> " + " rolü alındı.",
-  footer: {
-   text: `${[notdefteri[Math.floor(Math.random() * notdefteri.lenght)]]}`
-  },
-  timestamp: new Date(),
-    color: Math.floor(Math.random() * (0xFFFFFF + 1))
+client.on('message', message => {
+  let tag = "仒"; //tagınızı yazın
+  let rol = "709432634140262470"; //tag alındığı zaman verilecek rolün ID-si
+  let channel = message.guild.channels.find('name', 'oto-tag'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
+  if (!rol) return;
+  if (!tag) return;
+  if (message.member.user.username.includes(tag)) {
+    if (message.member.roles.has(rol)) return;
+    message.member.addRole(rol).then(() => {
+      const tagalma = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription(`${message.author} ${tag} tagını aldığından dolayı <@&${rol}> rolü Verildi`)
+        .setTimestamp()
+      channel.send(tagalma)
+    });
   }
-   }).catch(console.error);
-client.guilds.get(sunucu).members.get(nev.id).removeRole(tagrol).catch(console.error);
-client.guilds.get(sunucu).members.get(nev.id).setNickname(qwerty);
-             };
-                 });
+  if (!message.member.user.username.includes(tag)) {
+    if (!message.member.roles.has(rol)) return;
+    message.member.removeRole(rol).then(() => {
+      const tagsilme = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription(`${message.author} ${tag} tagını sildiğinden dolayı <@&${rol}> rolü Alındı`)
+        .setTimestamp()
+      channel.send(tagsilme)
+    });
+  }
+});
 
 
 //
