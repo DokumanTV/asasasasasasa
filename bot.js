@@ -134,36 +134,6 @@ client.on('error', e => {
 client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
-
-client.on('message', message => {
-  let tag = "仒"; //tagınızı yazın
-  let rol = "709432634140262470"; //tag alındığı zaman verilecek rolün ID-si
-  let channel = message.guild.channels.find('name', 'oto-tag'); //tagrol-log yerine kendi kanalınızın ismini yaza bilirsiniz
-  if (!rol) return;
-  if (!tag) return;
-  if (message.member.user.username.includes(tag)) {
-    if (message.member.roles.has(rol)) return;
-    message.member.addRole(rol).then(() => {
-      const tagalma = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını aldığından dolayı <@&${rol}> rolü Verildi`)
-        .setTimestamp()
-      channel.send(tagalma)
-    });
-  }
-  if (!message.member.user.username.includes(tag)) {
-    if (!message.member.roles.has(rol)) return;
-    message.member.removeRole(rol).then(() => {
-      const tagsilme = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription(`${message.author} ${tag} tagını sildiğinden dolayı <@&${rol}> rolü Alındı`)
-        .setTimestamp()
-      channel.send(tagsilme)
-    });
-  }
-});
-
-
 //
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
@@ -189,6 +159,41 @@ buse.send("**<a:gokalp2:710930970940932188> Hoşgeldin! " + member + " Seninle _
    )
   );
 });
+
+//
+
+client.on('userUpdate', async user => {
+  let sunucuid = " "; //Buraya sunucunuzun IDsini yazın
+  let tag = "仒"; //Buraya tagınızı yazın
+  let rol = "709432634140262470"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+  let channel = client.guilds.get(sunucuid).channels.find(x => x.name == 'oto-tag'); //tagrol-log yerine kendi log kanalınızın ismini yazabilirsiniz
+  if (!tag) return;
+  if (!rol) return;
+  if (!channel) return;
+  let member = client.guilds.get(sunucuid).members.get(user.id);
+  if (!member) return;
+  if (!member.roles.has(rol)) {
+    if (member.user.username.includes(tag)) {
+      member.addRole(rol)
+      const tagalma = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription(`<@${user.id}> adlı kişi, ${tag} tagını aldığından dolayı <@&${rol}> rolünü kazandı.`)
+      .setTimestamp()
+      channel.send(tagalma)
+    }
+  }else{
+    if (!member.user.username.includes(tag)) {
+      member.removeRole(rol)
+      const tagsilme = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription(`<@${user.id}> adlı kişi, ${tag} tagını sildiğinden dolayı <@&${rol}> rolünü kaybetti.`)
+      .setTimestamp()
+      channel.send(tagsilme)
+    }
+  }
+});
+
+
 //BURAYI @ROLEİD GİBİ EDİTLEYEBİLİRİSİNİZ ! 
 
 //
