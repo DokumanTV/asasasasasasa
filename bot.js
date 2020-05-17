@@ -155,7 +155,7 @@ if (kurulus < 1296000000) kontrol = '<a:false:710937443490332743> **__Bu Hesap G
 if (kurulus > 1296000000) kontrol = '<a:true:710931365809356861> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:710931365809356861>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:gokalp2:711638741734785034> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:mavimsitik:711639165032202352> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:kitapck:711639131461124166> <@&709432624753541181> seninle ilgilenicektir. \n\n <a:greenload:711638928633102496> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:blueverify:710930944764411976>** **Tagımızı alarak ` ☤ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
+buse.send("**<a:gokalp2:711638741734785034> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:mavimsitik:711639165032202352> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:kitapck:711639131461124166> <@&709432624753541181> seninle ilgilenicektir. \n\n <a:greenload:711638928633102496> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:blueverify:711638724760436878>** **Tagımızı alarak ` ☤ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
    )
   );
 });
@@ -164,7 +164,7 @@ buse.send("**<a:gokalp2:711638741734785034> Hoşgeldin! " + member + " Seninle _
 
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
-    let tag = "✫"  ; //tagınız
+    let tag = "☤"  ; //tagınız
     let sunucu = "709431493960925255"; //sunucu ID
     let kanal = "709432744157118554" //log kanal id
     let rol = "709432634140262470"; // rol ID
