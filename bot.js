@@ -1,4 +1,4 @@
- const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
@@ -155,7 +155,7 @@ if (kurulus < 1296000000) kontrol = '<a:false:710937443490332743> **__Bu Hesap G
 if (kurulus > 1296000000) kontrol = '<a:true:710931365809356861> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:710931365809356861>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:gokalp2:710930970940932188> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:bluestar:710931362072363090> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:registerco:710931331504406618> <@&709432624753541181> seninle ilgilenicektir. \n\n <a:brave:710930953849274409> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:blueverify:710930944764411976>** **Tagımızı alarak ` ✫ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
+buse.send("**<a:gokalp2:711638741734785034> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:mavimsitik:711639165032202352> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:kitapck:711639131461124166> <@&709432624753541181> seninle ilgilenicektir. \n\n <a:greenload:711638928633102496> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:blueverify:710930944764411976>** **Tagımızı alarak ` ☤ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/708381484201017354/ezgif.com-crop_14.gif"                   
    )
   );
 });
