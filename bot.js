@@ -143,6 +143,12 @@ client.on('guildMemberAdd', member => {
 });
 
 //
+client.on("guildMemberAdd", member => {
+var rol = member.guild.roles.get("711600935486488636")
+member.addRole(rol)
+   })
+
+//
 client.on("guildMemberAdd", member => {  
   const kanal = "711600980273135676";
   let user = client.users.get(member.id);
