@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
   const log = message.guild.channels.find(c => c.id === "713016880868229220"); //buraya kayıt log id koyun
-  const tag = "☤";//YAZMAK İSTERSENİZ TAGINIZ ( BOŞ BIRAKABİLİRSİNİZ )
+  const tag = "⚚";//YAZMAK İSTERSENİZ TAGINIZ ( BOŞ BIRAKABİLİRSİNİZ )
   const dogrulandi = client.emojis.find(emoji => emoji.name === "siyahtik");
   if(!message.member.roles.array().filter(r => r.id === "712942738844286977")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
       if(!yas) return message.channel.send("Bir yaş girin.")
     c.setNickname(`${tag} ${nick} | ${yas}`)
     const embed = new Discord.RichEmbed()
-    .setDescription(`\<a:conf:713025712348463144> **<@${c.user.id}>** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
+    .setDescription(`<a:conf:713025712348463144> **<@${c.user.id}>** kişinin yeni adı **${tag} ${nick} | ${yas} !**`)
     .setColor("0xf3f5a7")
     log.send(embed)
     message.react(dogrulandi)

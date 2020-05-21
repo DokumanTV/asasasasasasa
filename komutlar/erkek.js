@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
   const kayıtlı = message.guild.roles.find(r => r.id === "712942720133365771"); //buraya erkek rolünüzün id'sini koyun
   const male = message.guild.roles.find(r => r.id === "712942720997654579"); //buraya erkek rolünüzün id'sini koyun
   const smale = message.guild.roles.find(r => r.id === "712942722838953985"); //buraya erkek rolünüzün id'sini koyun
-  const misafir = message.guild.roles.find(r => r.id === "711600935486488636"); //buraya misafir rolünüzün id'sini koyun.
+  const misafir = message.guild.roles.find(r => r.id === "712942721349713932"); //buraya misafir rolünüzün id'sini koyun.
   const log = message.guild.channels.find(c => c.id === "713016880868229220"); //buraya kayıt log id koyun
   const dogrulandi = client.emojis.find(emoji => emoji.name === "mavitik");
   if(!message.member.roles.array().filter(r => r.id === "712942738844286977")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
     c.addRole(smale)
     c.removeRole(misafir)
     const embed = new Discord.RichEmbed()
-    .setDescription(`<a:mavitik:711638776853561395> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
+    .setDescription(`<a:mavimsitik:713025746829967400> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
     .setColor("0x42fcd7")
     log.send(embed)
     message.react(dogrulandi)
