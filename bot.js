@@ -216,7 +216,7 @@ setTimeout(() => {
     });
 //
 client.on("ready", () => {
-  client.channels.get("711600991224725505").join();
+  client.channels.get("713018997922201651").join();
    //main dosyaya atılacak
 })
 //
