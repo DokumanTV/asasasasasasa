@@ -197,9 +197,9 @@ client.on("guildMemberAdd", member => {
    var user = member.user
    x = x.replace("birkaç saniye önce", " ")
    if(!x.includes("önce") || x.includes("sonra") ||x == " ") {
-   var rol = member.guild.roles.get("711600918793158728") ///Cezalı Rol ID'si
-   var rol = member.guild.roles.get("711600918793158728") ///Cezalı Rol ID'si
-   var kayıtsız = member.guild.roles.get("711600935486488636") ///Kayıtsız rolü ID'si
+   var rol = member.guild.roles.get("712942743038459915") ///Cezalı Rol ID'si
+   var rol = member.guild.roles.get("712942743038459915") ///Cezalı Rol ID'si
+   var kayıtsız = member.guild.roles.get("712942721349713932") ///Kayıtsız rolü ID'si
    member.addRole(rol)
 member.user.send('Hesabınız Bir Hafta Gibi Kısa Bir Sürede Açıldığı İçin Cezalıya Atıldınız, Yetkililere Bildirerek Açtırabilirsiniz.')
 setTimeout(() => {
