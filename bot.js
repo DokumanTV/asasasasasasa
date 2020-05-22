@@ -161,7 +161,7 @@ if (kurulus < 1296000000) kontrol = '<a:false:713024804667785266> **__Bu Hesap G
 if (kurulus > 1296000000) kontrol = '<a:true:713025439907708958> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:713025439907708958>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:saturn:713026191237578796> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:ops:713024631929438288> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:conf:713025712348463144> <@&712942738844286977> seninle ilgilenicektir. \n\n <a:ucugen:713025030224740393> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:brave:713024902034227260>** **Tagımızı alarak ` ⚚ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/713068127189204992/ezgif.com-crop_30.gif"                   
+buse.send("**<a:saturn:713026191237578796> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:ops:713024631929438288> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:conf:713025712348463144> <@&712942738844286977> seninle ilgilenicektir. \n\n <a:ucugen:713025030224740393> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:brave:713024902034227260>** **Tagımızı alarak ` ✭ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/713068127189204992/ezgif.com-crop_30.gif"                   
    )
   );
 });
@@ -170,7 +170,7 @@ buse.send("**<a:saturn:713026191237578796> Hoşgeldin! " + member + " Seninle __
 
 client.on("userUpdate", async (oldUser, newUser) => {
   if (oldUser.username !== newUser.username) {
-    let tag = "⚚"  ; //tagınız
+    let tag = "✭"  ; //tagınız
     let sunucu = "712942555213594704"; //sunucu ID
     let kanal = "713026430891720744" //log kanal id
     let rol = "712942715385675816"; // rol ID
