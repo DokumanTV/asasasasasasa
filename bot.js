@@ -166,24 +166,18 @@ buse.send("**<a:saturn:713026191237578796> Hoşgeldin! " + member + " Seninle __
   );
 });
 
-//
-
-client.on("userUpdate", async (oldUser, newUser) => {
-  if (oldUser.username !== newUser.username) {
-    let tag = "✭"  ; //tagınız
-    let sunucu = "712942555213594704"; //sunucu ID
-    let kanal = "713026430891720744" //log kanal id
-    let rol = "712942715385675816"; // rol ID
-    if (newUser.username.includes(tag) && !client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
-      client.channels.get(kanal).send(`${newUser} ${tag} tagını aldığı Ve Ailemize Katıldı !`)
-      client.guilds.get(sunucu).members.get(newUser.id).addRole(rol)
-    } if (!newUser.username.includes(tag) && client.guilds.get(sunucu).members.get(newUser.id).roles.has(rol)) {
-      client.guilds.get(sunucu).members.get(newUser.id).removeRole(rol)
-      client.channels.get(kanal).send(`${newUser} ${tag} tagını çıkardığı için <@&${rol}> rolünü kaybetti!`)
-    }
-
+client.on("userUpdate", async(old, nev) => {
+  if(old.username !== nev.username) {
+  if(!nev.username.includes("✭") && client.guilds.get("712942555213594704").members.get(nev.id).roles.has("TAG ROLÜ")) {
+     client.guilds.get("712942555213594704").members.get(nev.id).removeRole("TAG ROLÜ")
+     client.channels.get('713026430891720744').send(`**${nev}, "tagınız" tagını çıkardığı için Raito tarafından <@&........> rolü alındı!**`)
+    } 
+     if(nev.username.includes("TAGINIZ") && !client.guilds.get("712942555213594704").members.get(nev.id).roles.has("TAG ROLÜ")) {
+      client.channels.get('713026430891720744').send(`**${nev}, "tagınız" tagını aldığı için Raito tarafından <@&.......> rolü verildi!**`) 
+      client.guilds.get("712942555213594704").members.get(nev.id).addRole("TAG ROLÜ")
+     }
   }
-})
+  })
 
 //BURAYI @ROLEİD GİBİ EDİTLEYEBİLİRİSİNİZ ! 
 
