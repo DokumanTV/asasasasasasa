@@ -137,7 +137,7 @@ client.login(ayarlar.token);
 //
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
-  let joinRole = guild.roles.find('name', 'Unregister');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
+  let joinRole = guild.roles.find('name', 'Teyitsiz Üye');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
   member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
 });
@@ -150,34 +150,22 @@ member.addRole(rol)
 
 //
 client.on("guildMemberAdd", member => {  
-  const kanal = "713016880868229220";
+  const kanal = "714212722564137071";
   let user = client.users.get(member.id);
   require("moment-duration-format");
     const kurulus = new Date().getTime() - user.createdAt.getTime();  
   const embed = new Discord.RichEmbed()
  
   var kontrol;
-if (kurulus < 1296000000) kontrol = '<a:false:713024804667785266> **__Bu Hesap Güvenilir Değil__** <a:false:713024804667785266>'
-if (kurulus > 1296000000) kontrol = '<a:true:713025439907708958> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:713025439907708958>'
+if (kurulus < 1296000000) kontrol = '<a:false:714215310575796224> **__Bu Hesap Güvenilir Değil__** <a:false:714215310575796224>'
+if (kurulus > 1296000000) kontrol = '<a:true:714215052831359017> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:714215052831359017>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:saturn:713026191237578796> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:ops:713024631929438288> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:conf:713025712348463144> <@&712942738844286977> seninle ilgilenicektir. \n\n <a:ucugen:713025030224740393> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:brave:713024902034227260>** **Tagımızı alarak ` ✭ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/713978969023578112/ezgif.com-crop_31.gif"                   
+buse.send("**<a:greenload:714215272466088068> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:brave:714215587395534939> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:registerbook:714215012884807756> <@&712942738844286977> seninle ilgilenicektir. \n\n <a:bluestar:714215046699548734> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:gokalp:714215291793440789>** **Tagımızı alarak ` ✭ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/713978969023578112/ezgif.com-crop_31.gif"                   
    )
   );
 });
 
-client.on("userUpdate", async(old, nev) => {
-  if(old.username !== nev.username) {
-  if(!nev.username.includes("✭") && client.guilds.get("712942555213594704").members.get(nev.id).roles.has("712942715385675816")) {
-     client.guilds.get("712942555213594704").members.get(nev.id).removeRole("712942715385675816")
-     client.channels.get('713026430891720744').send(`**${nev}, ✭ tagını çıkardığı için Striga tarafından WYNONNA  rolü alındı!**`)
-    } 
-     if(nev.username.includes("✭") && !client.guilds.get("712942555213594704").members.get(nev.id).roles.has("712942715385675816")) {
-      client.channels.get('713026430891720744').send(`**${nev}, ✭ tagını aldığı için Striga tarafından WYNONNA rolü verildi!**`) 
-      client.guilds.get("712942555213594704").members.get(nev.id).addRole("712942715385675816")
-     }
-  }
-  })
 
 //BURAYI @ROLEİD GİBİ EDİTLEYEBİLİRİSİNİZ ! 
 
@@ -191,8 +179,8 @@ client.on("guildMemberAdd", member => {
    var user = member.user
    x = x.replace("birkaç saniye önce", " ")
    if(!x.includes("önce") || x.includes("sonra") ||x == " ") {
-   var rol = member.guild.roles.get("712942743038459915") ///Cezalı Rol ID'si
-   var kayıtsız = member.guild.roles.get("712942721349713932") ///Kayıtsız rolü ID'si
+   var rol = member.guild.roles.get("714212654071283853") ///Cezalı Rol ID'si
+   var kayıtsız = member.guild.roles.get("714212670609555548") ///Kayıtsız rolü ID'si
    member.addRole(rol)
 member.user.send('Hesabınız Bir Hafta Gibi Kısa Bir Sürede Açıldığı İçin Cezalıya Atıldınız, Yetkililere Bildirerek Açtırabilirsiniz.')
 setTimeout(() => {
@@ -209,7 +197,7 @@ setTimeout(() => {
     });
 //
 client.on("ready", () => {
-  client.channels.get("713018997922201651").join();
+  client.channels.get("").join();
    //main dosyaya atılacak
 })
 //
