@@ -161,7 +161,7 @@ if (kurulus < 1296000000) kontrol = '<a:false:714215310575796224> **__Bu Hesap G
 if (kurulus > 1296000000) kontrol = '<a:true:714215052831359017> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:714215052831359017>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:greenload:714215272466088068> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:brave:714215587395534939> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:registerbook:714215012884807756> <@&712942738844286977> seninle ilgilenicektir. \n\n <a:bluestar:714215046699548734> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:gokalp:714215291793440789>** **Tagımızı alarak ` ✭ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/713978969023578112/ezgif.com-crop_31.gif"                   
+buse.send("**<a:greenload:714215272466088068> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:brave:714215587395534939> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:registerbook:714215012884807756> <@&712942738844286977> seninle ilgilenicektir. \n\n <a:bluestar:714215046699548734> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:gokalp:714215291793440789>** **Tagımızı alarak ` 仒 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/714224741732319236/ezgif.com-crop_14.gif"                   
    )
   );
 });
@@ -195,12 +195,7 @@ setTimeout(() => {
 
         }  
     });
-//
-client.on("ready", () => {
-  client.channels.get("").join();
-   //main dosyaya atılacak
-})
-//
+
 
 //oto tag
 
