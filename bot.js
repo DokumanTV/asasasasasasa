@@ -170,10 +170,10 @@ client.on("userUpdate", async(old, nev) => {
   if(old.username !== nev.username) {
   if(!nev.username.includes("✭") && client.guilds.get("712942555213594704").members.get(nev.id).roles.has("712942715385675816")) {
      client.guilds.get("712942555213594704").members.get(nev.id).removeRole("712942715385675816")
-     client.channels.get('713026430891720744').send(`**${nev}, "tagınız" tagını çıkardığı için Striga tarafından WYNONNA  rolü alındı!**`)
+     client.channels.get('713026430891720744').send(`**${nev}, ✭ tagını çıkardığı için Striga tarafından WYNONNA  rolü alındı!**`)
     } 
      if(nev.username.includes("✭") && !client.guilds.get("712942555213594704").members.get(nev.id).roles.has("712942715385675816")) {
-      client.channels.get('713026430891720744').send(`**${nev}, "tagınız" tagını aldığı için Striga tarafından WYNONNA rolü verildi!**`) 
+      client.channels.get('713026430891720744').send(`**${nev}, ✭ tagını aldığı için Striga tarafından WYNONNA rolü verildi!**`) 
       client.guilds.get("712942555213594704").members.get(nev.id).addRole("712942715385675816")
      }
   }
