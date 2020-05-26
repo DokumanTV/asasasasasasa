@@ -247,16 +247,16 @@ else {
 if (!role) {
   member.addRole(member.guild.roles.get(otorol))
                         var embed = new Discord.RichEmbed()
-                        .setDescription("**Sunucuya Yeni Katılan** @" + member.user.tag + " **Kullanıcısına** <@&" + otorol + ">  **Rolü verildi.**")
+                        .setDescription("@" + member.user.tag + " **Kullanıcısına** <@&" + otorol + "> **Verildi.**")
                         .setColor('0x36393E')
-                        .setFooter(`Otorol Sistemi`)
+                        .setFooter(`P O S E I D O N 🔱`)
      member.guild.channels.get(i).send(embed)
 } else if (role) {
     member.addRole(member.guild.roles.get(otorol))
                         var embed = new Discord.RichEmbed()
-                        .setDescription(`**Sunucuya Yeni Katılan** \`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Rolü verildi.**`)
+                        .setDescription(`\`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Verildi.**`)
                         .setColor('0x36393E')
-                        .setFooter(`Otorol Sistemi`)
+                        .setFooter(`P O S E I D O N 🔱`)
      member.guild.channels.get(i).send(embed)
  
 }
