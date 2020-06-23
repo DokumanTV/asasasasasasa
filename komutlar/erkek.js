@@ -1,13 +1,12 @@
 const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
-  const kayıtlı = message.guild.roles.find(r => r.id === "714212668952805381"); //buraya erkek rolünüzün id'sini koyun
-  const male = message.guild.roles.find(r => r.id === "714216254881267744"); //buraya erkek rolünüzün id'sini koyun
-  const smale = message.guild.roles.find(r => r.id === "714212669644865546"); //buraya erkek rolünüzün id'sini koyun
-  const misafir = message.guild.roles.find(r => r.id === "714212670609555548"); //buraya misafir rolünüzün id'sini koyun.
-  const log = message.guild.channels.find(c => c.id === "714212722564137071"); //buraya kayıt log id koyun
+  const kayıtlı = message.guild.roles.find(r => r.id === "724682165912338432"); //buraya erkek rolünüzün id'sini koyun
+  const male = message.guild.roles.find(r => r.id === "724682166516187266"); //buraya erkek rolünüzün id'sini koyun
+  const misafir = message.guild.roles.find(r => r.id === "724697987443458247"); //buraya misafir rolünüzün id'sini koyun.
+  const log = message.guild.channels.find(c => c.id === "724713040951509002"); //buraya kayıt log id koyun
   const dogrulandi = client.emojis.find(emoji => emoji.name === "beyaztik");
-  if(!message.member.roles.array().filter(r => r.id === "714212657716133948")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
+  if(!message.member.roles.array().filter(r => r.id === "724686424284332102")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
     let member = message.mentions.users.first() || client.users.get(args.join(' '))
@@ -15,10 +14,9 @@ exports.run = (client, message, args) => {
     const c = message.guild.member(member)
     c.addRole(kayıtlı)
     c.addRole(male)
-    c.addRole(smale)
     c.removeRole(misafir)
     const embed = new Discord.RichEmbed()
-    .setDescription(`<a:mavitik:714223351169679431> **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
+    .setDescription(`🔱 **<@${c.user.id}>** adlı kişiye **<@&${kayıtlı.id}>** rolü verildi. !`)
     .setColor("0x42fcd7")
     log.send(embed)
     message.react(dogrulandi)
