@@ -144,7 +144,7 @@ client.on('guildMemberAdd', member => {
 
 //
 client.on("guildMemberAdd", member => {
-var rol = member.guild.roles.get("714212670609555548")
+var rol = member.guild.roles.get("724697987443458247")
 member.addRole(rol)
    })
 
@@ -157,11 +157,11 @@ client.on("guildMemberAdd", member => {
   const embed = new Discord.RichEmbed()
  
   var kontrol;
-if (kurulus < 1296000000) kontrol = '<a:false:714215310575796224> **__Bu Hesap Güvenilir Değil__** <a:false:714215310575796224>'
-if (kurulus > 1296000000) kontrol = '<a:true:714215052831359017> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:714215052831359017>'
+if (kurulus < 1296000000) kontrol = '<a:false:724726817231208478> **__Bu Hesap Güvenilir Değil__** <a:false:724726817231208478>'
+if (kurulus > 1296000000) kontrol = '<a:true:724726901645639782> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:724726901645639782>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:greenload:714215272466088068> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:brave:714215587395534939> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin..** \n\n <a:registerbook:714215012884807756> <@&714212657716133948> seninle ilgilenicektir. \n\n <a:bluestar:714215046699548734> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:gokalp:714215291793440789>** **Tagımızı alarak ` 仒 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/714224741732319236/ezgif.com-crop_14.gif"                   
+buse.send("**<a:zil:724726636859359274> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:xbrave:724966406986268704> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n\n <a:redbook:724726851255402666> <@&724686424284332102> seninle ilgilenicektir. \n\n <a:kilit:724727309017415789> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:gokalp:724727153702207580>** **Tagımızı alarak ` ✮ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://cdn.discordapp.com/attachments/707284153522978897/714224741732319236/ezgif.com-crop_14.gif"                   
    )
   );
 });
@@ -179,8 +179,8 @@ client.on("guildMemberAdd", member => {
    var user = member.user
    x = x.replace("birkaç saniye önce", " ")
    if(!x.includes("önce") || x.includes("sonra") ||x == " ") {
-   var rol = member.guild.roles.get("714212654071283853") ///Cezalı Rol ID'si
-   var kayıtsız = member.guild.roles.get("714212670609555548") ///Kayıtsız rolü ID'si
+   var rol = member.guild.roles.get("724703151030009958") ///Cezalı Rol ID'si
+   var kayıtsız = member.guild.roles.get("724697987443458247") ///Kayıtsız rolü ID'si
    member.addRole(rol)
 member.user.send('Hesabınız Bir Hafta Gibi Kısa Bir Sürede Açıldığı İçin Cezalıya Atıldınız, Yetkililere Bildirerek Açtırabilirsiniz.')
 setTimeout(() => {
@@ -197,75 +197,31 @@ setTimeout(() => {
     });
 
 
-//oto tag
+client.on("userUpdate", async (yashinu, yeni) => {
+  var sunucu = client.guilds.get('724677068830277704'); // Buraya Sunucu ID
+  var uye = sunucu.members.get(yeni.id);
+  var normalTag = "❖"; // Buraya Normal Tag (Yoksa boş bırakın)
+  var ekipTag = "✮"; // Buraya Ekip Tag
+  var ekipRolü = "724682165400502282"; // Buraya Ekip Rolünün ID
+  var logKanali = "724720175798288415"; // Loglanacağı Kanalın ID
 
-client.on('guildMemberAdd', async member => {
+  if (!sunucu.members.has(yeni.id) || yeni.bot || yashinu.username === yeni.username) return;
   
-  let tag = await db.fetch(`technotag_${member.guild.id}`);
-  let tagsekil;
-  if (tag == null) tagsekil = member.setNickname(`${member.user.username}`)
-  else tagsekil = member.setNickname(`${tag} ${member.user.username}`)
-});
-//////////////ototag
-//oto tag
-
-// İltifatlar
-const iltifatlar = [
-  'Gözlerindeki saklı cenneti benden başkası fark etsin istemiyorum.',
-  'Gerçek Sevgiye Layıksın.',
-  'Çok Tatlısın',
-  'Sensiz Geçen Dakikaların Asırlardan Farkı Yok.',
-  'Görmediğim Zaman Korktuğum Kişi Tahmin Et Kim ? Tabi ki Sensin Böyle Bir Tatlılığı Nasıl Kaybedebilirim Diye Korkuyorum.',
-  'Karanlık Sende Korkuyor Neden Biliyor Musun ? Çünkü Karanlık Işıktan Korkak.',
-  'B U      K A D A R      T A T L I      O L M A Z      M I S I N ?',
-  'Daralıyorum Senin Gibi Mükemmel Bir İnsanla Kıyaslayamıyorum Kendimi...',
-];
-// İLTİFATLARI BU ŞEKİLDE İSTEDİĞİNİZ KADAR ÇOĞALTABİLİRSİNİZ
-client.on("message", async message => {
-  if(message.channel.id !== "709432720874406049") return;
-  let codeAcademy = db.get('chatiltifat');
-  await db.add("chatiltifat", 1);
-  if(codeAcademy >= 25) { // 50 yazan yer, 50 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
-    db.delete("chatiltifat");
-    const random = Math.floor(Math.random() * ((iltifatlar).length - 1) + 1);
-    message.reply(`**${(iltifatlar)[random]}**`);
+  if ((yeni.username).includes(ekipTag) && !uye.roles.has(ekipRolü)) {
+    try {
+      await uye.addRole(ekipRolü);
+      await uye.setNickname((uye.displayName).replace(normalTag, ekipTag));
+      await uye.send(`Tagımızı aldığın için teşekkürler! Aramıza hoş geldin.`);
+      await client.channels.get(logKanali).send(`${yeni} adlı üye tagımızı alarak aramıza katıldı!`);
+    } catch (err) { console.error(err) };
+  };
+  
+  if (!(yeni.username).includes(ekipTag) && uye.roles.has(ekipRolü)) {
+    try {
+      await uye.removeRoles(uye.roles.filter(rol => rol.position >= sunucu.roles.get(ekipRolü).position));
+      await uye.setNickname((uye.displayName).replace(ekipTag, normalTag));
+      await uye.send(`Tagımızı bıraktığın için ekip rolü ve yetkili rollerin alındı! Tagımızı tekrar alıp aramıza katılmak istersen;\nTagımız: **${ekipTag}**`);
+      await client.channels.get(logKanali).send(`${yeni} adlı üye tagımızı bırakarak aramızdan ayrıldı!`);
+    } catch(err) { console.error(err) };
   };
 });
-
-//
-client.on('guildMemberAdd', async (member, guild, message) => {
- 
-let role = db.fetch(`otorolisim_${member.guild.id}`)
- let otorol = db.fetch(`autoRole_${member.guild.id}`)
- let i = db.fetch(`otorolKanal_${member.guild.id}`)
- if (!otorol || otorol.toLowerCase() === 'yok') return;
-else {
- try {
- 
- 
-  if (!i) return
-if (!role) {
-  member.addRole(member.guild.roles.get(otorol))
-                        var embed = new Discord.RichEmbed()
-                        .setDescription("@" + member.user.tag + " **Kullanıcısına** <@&" + otorol + "> **Verildi.**")
-                        .setColor('0x36393E')
-                        .setFooter(`P O S E I D O N 🔱`)
-     member.guild.channels.get(i).send(embed)
-} else if (role) {
-    member.addRole(member.guild.roles.get(otorol))
-                        var embed = new Discord.RichEmbed()
-                        .setDescription(`\`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Verildi.**`)
-                        .setColor('0x36393E')
-                        .setFooter(`P O S E I D O N 🔱`)
-     member.guild.channels.get(i).send(embed)
- 
-}
- 
- } catch (e) {
- console.log(e)
-}
-}
- 
-});
- 
- 
