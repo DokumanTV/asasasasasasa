@@ -142,11 +142,6 @@ client.on('guildMemberAdd', member => {
   member.addRole(joinRole);
 });
 
-//
-client.on("guildMemberAdd", member => {
-var rol = member.guild.roles.get("724697987443458247")
-member.addRole(rol)
-   })
 
 //
 client.on("guildMemberAdd", member => {  
@@ -225,3 +220,10 @@ client.on("userUpdate", async (yashinu, yeni) => {
     } catch(err) { console.error(err) };
   };
 });
+
+//sese sokma
+client.on("ready", () => {
+  client.channels.get("724721260017483827").join();
+   //main dosyaya atılacak
+})
+//sese sokma
