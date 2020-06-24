@@ -137,7 +137,7 @@ client.login(ayarlar.token);
 //
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
-  let joinRole = guild.roles.find('name', 'Unregistered');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
+  let joinRole = guild.roles.find('name', 'KAYITSIZ ROL İSMİ');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
   member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. Taglı Alımdayız Dilerseniz Tagımızı Alabilirsiniz. ✮")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
 });
@@ -145,18 +145,18 @@ client.on('guildMemberAdd', member => {
 
 //
 client.on("guildMemberAdd", member => {  
-  const kanal = "724713040951509002";
+  const kanal = "HG MESAJ KANALI";
   let user = client.users.get(member.id);
   require("moment-duration-format");
     const kurulus = new Date().getTime() - user.createdAt.getTime();  
   const embed = new Discord.RichEmbed()
  
   var kontrol;
-if (kurulus < 1296000000) kontrol = '<a:false:724726817231208478> **__Bu Hesap Güvenilir Değil__** <a:false:724726817231208478>'
-if (kurulus > 1296000000) kontrol = '<a:true:724726901645639782> **__Bu Hesap Güvenilir Gözüküyor__** <a:true:724726901645639782>'
+if (kurulus < 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Değil__** <EMOJİ GELCEK>'
+if (kurulus > 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Gözüküyor__** <EMOJİ GELCEK>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<a:zil:724726636859359274> Hoşgeldin! " + member + " Seninle __\`" + member.guild.memberCount + "\`__ Kişiyiz.**  \n\n <a:xbrave:724966406986268704> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n\n <a:redbook:724726851255402666> <@&724686424284332102> seninle ilgilenicektir. \n\n <a:kilit:724727309017415789> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n\n"  + kontrol + " \n\n **<a:gokalp:724727153702207580>** **Tagımızı alarak ` ✮ ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
+buse.send("**<Emoji Gelcek> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> **Hesabın Oluşturulma Tarihi:**" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
    )
   );
 });
@@ -174,8 +174,8 @@ client.on("guildMemberAdd", member => {
    var user = member.user
    x = x.replace("birkaç saniye önce", " ")
    if(!x.includes("önce") || x.includes("sonra") ||x == " ") {
-   var rol = member.guild.roles.get("724703151030009958") ///Cezalı Rol ID'si
-   var kayıtsız = member.guild.roles.get("724697987443458247") ///Kayıtsız rolü ID'si
+   var rol = member.guild.roles.get("ŞÜPHELİ Hesap") ///Cezalı Rol ID'si
+   var kayıtsız = member.guild.roles.get("Kayıtsız Rolü") ///Kayıtsız rolü ID'si
    member.addRole(rol)
 member.user.send('Hesabınız Bir Hafta Gibi Kısa Bir Sürede Açıldığı İçin Cezalıya Atıldınız, Yetkililere Bildirerek Açtırabilirsiniz.')
 setTimeout(() => {
@@ -195,10 +195,10 @@ setTimeout(() => {
 client.on("userUpdate", async (yashinu, yeni) => {
   var sunucu = client.guilds.get('724677068830277704'); // Buraya Sunucu ID
   var uye = sunucu.members.get(yeni.id);
-  var normalTag = "❖"; // Buraya Normal Tag (Yoksa boş bırakın)
-  var ekipTag = "✮"; // Buraya Ekip Tag
-  var ekipRolü = "724682165400502282"; // Buraya Ekip Rolünün ID
-  var logKanali = "724720175798288415"; // Loglanacağı Kanalın ID
+  var normalTag = "NORMAL TAG"; // Buraya Normal Tag (Yoksa boş bırakın)
+  var ekipTag = "SUNUCU TAGI"; // Buraya Ekip Tag
+  var ekipRolü = "TAG ROLÜ"; // Buraya Ekip Rolünün ID
+  var logKanali = "TAG ALANLAR KANALI"; // Loglanacağı Kanalın ID
 
   if (!sunucu.members.has(yeni.id) || yeni.bot || yashinu.username === yeni.username) return;
   
@@ -223,7 +223,7 @@ client.on("userUpdate", async (yashinu, yeni) => {
 
 //sese sokma
 client.on("ready", () => {
-  client.channels.get("724721260017483827").join();
+  client.channels.get("SESE SOKMA ID").join();
    //main dosyaya atılacak
 })
 //sese sokma

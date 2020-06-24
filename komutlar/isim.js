@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
-  const log = message.guild.channels.find(c => c.id === "724713040951509002"); //buraya kayıt log id koyun
+  const log = message.guild.channels.find(c => c.id === "HG LOG ID"); //buraya kayıt log id koyun
   const tag = "❖";//YAZMAK İSTERSENİZ TAGINIZ ( BOŞ BIRAKABİLİRSİNİZ )
-  const dogrulandi = client.emojis.find(emoji => emoji.name === "like");
-  if(!message.member.roles.array().filter(r => r.id === "724686424284332102")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
+  const dogrulandi = client.emojis.find(emoji => emoji.name === "EMOJI ISMI");
+  if(!message.member.roles.array().filter(r => r.id === "TEYİTCİ ID")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
     let member = message.mentions.users.first() || client.users.get(args.join(' '))
