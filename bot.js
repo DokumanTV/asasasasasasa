@@ -134,16 +134,23 @@ client.on('error', e => {
 client.login(ayarlar.token);
 
 //---------------------------------KOMUTLAR---------------------------------\\
-//
+// Sunucuya Girene Rol Verme
+
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
   let joinRole = guild.roles.find('name', 'KAYITSIZ ROL İSMİ');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
   member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. Taglı Alımdayız Dilerseniz Tagımızı Alabilirsiniz. ✮")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
+  member.setNickname('Ψ İsim | Yaş') // <----- SUNUCUYA GİRİŞ YAPANIN ADINI İSİM YAŞ YAPAR
 });
 
 
-//
+// Sunucuya Girene Rol Verme
+
+
+
+// Hoş Geldin Mesajı
+
 client.on("guildMemberAdd", member => {  
   const kanal = "HG MESAJ KANALI";
   let user = client.users.get(member.id);
@@ -155,16 +162,19 @@ client.on("guildMemberAdd", member => {
 if (kurulus < 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Değil__** <EMOJİ GELCEK>'
 if (kurulus > 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Gözüküyor__** <EMOJİ GELCEK>'
   moment.locale("tr");
+  member.setNickname('Ψ İsim | Yaş') // <----- SUNUCUYA GİRİŞ YAPANIN ADINI İSİM YAŞ YAPAR
   let buse = client.channels.get(kanal);
 buse.send("**<Emoji Gelcek> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> **Hesabın Oluşturulma Tarihi:**" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
    )
   );
 });
 
+// Hoş Geldin Mesajı
 
-//BURAYI @ROLEİD GİBİ EDİTLEYEBİLİRİSİNİZ ! 
 
-//
+
+// Şüpheli Hesap
+
 client.on("guildMemberAdd", member => {
   var moment = require("moment")
   require("moment-duration-format")
@@ -190,17 +200,19 @@ setTimeout(() => {
 
         }  
     });
+//
 
 
-client.on("userUpdate", async (yashinu, yeni) => {
-  var sunucu = client.guilds.get('724677068830277704'); // Buraya Sunucu ID
+
+client.on("userUpdate", async (eski, yeni) => {
+  var sunucu = client.guilds.get('SUNUCU ID'); // Buraya Sunucu ID
   var uye = sunucu.members.get(yeni.id);
   var normalTag = "NORMAL TAG"; // Buraya Normal Tag (Yoksa boş bırakın)
-  var ekipTag = "SUNUCU TAGI"; // Buraya Ekip Tag
-  var ekipRolü = "TAG ROLÜ"; // Buraya Ekip Rolünün ID
+  var ekipTag = "SUNUCU TAGI"; // Sunucunun Tagı
+  var ekipRolü = "TAG ROLÜ"; // Tagın Rol IDsi
   var logKanali = "TAG ALANLAR KANALI"; // Loglanacağı Kanalın ID
 
-  if (!sunucu.members.has(yeni.id) || yeni.bot || yashinu.username === yeni.username) return;
+  if (!sunucu.members.has(yeni.id) || yeni.bot || eski.username === yeni.username) return;
   
   if ((yeni.username).includes(ekipTag) && !uye.roles.has(ekipRolü)) {
     try {
@@ -221,9 +233,13 @@ client.on("userUpdate", async (yashinu, yeni) => {
   };
 });
 
-//sese sokma
+
+
+// Botu Sese Koyma
+
 client.on("ready", () => {
-  client.channels.get("SESE SOKMA ID").join();
+  client.channels.get("KANAL IDSI").join();
    //main dosyaya atılacak
 })
-//sese sokma
+
+// Botu Sese Koyma

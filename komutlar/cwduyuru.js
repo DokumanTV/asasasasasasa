@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
 if (!message.member.hasPermission("OWNER")) return message.channel.send(`Bu komutu kullanmak için **Yönetici** olmalısın.`);
 
   let mesaj = args.slice(0).join(' ');
-  let tag = "✮"
+  let tag = "TAG"
 
   if (!mesaj) return message.reply('Birşey Yazman Gerekiyor!');
 
