@@ -141,12 +141,16 @@ client.on('guildMemberAdd', member => {
   let joinRole = guild.roles.find('name', 'KAYITSIZ ROL İSMİ');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
   member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. Taglı Alımdayız Dilerseniz Tagımızı Alabilirsiniz. ✮")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
-  member.setNickname('Ψ İsim | Yaş') // <----- SUNUCUYA GİRİŞ YAPANIN ADINI İSİM YAŞ YAPAR
 });
 
 
 // Sunucuya Girene Rol Verme
 
+// isim yaş 
+client.on("guildMemberAdd", member => {  
+  member.setNickname(' İsim | Yaş');
+  });
+//isim yaş
 
 
 // Hoş Geldin Mesajı
@@ -162,7 +166,6 @@ client.on("guildMemberAdd", member => {
 if (kurulus < 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Değil__** <EMOJİ GELCEK>'
 if (kurulus > 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Gözüküyor__** <EMOJİ GELCEK>'
   moment.locale("tr");
-  member.setNickname('Ψ İsim | Yaş') // <----- SUNUCUYA GİRİŞ YAPANIN ADINI İSİM YAŞ YAPAR
   let buse = client.channels.get(kanal);
 buse.send("**<Emoji Gelcek> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> **Hesabın Oluşturulma Tarihi:**" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
    )
