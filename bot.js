@@ -241,7 +241,7 @@ client.on("userUpdate", async (eski, yeni) => {
 // Botu Sese Koyma
 
 client.on("ready", () => {
-  client.channels.get("722807558942752900").join();
+  client.channels.get("KANAL IDSI").join();
    //main dosyaya atılacak
 })
 
