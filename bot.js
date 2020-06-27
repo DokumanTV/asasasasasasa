@@ -167,7 +167,7 @@ if (kurulus < 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir De�
 if (kurulus > 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Gözüküyor__** <EMOJİ GELCEK>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<Emoji Gelcek> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> **Hesabın Oluşturulma Tarihi:**" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
+buse.send("**<a:gokalp2:720556659599998977> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> **Hesabın Oluşturulma Tarihi:**" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
    )
   );
 });
@@ -210,7 +210,7 @@ setTimeout(() => {
 client.on("userUpdate", async (eski, yeni) => {
   var sunucu = client.guilds.get('SUNUCU ID'); // Buraya Sunucu ID
   var uye = sunucu.members.get(yeni.id);
-  var normalTag = "NORMAL TAG"; // Buraya Normal Tag (Yoksa boş bırakın)
+  var normalTag = "NORMAL TAGI"; // Buraya Normal Tag (Yoksa boş bırakın)
   var ekipTag = "SUNUCU TAGI"; // Sunucunun Tagı
   var ekipRolü = "TAG ROLÜ"; // Tagın Rol IDsi
   var logKanali = "TAG ALANLAR KANALI"; // Loglanacağı Kanalın ID
