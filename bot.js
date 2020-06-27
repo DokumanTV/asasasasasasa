@@ -167,7 +167,7 @@ if (kurulus < 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir De�
 if (kurulus > 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Gözüküyor__** <EMOJİ GELCEK>'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<emoji gelecek> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> **Hesabın Oluşturulma Tarihi:**" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
+buse.send("**<Emoji Gelecek> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
    )
   );
 });
