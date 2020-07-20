@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
   const male = message.guild.roles.find(r => r.id === "ERKEK ROL SİMGE"); //buraya erkek rolünüzün id'sini koyun
   const misafir = message.guild.roles.find(r => r.id === "MISAFIR ROL ID"); //buraya misafir rolünüzün id'sini koyun.
   const log = message.guild.channels.find(c => c.id === "HG LOG ID"); //buraya kayıt log id koyun
-  const dogrulandi = client.emojis.find(emoji => emoji.name === "EMOJİ İSİM");
+  const dogrulandi = client.emojis.find(emoji => emoji.name === "EMOJİ İSİM"); // örn (emoji => emoji.name === "siyah");
   if(!message.member.roles.array().filter(r => r.id === "REGİSTER TEYİTCI ID")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
