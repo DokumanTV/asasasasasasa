@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
-  const kayıtlı = message.guild.roles.find(r => r.id === "ERKEK ROL"); //buraya erkek rolünüzün id'sini koyun
+  const kayıtlı = message.guild.roles.find(r => r.id === "772077096318795786"); //buraya erkek rolünüzün id'sini koyun
   const male = message.guild.roles.find(r => r.id === "ERKEK ROL SİMGE"); //buraya erkek rolünüzün id'sini koyun
   const misafir = message.guild.roles.find(r => r.id === "MISAFIR ROL ID"); //buraya misafir rolünüzün id'sini koyun.
   const log = message.guild.channels.find(c => c.id === "HG LOG ID"); //buraya kayıt log id koyun
