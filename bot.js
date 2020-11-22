@@ -21,7 +21,7 @@ const ytdl = require('ytdl-core');
 
 const app = express();
 app.get("/", (request, response) => {
-  console.log(Date.now() + "Gokalp 7/24 AKTİF TUTMA İŞLEMİ BAŞARILI");
+  console.log(Date.now() + "7/24 AKTİF TUTMA İŞLEMİ BAŞARILI");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
@@ -138,7 +138,7 @@ client.login(ayarlar.token);
 
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
-  let joinRole = guild.roles.find('name', 'KAYITSIZ ROL İSMİ');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
+  let joinRole = guild.roles.find('name', '');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
   member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. Taglı Alımdayız Dilerseniz Tagımızı Alabilirsiniz.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
 });

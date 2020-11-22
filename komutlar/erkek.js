@@ -2,11 +2,11 @@ const Discord = require("discord.js");
 const db = require('quick.db');
 exports.run = (client, message, args) => {
   const kayıtlı = message.guild.roles.find(r => r.id === "772077096318795786"); //buraya erkek rolünüzün id'sini koyun
-  const male = message.guild.roles.find(r => r.id === "ERKEK ROL SİMGE"); //buraya erkek rolünüzün id'sini koyun
-  const misafir = message.guild.roles.find(r => r.id === "MISAFIR ROL ID"); //buraya misafir rolünüzün id'sini koyun.
-  const log = message.guild.channels.find(c => c.id === "HG LOG ID"); //buraya kayıt log id koyun
-  const dogrulandi = client.emojis.find(emoji => emoji.name === "EMOJİ İSİM"); // örn (emoji => emoji.name === "siyah");
-  if(!message.member.roles.array().filter(r => r.id === "REGİSTER TEYİTCI ID")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
+  const male = message.guild.roles.find(r => r.id === "👨"); //buraya erkek rolünüzün id'sini koyun
+  const misafir = message.guild.roles.find(r => r.id === "772074648929566721"); //buraya misafir rolünüzün id'sini koyun.
+  const log = message.guild.channels.find(c => c.id === "772075615989923850"); //buraya kayıt log id koyun
+  const dogrulandi = client.emojis.find(emoji => emoji.name === ":tik:"); // örn (emoji => emoji.name === "siyah");
+  if(!message.member.roles.array().filter(r => r.id === "772077197993050153")[0]) { //buraya kayıt sorumlusu rolünün id'sini giriniz. SUNUCU AYARLARINDAN kopyalayın.
     return message.channel.send("Bu işlemi sadece Ayarlanmış Kayıt Sorumluları gerçekleştirebilir.");
   } else {
     let member = message.mentions.users.first() || client.users.get(args.join(' '))
