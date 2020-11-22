@@ -138,8 +138,8 @@ client.login(ayarlar.token);
 
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
-  let joinRole = guild.roles.find('name', '');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
-  member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. Taglı Alımdayız Dilerseniz Tagımızı Alabilirsiniz.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
+  let joinRole = guild.roles.find('name', '772074648929566721');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
+  member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. İsim Yaş Yazmayı Unutma.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
 });
 
@@ -156,18 +156,18 @@ client.on("guildMemberAdd", member => {
 // Hoş Geldin Mesajı
 
 client.on("guildMemberAdd", member => {  
-  const kanal = "HG MESAJ KANALI";
+  const kanal = "772075615989923850";
   let user = client.users.get(member.id);
   require("moment-duration-format");
     const kurulus = new Date().getTime() - user.createdAt.getTime();  
   const embed = new Discord.RichEmbed()
  
   var kontrol;
-if (kurulus < 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Değil__** <EMOJİ GELCEK>'
-if (kurulus > 1296000000) kontrol = '<EMOJİ GELCEK> **__Bu Hesap Güvenilir Gözüküyor__** <EMOJİ GELCEK>'
+if (kurulus < 1296000000) kontrol = '<:hg:779609306004979742> **__Bu Hesap Güvenilir Değil__** ⛔'
+if (kurulus > 1296000000) kontrol = '<:Hmm:779609306030538782> **__Bu Hesap Güvenilir Gözüküyor__** :tik:'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<Emoji Gelecek> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <Emoji Gelcek> **Müsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin.** \n <Emoji Gelcek> <@&REGİSTER ID> seninle ilgilenicektir. \n <Emoji Gelcek> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<Emoji Gelcek>** **Tagımızı alarak ` TAG ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
+buse.send("**<:sa:779605015849074728> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <:kral:779609005495943178> **Müsait olduğunda <@&772075615989923850> Odasına Geçip İsim Yaş Yazarak Kaydını Yaptırabilirsin.** \n <:gentleblob:779942606838562836> <@&772077197993050153> seninle ilgilenicektir. \n <:WumpusHello:779942907985526814> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<:HadeEyw:779609309260546079> ** **Tagımızı alarak ` 👿 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
    )
   );
 });
