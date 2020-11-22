@@ -139,7 +139,7 @@ client.login(ayarlar.token);
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
   let joinRole = guild.roles.find('name', '772074648929566721');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
-  member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. İsim Yaş Yazmayı Unutma.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
+  member.sendMessage("Sunucumuza Hoş Geldiniz Keyifli Vakitler Geçirmenizi Dileriz. İsim Yaş Yazmayı Unutma.Tagımızı Alarak Destek Olabilirsin Tagımız **👿 |**")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
   member.addRole(joinRole);
 });
 
@@ -167,8 +167,7 @@ if (kurulus < 1296000000) kontrol = '<:hg:779609306004979742> **__Bu Hesap Güve
 if (kurulus > 1296000000) kontrol = '<:Hmm:779609306030538782> **__Bu Hesap Güvenilir Gözüküyor__** :tik:'
   moment.locale("tr");
   let buse = client.channels.get(kanal);
-buse.send("**<:sa:779605015849074728> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <:kral:779609005495943178> **Müsait olduğunda <@&772075615989923850> Odasına Geçip İsim Yaş Yazarak Kaydını Yaptırabilirsin.** \n <:gentleblob:779942606838562836> <@&772077197993050153> seninle ilgilenicektir. \n <:WumpusHello:779942907985526814> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<:HadeEyw:779609309260546079> ** **Tagımızı alarak ` 👿 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif"                   
-   )
+buse.send("**<:sa:779605015849074728> Hoşgeldin!** " + member + " **Seninle \`" + member.guild.memberCount + "\` Kişiyiz.**  \n <:kral:779609005495943178> **Müsait olduğunda <@&772075615989923850> Odasına Geçip İsim Yaş Yazarak Kaydını Yaptırabilirsin.** \n <:gentleblob:779942606838562836> <@&772077197993050153> seninle ilgilenicektir. \n <:WumpusHello:779942907985526814> Hesabın Oluşturulma Tarihi:" + moment(member.user.createdAt).format("** YYYY __DD MMMM dddd (hh:mm:ss)__**") +  "\n"  + kontrol + " \n **<:HadeEyw:779609309260546079> ** **Tagımızı alarak ` 👿 ` bize destek olabilirsin.** \n",  new Discord.Attachment("https://media.giphy.com/media/lMCSqqyodOZX809HFE/giphy.gif")
   );
 });
 
@@ -187,8 +186,8 @@ client.on("guildMemberAdd", member => {
    var user = member.user
    x = x.replace("birkaç saniye önce", " ")
    if(!x.includes("önce") || x.includes("sonra") ||x == " ") {
-   var rol = member.guild.roles.get("ŞÜPHELİ Hesap rol id") ///Cezalı Rol ID'si
-   var kayıtsız = member.guild.roles.get("Kayıtsız Rolü") ///Kayıtsız rolü ID'si
+   var rol = member.guild.roles.get("779951740300558357") ///Cezalı Rol ID'si
+   var kayıtsız = member.guild.roles.get("772074648929566721") ///Kayıtsız rolü ID'si
    member.addRole(rol)
 member.user.send('Hesabınız Bir Hafta Gibi Kısa Bir Sürede Açıldığı İçin Cezalıya Atıldınız, Yetkililere Bildirerek Açtırabilirsiniz.')
 setTimeout(() => {
@@ -208,12 +207,12 @@ setTimeout(() => {
 
 
 client.on("userUpdate", async (eski, yeni) => {
-  var sunucu = client.guilds.get('SUNUCU ID'); // Buraya Sunucu ID
+  var sunucu = client.guilds.get('772070366122213414'); // Buraya Sunucu ID
   var uye = sunucu.members.get(yeni.id);
-  var normalTag = "NORMAL TAGI"; // Buraya Normal Tag (Yoksa boş bırakın)
-  var ekipTag = "SUNUCU TAGI"; // Sunucunun Tagı
-  var ekipRolü = "TAG ROLÜ"; // Tagın Rol IDsi
-  var logKanali = "TAG ALANLAR KANALI"; // Loglanacağı Kanalın ID
+  var normalTag = "👿"; // Buraya Normal Tag (Yoksa boş bırakın)
+  var ekipTag = "👿"; // Sunucunun Tagı
+  var ekipRolü = "779952162787819531"; // Tagın Rol IDsi
+  var logKanali = "772073067618762763"; // Loglanacağı Kanalın ID
 
   if (!sunucu.members.has(yeni.id) || yeni.bot || eski.username === yeni.username) return;
   
@@ -241,7 +240,7 @@ client.on("userUpdate", async (eski, yeni) => {
 // Botu Sese Koyma
 
 client.on("ready", () => {
-  client.channels.get("KANAL IDSI").join();
+  client.channels.get("772073093543886890").join();
    //main dosyaya atılacak
 })
 
