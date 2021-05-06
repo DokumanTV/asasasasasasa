@@ -14,7 +14,9 @@
     "discord.js": "^12.5.1",
     "fs": "0.0.1-security",
     "moment": "^2.29.1",
-    "quick.db": "^7.1.2"
+    "quick.db": "^7.1.2",
+    "common-tags": "^1.8.0",
+    "parse-ms": "^3.0.0"
   },
   "engines": {
     "node": "14.x"

@@ -157,12 +157,12 @@ if(miktar > para) return message.channel.send(new Discord.MessageEmbed()
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['adamasmaca'],
+  aliases: ['ekonomi-adamasmaca'],
   permlevel: 0
 };
 
 exports.help = {
-  name: 'adamasmaca',
+  name: 'ekonomi-adamasmaca',
   description: 'Adam asmaca oynarsınız.',
   usage: 'adamasmaca'
 };
