@@ -17,7 +17,9 @@
     "quick.db": "^7.1.2",
     "common-tags": "^1.8.0",
     "parse-ms": "^3.0.0",
-    "node-superfetch": "^0.2.3"
+    "node-superfetch": "^0.2.3",
+    "wio.db": "^4.0.20",
+    "weather-js": "^2.0.0"
   },
   "engines": {
     "node": "14.x"
