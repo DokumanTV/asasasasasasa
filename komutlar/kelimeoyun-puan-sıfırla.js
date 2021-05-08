@@ -6,7 +6,7 @@ const db = require ('quick.db')
 
 if(message.author.id === ayarlar.sahip){
 
-      client.users.forEach(u => {
+  
           let puan = db.fetch(`ktbalance_${u.id}_d0ru`)
         if(u.id === u.id){
 db.delete(`ktbalance_${u.id}_d0ru`,puan)
@@ -26,7 +26,7 @@ exports.conf = {
 
 exports.help = {
   name: 'kt-sıfırla',
-  description: 'Döküman Tv Ye Aittir Aksini İdda Eden Kedidir.',
+  description: '',
   usage: 'kt-sıfırla'
 };
    

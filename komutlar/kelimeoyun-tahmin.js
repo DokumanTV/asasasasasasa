@@ -27,7 +27,7 @@ db.set(`Deve`,`Çöl yaşamına dayanıklı, sarı esmer renkte, yüksek boylu, 
       message.channel.send(`> Kelimeyi tahmin et bakalım! :tada: \n\n > **İpucu:** \`${açıklama}\`\n > **Doğru ise kazanılacak puan:** ` + ekpoint);
      
 
-const collector = message.channel.createCollector(message => message.content.startsWith(''), {
+const collector = message.channel.createMessageCollector(message => message.content.startsWith(''), {
       time: 10000,
 })
 /* Burayı silmeyin!! */
@@ -45,10 +45,10 @@ if (!message.author.bot) {
               console.log() //burayı silende ne bilim.
               console.log('Kelime tahmini Collectoru aktif')
             if (message.content.includes(kelime.toLowerCase()) || message.content.includes(kelime.toUpperCase()) || message.content.includes(kelime)) {
-                const d0ruembed = new Discord.RichEmbed()
+                const d0ruembed = new Discord.MessageEmbed()
                 .setTitle(`Tebrikler ${message.author.username} :tada:`)
-                .setDescription(`Kelimeyi doğru bildin ve \` ${ekpoint} \` puan kazandın \n Mevcut Puan: **a!kt-puan**`)
-        .setFooter(`${client.user.username} ` + 'Kelime tahmini sistemi', client.user.avatarURL )
+                .setDescription(`Kelimeyi doğru bildin ve \` ${ekpoint} \` puan kazandın \n Mevcut Puan: **f!kt-puan**`)
+        .setFooter(`${client.user.username} ` + 'Kelime tahmini sistemi', client.user.avatarURL() )
                 .setColor('0x36393E')  
                 message.channel.send(d0ruembed)
                db.add(`ktbalance_${message.author.id}_d0ru`, ekpoint)
@@ -57,11 +57,11 @@ if (!message.author.bot) {
             } else if (message.content !== kelime) {
                   const balance = db.fetch(`ktbalance_${message.author.id}_d0ru`)
                   const kayip = balances - ekpoint
-                  const d0rudeilembed = new Discord.RichEmbed()
+                  const d0rudeilembed = new Discord.MessageEmbed()
                 .setColor('0x36393E')
                 .setTitle(`Oww... ${message.author.username}`)
                 .setDescription(`Kelimeyi yanlış bildin ve \` ${ekpoint} \` puan kaybettin \n Mevcut Puan: **a!kt-puan**`)
-        .setFooter(`${client.user.username} ` + 'Kelime tahmini sistemi', client.user.avatarURL )
+        .setFooter(`${client.user.username} ` + 'Kelime tahmini sistemi', client.user.avatarURL() )
                 message.channel.send(d0rudeilembed)
 
                db.set(`ktbalance_${message.author.id}_d0ru`, balance - ekpoint)

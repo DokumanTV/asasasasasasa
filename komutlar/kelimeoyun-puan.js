@@ -4,9 +4,9 @@ const db = require('quick.db');
 
 exports.run = async(client, message, args) => {
 const balance = await db.fetch(`ktbalance_${message.author.id}_d0ru`)
-    const embed = new Discord.MessageEmbed
+    const embed = new Discord.MessageEmbed()
         .setAuthor(`${message.author.username} puanın karşında!`, message.author.avatarURL())
-        .setDescription(`•               \` ${balance  || 0}\` \n`)
+        .setDescription(`•               \**${balance  || 0}\**\n`)
         .setFooter(`${client.user.username} ` + 'Kelime tahmini sistemi', client.user.avatarURL() )
     return message.channel.send(embed);
 
