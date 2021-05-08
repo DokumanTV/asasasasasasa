@@ -13,8 +13,8 @@ const embed  = new Discord.MessageEmbed()
   🔸 Logo Yazı Yardım Komutları 🔸
  
 
-\**🔹${p}yazı-cool Logoda Yazıcak Şey\** - Cool Logo Yazı. 
-\**🔹${p}yazı-alev Logoda Yazıcak Şey\** - Alevli Logo Yazı.
+\**🔹${p}xox @Oynayacağınız Kişi\** - Etiketlediğiniz Kişiyle XoX Oynarsınız.
+\**🔹${p}duello @Oynayacağınız Kişi\** - Etiketlediğiniz Kişiyle Duello Oynarsınız.
 \**🔹${p}yazı-neon Logoda Yazıcak Şey\** - Neon Logo Yazı.
 \**🔹${p}yazı-anime Logoda Yazıcak Şey\** - Anime Logo .
 \**🔹${p}yazı-altın Logoda Yazıcak Şey\** - Altın Logo Yazı.
@@ -33,7 +33,7 @@ aliases: [''],
 permLevel: 0
 }
 exports.help = {
-name: 'yardım-yazı',
-description: 'yardım yazı',
-usage: 'Yazı Yardım'
+name: 'yardım-2-kişilik',
+description: 'yardım 2 kişilik',
+usage: '2 Kişilik Yardım'
 }

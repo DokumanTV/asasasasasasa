@@ -6,11 +6,11 @@ var p = ayarlar.prefix;
 let nicat = args[0]
 
 const embed  = new Discord.MessageEmbed()
-.setTitle('İşte Logo Yazı Yardım Komutları')
+.setTitle('🔸 Kelime Oyunu Yardım Komutları 🔸')
 .setColor('RANDOM')
 .setDescription(`
 
-  🔸 İşte Kelime Oyunu Yardım Komutları 🔸
+  🔸 Kelime Oyunu Yardım Komutları 🔸
  
 
 \**🔹${p}kt-puan\** - Kaç Puanın Olduğunu Gösterir.
@@ -29,7 +29,7 @@ aliases: [''],
 permLevel: 0
 }
 exports.help = {
-name: 'yardım-yazı',
-description: 'yardım yazı',
-usage: 'Yazı Yardım'
+name: 'yardım-kelime',
+description: 'yardım kelime',
+usage: 'Kelime Yardım'
 }
