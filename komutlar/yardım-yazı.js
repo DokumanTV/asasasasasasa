@@ -21,11 +21,10 @@ const embed  = new Discord.MessageEmbed()
 \**🔹${p}yazı-dracula Yazı\** - Dracula Logo Yazı.
 \**🔹${p}yazı-everest Yazı\** - Everest Logo Yazı.
 `)
-.addField (`[Botu Ekle](https://discord.com/api/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=botlink)`)
+.addField ('["Botu Ekle"]("https://discord.com/api/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=botlink")')
 
 if(!nicat) return message.channel.send(embed)
-if(nicat !== 'mod' && nicat !== 'eğlence') return message.channel.send(`:x: Yanlış Kategori!`)
-if(nicat == 'mod'){
+if(nicat == 'yazı'){
 }
 }
 exports.conf = {
