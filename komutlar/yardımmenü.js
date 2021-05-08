@@ -7,7 +7,7 @@ const imdat = new wensamita.MessageEmbed()
 .setColor('RANDOM')
 .setTitle(`» ${client.user.username} Yardım Menüsü`)
 .addField('» Logo Yazı Komutları', 'f!yardım-yazı')
-.addField('» Kelime Oyunu Komutları', '!moderatör')
+.addField('» Kelime Oyunu Komutları', 'f!yardım-kelime')
 .addField('» Genel Komutlar', '!genel')
 .addField('» Ekstra Komutlar', '!ekstra')
 .addField('» Nsfw Komutları', '!nsfw') //.addField('') Bunları çoğaltarak daha fazla satır ekleyebilirsiniz.

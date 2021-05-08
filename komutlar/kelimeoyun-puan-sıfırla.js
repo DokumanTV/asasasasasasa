@@ -6,14 +6,14 @@ const db = require ('quick.db')
 
 if(message.author.id === ayarlar.sahip){
 
-  
+      client.users.cache.forEach(u => {
           let puan = db.fetch(`ktbalance_${u.id}_d0ru`)
         if(u.id === u.id){
 db.delete(`ktbalance_${u.id}_d0ru`,puan)
         }
       })
 
-message.channel.send(`:white_check_mark:  Başariyla **` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + `** Kullanıcının puanı silindi.`);
+message.channel.send(`:white_check_mark: Başariyla Tüm Kullanıcıların Puanı Silindi.`);
 }
 };
 
@@ -26,7 +26,7 @@ exports.conf = {
 
 exports.help = {
   name: 'kt-sıfırla',
-  description: '',
+  description: '.',
   usage: 'kt-sıfırla'
 };
    
