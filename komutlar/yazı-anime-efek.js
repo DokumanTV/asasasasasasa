@@ -9,8 +9,8 @@ exports.run = async (client, message, args) => {
 
   
   const logo = new Discord.MessageEmbed()
-  .setTitle("Logo")
-  .setColor("YELLOW")
+  .setTitle("Yazı")
+  .setColor("RANDOM")
   .setImage(link)
   .setFooter('Yazı Oluşturuldu')
   message.channel.send(logo)
@@ -24,6 +24,6 @@ exports.conf = {
 
 exports.help = {
     name: 'yazı-anime',
-    description: 'Yazdığınız yazı anime logoyla değiştirir',
+    description: 'Yazdığınız Yazı anime logoyla değiştirir',
     usage: 'anime'
 }

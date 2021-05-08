@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   const yazi = args.slice(0).join('+'); 
 
   if(!yazi) return message.channel.send(`**Yapacağım logonun ismini yazınız...**`)
-  const link = `https://flamingtext.com/net-fu/proxy_form.cgi?imageoutput=true&script=flame-logo&text=${yazi}`
+  const link = `https://flamingtext.com/net-fu/proxy_form.cgi?script=dracula-logo&text=${yazi}&_loc=generate&imageoutput=true`
   .replace(' ', '+')
 
   
@@ -23,7 +23,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'yazı-alev',
-    description: 'Yazdığınız yazıyı alev logoya değiştirir.',
-    usage: 'alev'
+    name: 'yazı-dracula',
+    description: 'Yazdığınız Yazı dracula logoyla değiştirir',
+    usage: 'dracula'
 }

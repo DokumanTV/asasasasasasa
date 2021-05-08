@@ -9,10 +9,10 @@ exports.run = async (client, message, args) => {
 
   
   const logo = new Discord.MessageEmbed()
-  .setTitle("Logo")
-  .setColor("YELLOW")
+  .setTitle("Yazı")
+  .setColor("RANDOM")
   .setImage(link)
-  .setFooter('Logo Oluşturuldu')
+  .setFooter('Yazı Oluşturuldu')
   message.channel.send(logo)
 }
 exports.conf = {
