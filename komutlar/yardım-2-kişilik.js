@@ -15,11 +15,6 @@ const embed  = new Discord.MessageEmbed()
 
 \**🔹${p}xox @Oynayacağınız Kişi\** - Etiketlediğiniz Kişiyle XoX Oynarsınız.
 \**🔹${p}duello @Oynayacağınız Kişi\** - Etiketlediğiniz Kişiyle Duello Oynarsınız.
-\**🔹${p}yazı-neon Logoda Yazıcak Şey\** - Neon Logo Yazı.
-\**🔹${p}yazı-anime Logoda Yazıcak Şey\** - Anime Logo .
-\**🔹${p}yazı-altın Logoda Yazıcak Şey\** - Altın Logo Yazı.
-\**🔹${p}yazı-dracula Logoda Yazıcak Şey\** - Dracula Logo Yazı.
-\**🔹${p}yazı-everest Logoda Yazıcak Şey\** - Everest Logo Yazı.
 `)
 .addField('\u200b', "[Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot)")
 .addField('\u200b', "[YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
