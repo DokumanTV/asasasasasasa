@@ -6,12 +6,12 @@ const imdat = new wensamita.MessageEmbed()
 .setThumbnail(message.author.avatarURL({ dynamic: true }))
 .setColor('RANDOM')
 .setTitle(`» ${client.user.username} Yardım Menüsü`)
-.addField('» Logo Yazı Komutları', '!eğlence') 
-.addField('» Moderatör Komutları', '!moderatör')
+.addField('» Logo Yazı Komutları', 'f!yardım-yazı')
+.addField('» Kelime Oyunu Komutları', '!moderatör')
 .addField('» Genel Komutlar', '!genel')
 .addField('» Ekstra Komutlar', '!ekstra')
 .addField('» Nsfw Komutları', '!nsfw') //.addField('') Bunları çoğaltarak daha fazla satır ekleyebilirsiniz.
-.setFooter('Made By. AntiCode')
+.setFooter('Made By. DökümanTV')
 message.channel.send(imdat)
 };
 exports.conf = {
