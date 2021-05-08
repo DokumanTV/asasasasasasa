@@ -21,8 +21,8 @@ const embed  = new Discord.MessageEmbed()
 \**🔹${p}yazı-dracula Yazı\** - Dracula Logo Yazı.
 \**🔹${p}yazı-everest Yazı\** - Everest Logo Yazı.
 `)
-.addField ('["Botu Ekle"]("https://discord.com/api/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=botlink")')
-
+.addField('\u200b', "[Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot)")
+.addField('\u200b', "[YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 if(!nicat) return message.channel.send(embed)
 if(nicat == 'yazı'){
 }
