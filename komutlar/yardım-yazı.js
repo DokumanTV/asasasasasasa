@@ -10,19 +10,18 @@ const embed  = new Discord.MessageEmbed()
 .setColor('RANDOM')
 .setDescription(`
 
-  🔴 İşte Logo Yazı Yardım Komutları 🔴
+  🔸 İşte Logo Yazı Yardım Komutları 🔸
  
 
-\**▪${p}yazı-cool Yazı\▪** - Cool Logo Yazı. 
-\**▪${p}yazı-alev Yazı\▪** - Alevli Logo Yazı.
-\**▪${p}yazı-neon Yazı\▪** - Neon Logo Yazı.
-\**▪${p}yazı-anime Yazı\▪** - Anime Logo .
-\**▪${p}yazı-altın Yazı\▪** - Altın Logo Yazı.
-\**▪${p}yazı-dracula Yazı\▪** - Dracula Logo Yazı.
-\**▪${p}yazı-everest Yazı\▪** - Everest Logo Yazı.
+\**🔹${p}yazı-cool Yazı\** - Cool Logo Yazı. 
+\**🔹${p}yazı-alev Yazı\** - Alevli Logo Yazı.
+\**🔹${p}yazı-neon Yazı\** - Neon Logo Yazı.
+\**🔹${p}yazı-anime Yazı\** - Anime Logo .
+\**🔹${p}yazı-altın Yazı\** - Altın Logo Yazı.
+\**🔹${p}yazı-dracula Yazı\** - Dracula Logo Yazı.
+\**🔹${p}yazı-everest Yazı\** - Everest Logo Yazı.
 `)
-.setFooter(`[Botu Ekle](link)`)
-.setTimestamp()
+.addField (`[Botu Ekle](https://discord.com/api/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=botlink)`)
 
 if(!nicat) return message.channel.send(embed)
 if(nicat !== 'mod' && nicat !== 'eğlence') return message.channel.send(`:x: Yanlış Kategori!`)
