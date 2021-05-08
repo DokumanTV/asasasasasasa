@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 exports.run = async (bot, message, args) => {
 
-    let replies = ('http://4.bp.blogspot.com/-Cdrk6ce21MM/VdCr1HRNkWI/AAAAAAAAEuc/txEqvYl-A_8/s1600/KEMAL_SUNAL_PATRONUN_KARISINA_TOKAT.gif', "https://4.bp.blogspot.com/-WfzGkNhjFIE/Vi-vwoWklXI/AAAAAAAAPCc/HXSnXtEMGs0/s1600/kemal_sunal_sener_sen_tokat.gif", "https://media1.tenor.com/images/19aa97d3f7b751c3551f3a2a9b03f2dd/tenor.gif", "https://j.gifs.com/KdXVEQ.gif")
+    let replies = ('http://4.bp.blogspot.com/-Cdrk6ce21MM/VdCr1HRNkWI/AAAAAAAAEuc/txEqvYl-A_8/s1600/KEMAL_SUNAL_PATRONUN_KARISINA_TOKAT.gif', 'https://4.bp.blogspot.com/-WfzGkNhjFIE/Vi-vwoWklXI/AAAAAAAAPCc/HXSnXtEMGs0/s1600/kemal_sunal_sener_sen_tokat.gif', '', 'https://j.gifs.com/KdXVEQ.gif')
 
    let result = Math.floor((Math.random() * replies.length));
    let member = message.mentions.members.first()
