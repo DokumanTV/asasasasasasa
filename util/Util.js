@@ -61,7 +61,6 @@ class ek {
 	static async randomFromImgurAlbum(album) {
 		const { body } = await request
 			.get(`https://api.imgur.com/3/album/${album}`)
-			.set({ Authorization: `Client-ID ${IMGUR_KEY}` });
 		if (!body.data.images.length) return null;
 		return body.data.images[Math.floor(Math.random() * body.data.images.length)].link;
 	}
