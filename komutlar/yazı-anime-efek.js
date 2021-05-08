@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   const yazi = args.slice(0).join('+'); 
 
   if(!yazi) return message.channel.send(`**Yapacağım logonun ismini yazınız...**`)
-  const link = `https://flamingtext.com/net-fu/proxy_form.cgi?imageoutput=true&script=flame-logo&text=${yazi}`
+  const link = `https://habbofont.net/font/battlebanzai/${yazi}.gif`
   .replace(' ', '+')
 
   
@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
   .setTitle("Logo")
   .setColor("YELLOW")
   .setImage(link)
-  .setFooter('Logo Oluşturuldu')
+  .setFooter('Yazı Oluşturuldu')
   message.channel.send(logo)
 }
 exports.conf = {
@@ -23,7 +23,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'yazı-alev',
-    description: 'Yazdığınız yazıyı alev logoya değiştirir.',
-    usage: 'alev'
+    name: 'yazı-anime',
+    description: 'Yazdığınız yazı anime logoyla değiştirir',
+    usage: 'anime'
 }
