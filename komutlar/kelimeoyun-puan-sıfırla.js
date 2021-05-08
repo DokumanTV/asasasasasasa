@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar.json');
 exports.run = async (client, message, args) => {
 const db = require ('quick.db')
 
-if(message.author.id === ayarlar.sahip){
+if (!message.member.hasPermission("ADMINISTRATOR")) {
 
       client.users.cache.forEach(u => {
           let puan = db.fetch(`ktbalance_${u.id}_d0ru`)
