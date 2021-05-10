@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 exports.run = async (bot, message, args) => {
 
-    let replies = ["https://steamuserimages-a.akamaihd.net/ugc/821188503831080043/B6783F1C6A7F1FA441F1DED04D050596102B5C2C/"];
+    let replies = ["https://media.tenor.com/images/f1b43cf98f4dfb1fb17d110f0d139e3a/tenor.gif"];
 
    let result = Math.floor((Math.random() * replies.length));
    let member = message.mentions.members.first()
