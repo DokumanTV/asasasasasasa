@@ -11,8 +11,10 @@ const imdat = new wensamita.MessageEmbed()
 .addField('<:wow:836289529400918046> » 2 Kişilik Oyunlar <:wow:836289529400918046>', 'f!yardım-2-kişilik')
 .addField('<:wow:836289529400918046> » Eğlence Komutları <:wow:836289529400918046>', 'Yapım Aşaması') 
 .addField('<:wow:836289529400918046> » Nsfw Komutları <:wow:836289529400918046>', 'Yapım Aşaması') //.addField('') Bunları çoğaltarak daha fazla satır ekleyebilirsiniz.
-.addField('\u200b', "[Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot)")
-message.channel.send(imdat)content://com.android.chrome.FileProvider/images/screenshot/1620554544447-1957926251.gif
+.addField('\u200b', "[Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot)")//Botun Davet Linki
+.addField('\u200b', "[Abone Ol!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")//Youtube Kanalınız Varsa Link
+.addField('')//Gif Varsa Gifinizin Linki (Bunlardan Yoksa Silebilirsiniz)
+message.channel.send(imdat)
 };
 exports.conf = {
   enabled: true,
