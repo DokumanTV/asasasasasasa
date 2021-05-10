@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) => {
    if(!member)return message.channel.send(':no_entry_sign: Birini Etiketle!')
 
     let gifembed = new Discord.MessageEmbed()
-        .setDescription(`${message.author} Tarafından ${member}'a Yumruk Atıldı!`)
+        .setDescription(`${message.author} Tarafından ${member}'a Tokat Atıldı!`)
         .setColor("#FF69B4")
         .setFooter(`Boş Durmıyacaksın Heralde ${member}`, message.author.avatarURL())
         .setImage(replies[result]);
