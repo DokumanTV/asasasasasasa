@@ -7,6 +7,7 @@ const imdat = new wensamita.MessageEmbed()
 .setColor('RANDOM')
 .setTitle(`🤖 » ${client.user.username} Yardım Menüsü`)
 .addField('\u200b', "[Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot)") .addField('\u200b', "[Abone Ol!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")//Youtube Kanalınız Varsa Link
+.addField('\u200b', "[Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot)")
 .addField('🔥 » Logo Yazı Komutları', 'f!yardım-yazı')
 .addField('🔠  » Kelime Oyunu Komutları', 'f!yardım-kelime')
 .addField(':crossed_swords: » 2 Kişilik Oyunlar', 'f!yardım-2-kişilik')
