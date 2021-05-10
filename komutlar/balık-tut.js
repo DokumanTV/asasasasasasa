@@ -1,28 +1,23 @@
-const ayarlar = require('../ayarlar.json')
-const Discord = require('discord.js')
-exports.run = async (client,message,args,db) => {
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
-var p = ayarlar.prefix;
-let nicat = args[0]
+exports.run = (client, message) => {
+   message.channel.send('Balık Tuttun Balığı Çekiyorsun..').then(message => {
+   var espriler = ['Sazan Tuttun! :fish:' ,'Köpek Balığı Tuttun İyi Para Eder Sat Sat :D' ,'Uskumru Tuttun! :fish:' ,'Mezgit Tuttun! Havyarıda Var hee ;) :fish:' ,'Japon Balığı Tuttun Yemeyi Düşünmüyorsun Herhalde?' ,'Hamsi Tuttun! :fish:' ,'Levrek Tuttun! :fish:' ,'Hiçbirşey Tutamadın Maalesef! :wastebasket:' ,'Alabalık Tuttun! :fish:' ,'Maalesef Balık Oltadan Kaçtı! :wastebasket:' ,'İstavrit Tuttun! :fish:'];
+      var espri = espriler[Math.floor(Math.random() * espriler.length)];
+            message.edit(`${espri}`);
+ });
+  }
 
-const embed  = new Discord.MessageEmbed()
-.setColor('RANDOM')
-.setDescription(`
-**Kağan Nolur Sahibime Kızma O Bişey Yapmadı Nolur Küfür Etmeyelim Birde Barışın Siz Ben Barıştırıyım**
-`)
-.addField(":link:・LİNKLER", "[Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
-.setImage("https://im2.ezgif.com/tmp/ezgif-2-782cd0087529.gif")
-if(!nicat) return message.channel.send(embed)
-if(nicat == 'yazı'){
-}
-}
 exports.conf = {
-enabled: true,
-aliases: [''],
-permLevel: 0
-}
+  enabled: true,
+  guildOnly: false,
+  aliases: ['balık'],
+  permLevel: 0
+};
+
 exports.help = {
-name: 'yardım-yazı',
-description: 'yardım yazı',
-usage: 'Yazı Yardım'
-}
+  name: 'balıktut',
+  description: 'Balık Tutarsın.',
+  usage: 'balıktut'
+};
