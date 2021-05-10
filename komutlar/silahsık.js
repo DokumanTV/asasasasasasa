@@ -4,12 +4,11 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   const snekfetch = require("snekfetch");
 snekfetch.get(`https://discordbots.org/api/bots/${client.user.id}/check?userId=${message.author.id}`)
-.set("Authorization", client.ayarlar.dbltoken)
-.then(response => {
+  .then(response => {
     let guild = message.guild
     let reason = args.slice(1).join(' ');
     let user = message.mentions.users.first();
-    if (message.mentions.users.size < 1) return message.reply('Kime ateş edeceksen etiketlemelisin.').catch(console.error);
+    if (message.mentions.users.cache.size < 1) return message.reply('Kime ateş edeceksen etiketlemelisin.').catch(console.error);
     message.channel.send('Ateş ediliyor....')
         .then(nmsg => nmsg.edit('https://goo.gl/91Y2az'))
         .then(nmsg => nmsg.edit('https://goo.gl/91Y2az'))
@@ -29,7 +28,7 @@ snekfetch.get(`https://discordbots.org/api/bots/${client.user.id}/check?userId=$
         'Iskaladın tekrar dene.',
     ];
     var kafasınasık = Math.floor(Math.random() * Random.length);
-let embed = new Discord.RichEmbed()
+let embed = new Discord.MessageEmbed()
       .setTitle('HATA')
       .setColor('RANDOM')
     message.channel.send(embed)
