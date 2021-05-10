@@ -11,7 +11,7 @@ const embed  = new Discord.MessageEmbed()
 .setDescription(`
 \**🔹${p}kartopu @kişi\** - Etiketlediğin Kişiye Kartopu Atar.
 \**🔹${p}tokat @kişi\** - Etiketlediğin Kişiye Tokat Atar.
-\**🔹${p}yazı-neon Logoda Yazıcak Şey\** - Neon Logo Yazı.
+\**🔹${p}yumruk @kişi\** - Etiketlediğin Kişiye Yumruk Atar.
 \**🔹${p}yazı-anime Logoda Yazıcak Şey\** - Anime Logo .
 \**🔹${p}yazı-altın Logoda Yazıcak Şey\** - Altın Logo Yazı.
 \**🔹${p}yazı-dracula Logoda Yazıcak Şey\** - Dracula Logo Yazı.
