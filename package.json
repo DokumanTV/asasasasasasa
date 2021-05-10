@@ -23,7 +23,8 @@
     "math-expression-evaluator": "^1.3.7",
     "request": "^2.88.2",
     "@freezegold/anime.js": "^2.0.4",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "jimp": "^0.16.1"
   },
   "engines": {
     "node": "14.x"

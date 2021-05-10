@@ -9,6 +9,7 @@ const embed  = new Discord.MessageEmbed()
 .setTitle('🔸 Logo Yazı Yardım Komutları 🔸')
 .setColor('RANDOM')
 .setDescription(`
+\**🔹${p}yazı-standart Logoda Yazıcak Şey\** - Standart Logo Yazı.
 \**🔹${p}yazı-cool Logoda Yazıcak Şey\** - Cool Logo Yazı. 
 \**🔹${p}yazı-alev Logoda Yazıcak Şey\** - Alevli Logo Yazı.
 \**🔹${p}yazı-neon Logoda Yazıcak Şey\** - Neon Logo Yazı.
