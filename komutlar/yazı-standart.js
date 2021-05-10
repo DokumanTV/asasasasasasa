@@ -9,10 +9,10 @@ exports.run = async (client, message, args) => {
 
   
   const embed = new Discord.MessageEmbed()
-  .setTitle("Banner!")
+  .setTitle("Yazı!")
   .setColor("#2ECC71")
   .setImage(linqo)
-  .setFooter('Banner Oluşturuldu!')
+  .setFooter('Yazı Oluşturuldu!')
   message.channel.send(embed)
 }
 exports.conf = {
