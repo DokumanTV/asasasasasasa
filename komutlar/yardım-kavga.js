@@ -6,7 +6,7 @@ var p = ayarlar.prefix;
 let nicat = args[0]
 
 const embed  = new Discord.MessageEmbed()
-.setTitle('🔸 Logo Yazı Yardım Komutları 🔸')
+.setTitle('🔸 Kavga Yardım Komutları 🔸')
 .setColor('RANDOM')
 .setDescription(`
 \**🔹${p}kartopu @kişi\** - Etiketlediğin Kişiye Kartopu Atar.

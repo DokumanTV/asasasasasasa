@@ -3,7 +3,7 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   const snekfetch = require("snekfetch");
-snekfetch.get(`https://discordbots.org/api/bots/${client.user.id}/check?userId=${message.author.id}`)
+snekfetch.get
   .then(response => {
     let guild = message.guild
     let reason = args.slice(1).join(' ');
