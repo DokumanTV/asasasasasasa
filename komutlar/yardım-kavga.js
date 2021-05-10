@@ -12,8 +12,8 @@ const embed  = new Discord.MessageEmbed()
 \**🔹${p}kartopu @kişi\** - Etiketlediğin Kişiye Kartopu Atar.
 \**🔹${p}tokat @kişi\** - Etiketlediğin Kişiye Tokat Atar.
 \**🔹${p}yumruk @kişi\** - Etiketlediğin Kişiye Yumruk Atar.
-\**🔹${p}yazı-anime Logoda Yazıcak Şey\** - Anime Logo .
-\**🔹${p}yazı-altın Logoda Yazıcak Şey\** - Altın Logo Yazı.
+\**🔹${p}aduketçek @kişi\** - Etiketlediğin Kişiye Aduket Çeker.
+\**🔹${p}ateş @kişi\** - Etiketlediğin Kişiye Ateş Eder.
 \**🔹${p}yazı-dracula Logoda Yazıcak Şey\** - Dracula Logo Yazı.
 \**🔹${p}yazı-everest Logoda Yazıcak Şey\** - Everest Logo Yazı.
 `)
