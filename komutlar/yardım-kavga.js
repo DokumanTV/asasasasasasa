@@ -15,12 +15,13 @@ const embed  = new Discord.MessageEmbed()
 \**🔹${p}aduketçek @kişi\** - Etiketlediğin Kişiye Aduket Çeker.
 \**🔹${p}nah @kişi\** - Etiketlediğin Kişiye Nah Çeker.
 \**🔹${p}uçan-tekme @kişi\** - Etiketlediğin Kişiye Uçan Tekme Atar.
-\**🔹${p}tekme\** - Etiketlediğin Kişiye Tekme Atar.
+\**🔹${p}tekme @kişi\** - Etiketlediğin Kişiye Tekme Atar.
+\**🔹${p}korkut @kişi\** - Etiketlediğin Kişiyi Korkutur.
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 .setImage("https://im2.ezgif.com/tmp/ezgif-2-782cd0087529.gif")
 if(!nicat) return message.channel.send(embed)
-if(nicat == 'yazı'){
+if(nicat == 'kavga'){
 }
 }
 exports.conf = {
