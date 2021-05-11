@@ -17,6 +17,7 @@ const embed  = new Discord.MessageEmbed()
 \**🔹${p}yazı-altın Logoda Yazıcak Şey\** - Altın Logo Yazı.
 \**🔹${p}yazı-dracula Logoda Yazıcak Şey\** - Dracula Logo Yazı.
 \**🔹${p}yazı-everest Logoda Yazıcak Şey\** - Everest Logo Yazı.
+\*
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 .setImage("https://im2.ezgif.com/tmp/ezgif-2-782cd0087529.gif")
