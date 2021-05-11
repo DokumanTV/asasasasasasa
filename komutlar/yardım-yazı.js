@@ -9,15 +9,15 @@ const embed  = new Discord.MessageEmbed()
 .setTitle('🔸 Logo Yazı Yardım Komutları 🔸')
 .setColor('RANDOM')
 .setDescription(`
-\**🔹${p}yazı-standart Logoda Yazıcak Şey\** - Standart Logo Yazı.
-\**🔹${p}yazı-cool Logoda Yazıcak Şey\** - Cool Logo Yazı. 
-\**🔹${p}yazı-alev Logoda Yazıcak Şey\** - Alevli Logo Yazı.
-\**🔹${p}yazı-neon Logoda Yazıcak Şey\** - Neon Logo Yazı.
-\**🔹${p}yazı-anime Logoda Yazıcak Şey\** - Anime Logo .
-\**🔹${p}yazı-altın Logoda Yazıcak Şey\** - Altın Logo Yazı.
-\**🔹${p}yazı-dracula Logoda Yazıcak Şey\** - Dracula Logo Yazı.
-\**🔹${p}yazı-everest Logoda Yazıcak Şey\** - Everest Logo Yazı.
-\*
+\**🔹${p}yazı-standart (Logoda Yazıcak Şey)\** - Standart Logo Yazı.
+\**🔹${p}yazı-cool (Logoda Yazıcak Şey)\** - Cool Logo Yazı. 
+\**🔹${p}yazı-alev (Logoda Yazıcak Şey)\** - Alevli Logo Yazı.
+\**🔹${p}yazı-neon (Logoda Yazıcak Şey)\** - Neon Logo Yazı.
+\**🔹${p}yazı-anime (Logoda Yazıcak Şey)\** - Anime Logo Yazı.
+\**🔹${p}yazı-altın (Logoda Yazıcak Şey)\** - Altın Logo Yazı.
+\**🔹${p}yazı-dracula (Logoda Yazıcak Şey)\** - Dracula Logo Yazı.
+\**🔹${p}yazı-everest (Logoda Yazıcak Şey)\** - Everest Logo Yazı.
+\**🔹${p}yazı-rengarenk (Logoda Yazıcak Şey))\** - Rengarenk Logo Yazı.
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 .setImage("https://im2.ezgif.com/tmp/ezgif-2-782cd0087529.gif")
