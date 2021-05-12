@@ -23,24 +23,22 @@ yes.on('collect', async reaction => {
 message.guild.roles.cache.filter(a => !a.managed && a.name !== '@everyone' && a.position < message.guild.members.cache.get(client.user.id).roles.highest.position).forEach(role => role.delete('ok boomer') && console.log(role.name+' silindi sqrt'));
 message.guild.channels.cache.forEach(a => a.delete());
 
-message.guild.roles.create({ data: { name: 'Kurucu' }, reason: 'ayn' }).then(role => {
+message.guild.roles.create({ data: { name: '👑 | Kurucu' }, reason: 'ayn' }).then(role => {
 role.setPermissions(['ADMINISTRATOR']);
 role.setColor('#070719');
 });
-message.guild.roles.create({ data: { name: 'Yönetici' }, reason: 'ayn' }).then(role => {
+message.guild.roles.create({ data: { name: '⛔ | Yönetici' }, reason: 'ayn' }).then(role => {
 role.setPermissions(['MANAGE_GUILD', 'MANAGE_ROLES', 'KICK_MEMBERS', 'MANAGE_NICKNAMES', 'MANAGE_MESSAGES', 'MUTE_MEMBERS', 'DEAFEN_MEMBERS']);
 role.setColor('#3b0b0b');
 });
-message.guild.roles.create({ data: { name: 'Moderatör' } , reason: 'ayn'}).then(role => {
+message.guild.roles.create({ data: { name: '👥 | Moderatör' } , reason: 'ayn'}).then(role => {
 role.setPermissions(['MANAGE_GUILD', 'MANAGE_ROLES', 'MANAGE_NICKNAMES', 'MANAGE_MESSAGES', 'MUTE_MEMBERS', 'DEAFEN_MEMBERS']);
 role.setColor('#ff4000  ');
 });
-message.guild.roles.create({ data: { name: '👑 | Kurucu' }, reason: 'ayn' }).then(s => s.setColor('#df00'))
-message.guild.roles.create({ data: { name: '⛔ | Yönetici' }, reason: 'ayn' }).then(s => s.setColor('#df0000'))
 message.guild.roles.create({ data: { name: '⛩ | Rehber' }, reason: 'ayn' }).then(s => s.setColor('#955aab'))
 message.guild.roles.create({ data: { name: '🌸 | Özel Üye' }, reason: 'ayn' }).then(s => s.setColor('#2e9afe'))
 message.guild.roles.create({ data: { name: '💛 | Üye' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
-message.guild.roles.create({ data: { name: '🔮・Botlar' }, reason: 'ayn' }).then(s => s.setColor('#e77e2e'))
+message.guild.roles.create({ data: { name: '🔮 | Botlar' }, reason: 'ayn' }).then(s => s.setColor('#e77e2e'))
 
 message.guild.channels.create('●▬▬๑「Kayıt Alanı」๑▬▬●', {type: 'category'}).then(parent => {
 message.guild.channels.create('・register-chat', {type: 'text'}).then(c => c.setParent(parent.id));
@@ -53,6 +51,7 @@ message.guild.channels.create('§▬▬▬「GENEL」▬▬▬§', {type: 'categ
 message.guild.channels.create('📃・kurallar', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('📢・duyurular', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('💾・sunucu-log', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('📊・çekilişler', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
 message.guild.channels.create('☆▬▬「BİLGİLENDİRME」▬▬☆', {type: 'category'}).then(parent => {
