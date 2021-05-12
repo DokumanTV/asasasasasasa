@@ -25,7 +25,8 @@
     "@freezegold/anime.js": "^2.0.4",
     "snekfetch": "^4.0.4",
     "jimp": "^0.16.1",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "node-fetch": "^2.6.1"
   },
   "engines": {
     "node": "14.x"
