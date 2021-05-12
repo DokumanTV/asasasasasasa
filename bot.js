@@ -62,6 +62,7 @@ client.load = command => {
   });
 };
 
+
 //--------------------ETİKET PREFİX--------------------\\
 
 client.on('message', message => {
