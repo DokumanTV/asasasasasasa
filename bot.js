@@ -71,38 +71,38 @@ let sahip = '726482014877777980'
     if(msg.author.id === sahip) return
     if(msg.author.bot) return
     
-    if(msg.guild.channels.get(await db.fetch(`destek_${msg.author.id}`))) {
+    if(msg.guild.channels.cache.get(await db.fetch(`destek_${msg.author.id}`))) {
       msg.delete()
-      return msg.guild.channels.get(await db.fetch(`destek_${msg.author.id}`)).send(msg.author + " zaten bir destek talebin bulunmakta!")
+      return msg.guild.channels.cache.get(await db.fetch(`destek_${msg.author.id}`)).send(msg.author + " zaten bir destek talebin bulunmakta!")
     } 
-    if(msg.guild.channels.get('842058161342251089')) {// kanalid
-      msg.guild.createChannel(`destek-${msg.author.username}`, "text").then(async c => {
+    if(msg.guild.channels.cache.get('842058161342251089')) {// kanalid
+      msg.guild.channels.create(`destek-${msg.author.username}`, "text").then(async c => {
         db.set(`destek_${msg.author.id}`, c.id)
-      const category = msg.guild.channels.get('833233656755519509') // Kategori id
+      const category = msg.guild.channels.cache.get('833233656755519509') // Kategori id
       c.setParent(category.id)
-      let role = msg.guild.roles.get("835523256042782741", "833235738165903381");//Rol id
-      let role2 = msg.guild.roles.find("name", "@everyone");
-      await c.overwritePermissions(role, {
+      let role = msg.guild.roles.cache.get("835523256042782741", "833235738165903381");//Rol id
+      let role2 = msg.guild.roles.cache.find("name", "@everyone");
+      await c.createOverwrite(role, {
           SEND_MESSAGES: true,
-          READ_MESSAGES: true
+          VIEW_CHANNEL: true
       });
-      await c.overwritePermissions(role2, {
+      await c.createOverwrite(role2, {
           SEND_MESSAGES: false,
-          READ_MESSAGES: false
+          VIEW_CHANNEL: false
       });
-      await c.overwritePermissions(msg.author, {
+      await c.createOverwrite(msg.author, {
           SEND_MESSAGES: true,
-          READ_MESSAGES: true
+          VIEW_CHANNEL: true
       });
 
-      const embed = new Discord.RichEmbed()
+      const embed = new Discord.MessageEmbed()
       .setColor("#f0393b")
       .addField(`» Talep Konusu:`, `${msg.content}`, true)
       .addField(`» Kullanıcı:`, `<@${msg.author.id}>`, true)
       .setFooter(`${client.user.username} | Destek Sistemi`)
       .setTimestamp()
       await c.send({ embed: embed });
-      await c.send(`<@${msg.author.id}> Adlı kullanıcı "\`${msg.content}\`" sebebi ile destek talebi açtı! Lütfen Destek Ekibini bekle, @everyone`)
+      await c.send(`<@${msg.author.id}> Adlı kullanıcı "\`${msg.content}\`" sebebi ile destek talebi açtı! Lütfen Destek Ekibini bekle, <@$842059876720574505>`)
       msg.delete()
       db.set(`talep_${c.id}`, msg.content)
       db.set(`kullanici_${c.id}`, msg.author.id)
@@ -116,7 +116,7 @@ let sahip = '726482014877777980'
 
 client.on("message", message => {
 if (message.channel.name.startsWith(`destek-`)) {
-let kanal = client.channels.get("Destekdeki mesajları loglaması için kanal idsi")
+let kanal = client.channels.cache.get("837393461669658634")
 kanal.send(`Mesaj sahibi: ${message.author.username} ( ${message.author.id} ) \n Mesaj İçeriği: ${message.content}`)
 }
 })
@@ -129,13 +129,13 @@ if (message.content.toLowerCase() === "talep kapat") {
   
     let yetki = false;
   
-    if (message.member.roles.has("rolün idsi")) yetki = true;
+    if (message.member.roles.cache.has("842059876720574505")) yetki = true;
     else yetki = false;
   
   if (yetki == false) return message.channel.send("Destek taleplerini yalnızca yetkililer kapatabilir.");
   
     if(message.author.bot) return
-    var deneme = new Discord.RichEmbed()
+    var deneme = new Discord.MessageEmbed()
     .setColor("#f0393b")
     .setAuthor(`Destek Talebi Kapatma İşlemi`)
     .setDescription(`Destek talebini kapatmayı onaylamak için, \n10 saniye içinde \`evet\` yazınız.`)
@@ -149,15 +149,15 @@ if (message.content.toLowerCase() === "talep kapat") {
       })
       .then(async (collected) => {
           message.channel.delete();
-        const embed = new Discord.RichEmbed()
+        const embed = new Discord.MessageEmbed()
           .setTitle("")
           .setColor('#f0393b')
           .setDescription("Destek Kapatıldı")
           .addField("Kapatan Kullanıcı:", message.author)
           .addField("Kapatılan Kanal: ", "#" + message.channel.name)
           .addField("Talep Sebebi: ", "```" + await db.fetch(`talep_${message.channel.id}`) + "```")
-          .setFooter("BRUH", client.user.avatarURL)
-          client.channels.get("kapantınca atıcak kanal idsi").send("Bir __**kullanıcı destek talebi**__ kapatıldı", embed);
+          .setFooter("BRUH", client.user.avatarURL())
+          client.channels.cache.get("837393461669658634").send("Bir __**kullanıcı destek talebi**__ kapatıldı", embed);
           db.delete(`talep_${message.channel.id}`)
         })
         .catch(() => {
