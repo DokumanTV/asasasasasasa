@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   const yazi = args.slice(0).join('+'); 
 
   if(!yazi) return message.channel.send(`**Yapacağım logonun ismini yazınız...**`)
-  const link = `https://flamingtext.com/net-fu/proxy_form.cgi?script=harry-potter-logo&text=${yazi}&_loc=generate&imageoutput=true`
+  const link = `https://flamingtext.com/net-fu/proxy_form.cgi?script=star-wars-logo&text=${yazi}&_loc=generate&imageoutput=true`
   .replace(' ', '+')
 
   
@@ -23,7 +23,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'yazı-hp',
-    description: 'Yazdığınız Yazı everest logoyla değiştirir',
-    usage: 'everest'
+    name: 'yazı-starwars',
+    description: 'Yazdığınız Yazı dracula logoyla değiştirir',
+    usage: 'dracula'
 }

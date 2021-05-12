@@ -18,6 +18,9 @@ const embed  = new Discord.MessageEmbed()
 \**🔹${p}yazı-dracula (Logoda Yazıcak Şey)\** - Dracula Logo Yazı.
 \**🔹${p}yazı-everest (Logoda Yazıcak Şey)\** - Everest Logo Yazı.
 \**🔹${p}yazı-rengarenk (Logoda Yazıcak Şey))\** - Rengarenk Logo Yazı.
+\**🔹${p}yazı-hp (Logoda Yazıcak Şey))\** - Harry Potter Logo Yazı.
+\**🔹${p}yazı-starwars (Logoda Yazıcak Şey))\** - Star Wars Logo Yazı.
+\**🔹${p}yazı-shrek (Logoda Yazıcak Şey))\** - Shrek Logo Yazı.
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 .setImage("https://im2.ezgif.com/tmp/ezgif-2-782cd0087529.gif")
