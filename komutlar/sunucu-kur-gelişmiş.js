@@ -36,11 +36,16 @@ role.setPermissions(['MANAGE_GUILD', 'MANAGE_ROLES', 'MANAGE_NICKNAMES', 'MANAGE
 role.setColor('#ff4000  ');
 });
 message.guild.roles.create({ data: { name: '⛩ | Rehber' }, reason: 'ayn' }).then(s => s.setColor('#955aab'))
+message.guild.roles.create({ data: { name: '⭐️ | Boost Basan' }, reason: 'ayn' }).then(s => s.setColor('#ff00ff'))
 message.guild.roles.create({ data: { name: '🌸 | Özel Üye' }, reason: 'ayn' }).then(s => s.setColor('#2e9afe'))
-message.guild.roles.create({ data: { name: '💛 | Üye' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
-
+message.guild.roles.create({ data: { name: '📞 | Destek' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
+message.guild.roles.create({ data: { name: '📚 | Kayıt Sorumlusu' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
+message.guild.roles.create({ data: { name: '👥 | Partner' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
+message.guild.roles.create({ data: { name: '⭐️ | Tagımızı Alan' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
+message.guild.roles.create({ data: { name: '🎥 | Yayıncı' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
 message.guild.roles.create({ data: { name: '💛 | Üye' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
 message.guild.roles.create({ data: { name: '🔮 | Botlar' }, reason: 'ayn' }).then(s => s.setColor('#e77e2e'))
+message.guild.roles.create({ data: { name: '❌ | Kayıtsız' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
 
 message.guild.channels.create('●▬▬๑「Kayıt Alanı」๑▬▬●', {type: 'category'}).then(parent => {
 message.guild.channels.create('・register-chat', {type: 'text'}).then(c => c.setParent(parent.id));
@@ -54,6 +59,7 @@ message.guild.channels.create('📃・kurallar', {type: 'text'}).then(c => c.set
 message.guild.channels.create('📢・duyurular', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('💾・sunucu-log', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('📊・çekilişler', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('📊・destek', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
 message.guild.channels.create('☆▬▬「BİLGİLENDİRME」▬▬☆', {type: 'category'}).then(parent => {
