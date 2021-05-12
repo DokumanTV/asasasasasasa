@@ -62,6 +62,16 @@ client.load = command => {
   });
 };
 
+//--------------------ETİKET PREFİX--------------------\\
+
+client.on('message', message => {
+if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) {
+ message.reply(`Prefix'im: **f!**, Yardım için: **f!yardım**`)
+}
+});
+
+//--------------------ETİKET PREFİX--------------------\\
+
 client.unload = command => {
   return new Promise((resolve, reject) => {
     try {
