@@ -10,7 +10,7 @@ const embed  = new Discord.MessageEmbed()
 .setColor('RANDOM')
 .setDescription(`
 \**🔹${p}havadurumu\** - Etiketlediğiniz Ülkenin Hava Durumunu Gösterir.
-\**🔹${p}kullanıcı-bilgi\** - Etiketlediğiniz Kişinin Bilgilerini Gösterir.
+\**🔹${p}ping\** - Botun Ping'ini Gösterir.
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=791213780138852392&permissions=8&scope=bot) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 .setImage("https://im2.ezgif.com/tmp/ezgif-2-782cd0087529.gif")
