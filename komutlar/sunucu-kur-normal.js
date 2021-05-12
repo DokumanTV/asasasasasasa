@@ -119,5 +119,5 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'sunucu-kur'
+  name: 'sunucu-kur-normal'
 };
