@@ -122,5 +122,3 @@ exports.conf = {
 exports.help = {
   name: 'sunucu-kur'
 };
-sunucukur.js
-9 KB
