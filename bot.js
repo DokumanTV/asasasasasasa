@@ -62,6 +62,114 @@ client.load = command => {
   });
 };
 
+//--------------------DESTEK KANAL--------------------\\
+
+client.on('message', async msg => {
+let sahip = '726482014877777980'
+  const reason = msg.content.split(" ").slice(1).join(" ");
+  if (msg.channel.id === '842058161342251089') { 
+    if(msg.author.id === sahip) return
+    if(msg.author.bot) return
+    
+    if(msg.guild.channels.get(await db.fetch(`destek_${msg.author.id}`))) {
+      msg.delete()
+      return msg.guild.channels.get(await db.fetch(`destek_${msg.author.id}`)).send(msg.author + " zaten bir destek talebin bulunmakta!")
+    } 
+    if(msg.guild.channels.get('842058161342251089')) {// kanalid
+      msg.guild.createChannel(`destek-${msg.author.username}`, "text").then(async c => {
+        db.set(`destek_${msg.author.id}`, c.id)
+      const category = msg.guild.channels.get('833233656755519509') // Kategori id
+      c.setParent(category.id)
+      let role = msg.guild.roles.get("835523256042782741", "833235738165903381");//Rol id
+      let role2 = msg.guild.roles.find("name", "@everyone");
+      await c.overwritePermissions(role, {
+          SEND_MESSAGES: true,
+          READ_MESSAGES: true
+      });
+      await c.overwritePermissions(role2, {
+          SEND_MESSAGES: false,
+          READ_MESSAGES: false
+      });
+      await c.overwritePermissions(msg.author, {
+          SEND_MESSAGES: true,
+          READ_MESSAGES: true
+      });
+
+      const embed = new Discord.RichEmbed()
+      .setColor("#f0393b")
+      .addField(`» Talep Konusu:`, `${msg.content}`, true)
+      .addField(`» Kullanıcı:`, `<@${msg.author.id}>`, true)
+      .setFooter(`${client.user.username} | Destek Sistemi`)
+      .setTimestamp()
+      await c.send({ embed: embed });
+      await c.send(`<@${msg.author.id}> Adlı kullanıcı "\`${msg.content}\`" sebebi ile destek talebi açtı! Lütfen Destek Ekibini bekle, @everyone`)
+      msg.delete()
+      db.set(`talep_${c.id}`, msg.content)
+      db.set(`kullanici_${c.id}`, msg.author.id)
+      }).catch(console.error);
+    }
+  }
+});
+  
+
+
+
+client.on("message", message => {
+if (message.channel.name.startsWith(`destek-`)) {
+let kanal = client.channels.get("Destekdeki mesajları loglaması için kanal idsi")
+kanal.send(`Mesaj sahibi: ${message.author.username} ( ${message.author.id} ) \n Mesaj İçeriği: ${message.content}`)
+}
+})
+
+
+
+client.on("message", message => {
+if (message.content.toLowerCase() === "talep kapat") {
+    if (!message.channel.name.startsWith(`destek-`)) return
+  
+    let yetki = false;
+  
+    if (message.member.roles.has("rolün idsi")) yetki = true;
+    else yetki = false;
+  
+  if (yetki == false) return message.channel.send("Destek taleplerini yalnızca yetkililer kapatabilir.");
+  
+    if(message.author.bot) return
+    var deneme = new Discord.RichEmbed()
+    .setColor("#f0393b")
+    .setAuthor(`Destek Talebi Kapatma İşlemi`)
+    .setDescription(`Destek talebini kapatmayı onaylamak için, \n10 saniye içinde \`evet\` yazınız.`)
+    .setFooter(`${client.user.username} | Destek Sistemi`)
+    message.channel.send(deneme)
+    .then((m) => {
+      message.channel.awaitMessages(response => response.content.toLowerCase() === 'evet', {
+        max: 1,
+        time: 10000,
+        errors: ['time'],
+      })
+      .then(async (collected) => {
+          message.channel.delete();
+        const embed = new Discord.RichEmbed()
+          .setTitle("")
+          .setColor('#f0393b')
+          .setDescription("Destek Kapatıldı")
+          .addField("Kapatan Kullanıcı:", message.author)
+          .addField("Kapatılan Kanal: ", "#" + message.channel.name)
+          .addField("Talep Sebebi: ", "```" + await db.fetch(`talep_${message.channel.id}`) + "```")
+          .setFooter("BRUH", client.user.avatarURL)
+          client.channels.get("kapantınca atıcak kanal idsi").send("Bir __**kullanıcı destek talebi**__ kapatıldı", embed);
+          db.delete(`talep_${message.channel.id}`)
+        })
+        .catch(() => {
+          m.edit('Destek Talebi kapatma isteğin zaman aşımına uğradı!').then(m2 => {
+              m2.delete();
+          }, 3000);
+        });
+    });
+}
+});
+
+
 //--------------------ETİKET PREFİX--------------------\\
 
 client.on('message', message => {
