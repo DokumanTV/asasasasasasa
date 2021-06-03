@@ -1,30 +1,22 @@
 const Discord = require("discord.js");
 exports.run = async (client, message, args) => {
-  try {
-    let kişi = message.mentions.users.first();
-    const hataembed = new Discord.MessageEmbed()
-      .setColor("RED")
-      .setTimestamp()
-      .addField("HATA:", "Lütfen Birisini Etiketle ve Bir Yazı Yaz!");
-    if (message.mentions.users.size < 1) return message.reply(hataembed);
-    let yazi = args.slice(1).join(" ");
-    if (!yazi) return message.reply(hataembed);
-    message.delete();
-
-    message.channel
-      .createWebhook(kişi.username, {
-        avatar: kişi.avatarURL()
-      })
-      .then(hook => {
-        hook.send(yazi);
-        setTimeout(function() {
-          hook.delete();
-        }, 3000);
-      })
-      .catch(console.error);
-  } catch (err) {
-    console.error(err)
-  }
+    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+    if(!member) return message.channel.send('Lütfen birisini etiketle')
+    {
+        try {
+            const webhooks = await message.channel.fetchWebhooks();
+        
+            const webhook = webhooks.first();
+            const msg = args.slice(1).join(" ");
+            if(!msg) return message.reply('bir şeyler yaz')
+              await webhook.send(msg , {
+                username: message.author.username,
+                avatarURL: message.author.avatarURL()(),
+              
+            });
+        } catch (error) {
+            console.error('Error trying to send: ', error);
+        }}
 };
 
 exports.conf = {

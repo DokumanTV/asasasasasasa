@@ -25,7 +25,8 @@ const embed  = new Discord.MessageEmbed()
 \**🔹${p}ping\** - Botun Ping'ini Gösterir.
 \**🔹${p}iftar\** - Söylediğiniz Ülkede İftar Saatine Ne Kadar Kaldığını Gösterir.
 \**🔹${p}balıktut\** - Balık Tutarsınız.
-\**🔹${p}fakemesaj @Kişi Yazı\** - Etiketlediğiniz Kişi Yerine .
+\**🔹${p}fakemesaj @Kişi Yazı\** - Etiketlediğiniz Kişi Yerine Yazıyo Gösterir.
+\**🔹${p}yaş-hesapla\** - Yaşınızı Hesaplar.
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=847022035510886430&scope=bot&permissions=8589934591) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 if(!nicat) return message.channel.send(embed)
