@@ -7,9 +7,9 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
 var oyun = [
-        "🔥",
-        "✨",
-        "⭐️"  
+        "-yardım",
+        "Kayıt & Koruma & Moderasyon & Sunucu Kur & Eğlence & Radyo & Müzik(Ekleniyor) & Çekiliş(Ekleniyor)",
+        "Bot Yapım Aşamasındadır Az Kod Bulunmaktadır Kodların Bazıları Çalışmaya Bilir Destek Sunucusundan Bildirebilirsiniz"  
     ];
 
     setInterval(function() {
