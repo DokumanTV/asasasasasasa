@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
             message.channel.clone().then(knl => {
               let position = message.channel.position;
               knl.setPosition(position);
-              knl.send(`Nuked`);
+              knl.send(`Kanal Silindi Ve Yeniden Oluşturuldu`);
               message.channel.delete();
             });
   

@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const database = require('quick.db');
-var kelimeler = ['test1', 'test2'];
+var kelimeler = ['Elma', 'Yoğurt', 'Sude', 'Sensiz', 'Büyüttüm', 'Gülleri', 'Laboratuvar', 'Anketörleştiremediklerimizdenmişsiniz', 'YouTube/DökümanTV'];
 
-exports.run = async (client, message, args) => {// can#0002
+exports.run = async (client, message, args) => {
 
   if(!args[0]) return message.channel.send('Kiminle yazan kazanır oynamak istiyorsan o kişiyi etiketle.');
   if(!message.mentions.members.first()) return message.channel.send('Hata: Etiketlenen kişi bulunamadı.');

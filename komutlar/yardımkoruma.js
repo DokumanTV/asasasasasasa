@@ -10,8 +10,7 @@ const embed  = new Discord.MessageEmbed()
 .addField("**__Not :__**", "**Botun Rolünü En Üste Almassanız Çalışmaz**")
 .setColor('RANDOM')
 .setDescription(`
-\**:small_blue_diamond:${p}anti-raid \** - İzinsiz Bot Girince Banlamayı Açar.
-\**:small_blue_diamond:${p}bot-izni \** - Anti Raid Açıkken İd Sini Yazdığınız Botu Banlamaz.
+\**🔹${p}everyone-here-engel \** - Ever Here Engelini Açar.
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=847022035510886430&scope=bot&permissions=8589934591) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 if(!nicat) return message.channel.send(embed)
