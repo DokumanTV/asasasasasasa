@@ -4,6 +4,7 @@ const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
+const db = require('quick.db');
 require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
@@ -179,6 +180,125 @@ if (message.content === `<@${client.user.id}>` || message.content === `<@!${clie
 });
 
 //--------------------ETİKET PREFİX--------------------\\
+
+//-------------------ANTİ RAİD-------------------\
+
+client.on("guildMemberAdd", async member => {
+let kanal = await db.fetch(`antiraidK_${member.guild.id}`)== "anti-raid-aç"
+  if (!kanal) return;  
+  var cod = member.guild.owner
+  if (member.user.bot === true) {
+     if (db.fetch(`botizin_${member.guild.id}.${member.id}`) == "aktif") {
+    let are = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(member.user.avatarURL())
+      .setDescription(`**${member.user.tag}** (${member.id}) Adlı Bota Bir Yetki Verdi Eğer Kaldırmak İstiyorsanız **${prefix}bot-izni kaldır botun_id**.`);
+    cod.send(are);
+     } else {
+       let izinverilmemişbot = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(member.user.avatarURL())
+      .setDescription("**" + member.user.tag +"**" + " (" + member.id+ ") " + "adlı bot sunucuya eklendi ve attım eğer izin vermek istiyorsanız **" + prefix + "bot-izni ver botun_id**")
+       member.members.kick();    
+       cod.send(izinverilmemişbot)
+}
+  }
+});
+
+//-------------------ANTİ RAİD-------------------\\
+
+//--------------EKLENDİM_ATILDIM---------------\\
+
+client.on('guildDelete', guild => {
+
+  let atıldı = new Discord.MessageEmbed()
+
+  .setColor("RANDOM")  
+  .setTitle(" Bot Atıldı ")
+  .addField("Sunucu Adı:", guild.name)
+  .addField("Sunucu sahibi", guild.owner)
+  .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+  .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+  .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+     client.channels.cache.get('848485163516035082').send(atıldı);
+
+  });
+
+  //Eklendi//
+
+  client.on('guildCreate', guild => {
+
+  let eklendi = new Discord.MessageEmbed()
+
+  .setColor("RANDOM")
+  .setTitle(" Bot Eklendi ")
+  .addField("Sunucu Adı:", guild.name)
+  .addField("Sunucu sahibi", guild.owner)
+  .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+  .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+  .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+     client.channels.cache.get('848485163516035082').send(eklendi);
+
+  });
+
+//--------------EKLENDİM-ATILDIM------------\\
+
+//----------------OTO ROL---------------------\\
+
+const qdb = require("quick.db")
+client.on("guildMemberAdd", member => {
+    var rol = qdb.fetch(`otorol_${member.guild.id}`) 
+    var rolcük = member.guild.roles.cache.get(rol)
+    var kanal = qdb.fetch(`otorolkanali_${member.guild.id}`)
+    var kanalcık = member.guild.channels.cache.get(kanal)
+    var yazı = qdb.fetch(`otorolyazi_${member.guild.id}`)
+    if(!yazı){
+      var yazı = "" 
+    }
+  if (kanalcık == undefined) return
+    const embedversion1mq = new Discord.MessageEmbed()
+    .setColor('BLACK')
+    .setAuthor(`${client.user.username} Otorol Sistemi`)
+    .setDescription(`
+    **${yazı}**
+    
+    **${member} kişisi ${member.guild} sunucusuna katıldı!**
+    
+    **Verilen rol: ${rolcük}**
+    
+    **Hoşgeldin ${member}! Seninle Birlikte ${member.guild.memberCount} kişi olduk!**
+    `)
+kanalcık.send(embedversion1mq)
+    member.roles.add(rolcük.id)
+})
+
+//--------------------OTOROL--------------------\\
+
+//----------------SAYAÇ--------------------\\
+
+client.on("guildMemberAdd", member => {
+var kanal = qdb.fetch(`sayackanali_${member.guild.id}`)
+if(!kanal) return;
+var hedef = qdb.fetch(`sayachedef_${member.guild.id}`)
+if(!hedef) return;
+client.channels.cache.get(kanal).send(`${member} Sunucuya katıldı! Hedefimize ulaşmamıza ${hedef - member.guild.memberCount} kişi kaldı!`)
+if(hedef <= member.guild.memberCount){
+  client.channels.cache.get(kanal).send(`Hedefimizi başardık! Sunucumuz ${hedef} kişiye ulaştı!`)
+  qdb.delete(`sayackanali_${member.guild.id}`)
+  qdb.delete(`sayachedef_${member.guild.id}`)
+}
+})
+client.on("guildMemberRemove", member => {
+var kanal = qdb.fetch(`sayackanali_${member.guild.id}`)
+if(!kanal) return;
+var hedef = qdb.fetch(`sayachedef_${member.guild.id}`)
+if(!hedef) return;
+client.channels.cache.get(kanal).send(`${member.user.tag} sunucudan ayrıldı! Hedefimize ulaşmamıza ${hedef - member.guild.memberCount} kişi kaldı!`)
+})
+
+//----------------SAYAÇ-----------------\\
 
 client.unload = command => {
   return new Promise((resolve, reject) => {
