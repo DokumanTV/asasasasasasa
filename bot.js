@@ -276,7 +276,33 @@ kanalcık.send(embedversion1mq)
 
 //--------------------OTOROL--------------------\\
 
+//-------------------SPAM--------------------\\
 
+const dctrat = require('dctr-antispam.js'); 
+ 
+client.on('ready', () => {
+   dctrat(client, {
+        uyarılimiti: 3, // Uyarı limiti.
+        susturmalimiti: 6, // Susturma limiti.
+        aralık: 1500, // Mesaj yazma aralığı. ms olarak ayarlayınız
+        uyarımesajı: "Spam Yapmaya Devam Edersen Susturulucaksun", // Uyarı mesajı
+        susturmamesajı: "Spam Nedeni İle Susturuldun.", // Susturulma mesajı
+        maksspam_uyarı: 3,// Kullanıcılar aynı iletiyi spam gönderirken, X üyesi 8'den fazla ileti gönderdiğinde kullanıcılar uyarı alır.
+        maksspam_susturma: 4, // Kullanıcılar aynı iletiyi spam gönderirken, X üyesi 10'den fazla ileti gönderdiğinde kullanıcılar susturulur.
+        adminrol: ["🏆 | Founder"], // Bu rollere sahip kullanıcılar engellenmez
+        adminkullanıcı: ["🇹🇷 𝔍𝔢𝔰么𝔢𝔯 🇹🇷 ツ#1234", "么 boş işler premsesi#2824"], // Bu kullanıcılar engellenmez
+        susturmarolü: "MUTE", // Kullanıcı spam yaparsa otomatik olarak susturulur eğer rol açılmaza otomatik olarak açılır.
+        susturmasüresi: 900000, // Susturma süresi bir kullanıcı spam yaptığı için susturulursa verilecek ceza süresi (15dk) ms olarak ayarlayınız.
+        logkanalı: "antispam-log" // Susturulmaların ve kaldırılmalarının atılacağı log kanalı (açılmazsa otomatik bu isimde açılır.)
+      });
+  });
+ 
+client.on('message', msg => {
+  client.emit('checkMessage', msg); 
+})
+
+
+//--------------------SPAM-----------------\\
 
 //----------------SAYAÇ--------------------\\
 

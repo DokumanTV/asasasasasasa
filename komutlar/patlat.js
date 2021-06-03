@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
+  aliases: ["patlat"],
   permLevel: 3 //Perm leveli istediğiniz gibi değiştirebilirsiniz.
 };
 
