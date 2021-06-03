@@ -2,16 +2,16 @@ const Discord = require("discord.js");
 
 const mapping = {
   " ": "   ",
-  "0": ":zero:",
-  "1": ":one:",
-  "2": ":two:",
-  "3": ":three:",
-  "4": ":four:",
-  "5": ":five:",
-  "6": ":six:",
-  "7": ":seven:",
-  "8": ":eight:",
-  "9": ":nine:",
+  "0": ":0_:",
+  "1": ":1_:",
+  "2": ":2_:",
+  "3": ":3_:",
+  "4": ":4_:",
+  "5": ":5_:",
+  "6": ":6_:",
+  "7": ":7_:",
+  "8": ":8_:",
+  "9": ":9_:",
   "!": "❕",
   "?": "❔",
   "#": "#️⃣",
@@ -47,7 +47,7 @@ exports.run = function(client, message, args) {
 
 const embed = new Discord.MessageEmbed()
 .setTitle('Sunucu İstatistikleri')
-.setColor('RANDOM')
+.setColor('0x36393e  ')
 .setDescription('' + sunucu + '\n \n' + offline2 + '\n \n' + offline)
 .setFooter('')
 
