@@ -3,24 +3,20 @@ const Discord = require("discord.js");
       try {
         let kişi = message.mentions.users.first();
         const hataembed = new Discord.MessageEmbed()
-          .setColor("0x36393e")
+          .setColor("RED")
           .setTimestamp()
           .addField("HATA:", "Lütfen Birisini Etiketle ve Bir Yazı Yaz!");
-     let userid;
-  if(isNaN(args[0])) {
-    if (!kişi) {
-      message.reply(hataembed)
-    } else {
-      userid = kişi.id;
-    }
-  } 
+        if (message.mentions.users.size < 1) return message.reply(hataembed);
         let yazi = args.slice(1).join(" ");
         if (!yazi) return message.reply(hataembed);
 
         if (message.content.includes("@everyone")) return message.reply("Fakemesaj Everyone İçeremez Şakacı Jojuk Seni");
             if (message.content.includes("@here")) return message.reply("Fakemesaj Here İçeremez Şakacı Jojuk Seni");
 
-        message.delete();
+
+
+
+        message.delete();      
       message.channel
           .createWebhook(kişi.username, {
             avatar: kişi.avatarURL()
