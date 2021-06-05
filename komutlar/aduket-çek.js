@@ -16,7 +16,7 @@ const Embedmatador = new Discord.MessageEmbed()
     .setImage(
       "https://cdn.discordapp.com/attachments/747769679984066582/748464442249052251/street-fighter-60854-18102018130021.gif"
     ) 
-    .setFooter("Boş Durmıyacaksın Heralde Sende Çak", client.user.avatarURL)
+    .setFooter("Aduket Çekildi", client.user.avatarURL)
     
 
 return message.channel.send(Embedmatador);

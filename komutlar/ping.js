@@ -27,7 +27,7 @@ try {
         Şu anda bulunduğunuz sunucunun pingi: ${ping} ms
         Şu anda bulunduğunuz sunucunun mesaj pingi: ${p2} ms
         Pingi azaltmak için sunucu bölgesini değiştirebilir
-        veya [Destek Sunucuma](https://discord.gg/tDvherygAe) gelerek sorunu anlatabilirsin.
+        veya [Destek Sunucuma](https://discord.gg/AbgaYQMdNQ) gelerek sorunu anlatabilirsin.
         `)
       message.channel.send(embed1)
       .then((neiva) => neiva.edit(embed))
@@ -39,7 +39,7 @@ try {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["p"],
+    aliases: [""],
     permLevel: 0
   };
 

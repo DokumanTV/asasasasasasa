@@ -1,31 +1,36 @@
 const Discord = require("discord.js");
 
-exports.run = async (bot, message, args) => {
+exports.run = function(client, message, args) {
 
-    let replies = ["https://tenor.com/view/sad-crying-tears-baby-gif-8822845"];
+const matador = message.mentions.users.first();
 
-   let result = Math.floor((Math.random() * replies.length));
-   let member = message.mentions.members.first()
-   if(!member)return message.channel.send(':no_entry_sign: Birini Etiketle!')
+if (!matador)
 
-    let gifembed = new Discord.MessageEmbed()
-        .setDescription(`${message.author} Tarafından ${member} Ağlatıldı!`)
-        .setColor("#FF69B4")
-        .setFooter(`Boş Durmıyacaksın Heralde ${member}`, message.author.avatarURL())
-        .setImage(replies[result]);
+return message.reply("**Aduket Çekeceğin Kişiyi Etiketlemelisin**");
 
-    message.channel.send(gifembed);
+const Embedmatador = new Discord.MessageEmbed()
+
+    .setDescription(
+      `${matador} ` + `**${message.author.username}** Size Aduket Çekti`
+    )
+    .setImage(
+      "https://media4.giphy.com/media/8wcFnJ71xxXNJSSxb6/200.gif"
+    ) 
+    .setFooter("Ağladı", client.user.avatarURL)
+    
+
+return message.channel.send(Embedmatador);
 };
 
 exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: ["ağla"],
-    permLevel: 0
-   };
-   
-  exports.help = {
-    name: 'agla',
-    description: 'Etiketlediniz Kisiye Tokat Atar.',
-    usage: 'tokat-at'
-   }
+  enabled: true,
+  guildOnly: false,
+  aliases: ["ağlat"],
+  permLevel: 0
+};
+
+exports.help = {
+  name: "ağla",
+  description: "",
+  usage: "aduket-çek <etiket>"
+};
