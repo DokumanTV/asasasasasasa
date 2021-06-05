@@ -1,44 +1,48 @@
-  const Discord = require('discord.js');
+const Discord = require("discord.js");
+    exports.run = async (client, message, args) => {
+      try {
+        let kişi = message.mentions.users.first();
+        const hataembed = new Discord.MessageEmbed()
+          .setColor("0x36393e")
+          .setTimestamp()
+          .addField("HATA:", "Lütfen Birisini Etiketle ve Bir Yazı Yaz!");
+     let userid;
+  if(isNaN(args[0])) {
+    if (!kişi) {
+      message.reply(hataembed)
+    } else {
+      userid = kişi.id;
+    }
+  } 
+        let yazi = args.slice(1).join(" ");
+        if (!yazi) return message.reply(hataembed);
 
-  exports.run = async (client, message, args) => {
+        if (message.content.includes("@everyone")) return message.reply("Fakemesaj Everyone İçeremez Şakacı Jojuk Seni");
+            if (message.content.includes("@here")) return message.reply("Fakemesaj Here İçeremez Şakacı Jojuk Seni");
 
-    if (message.deletable) await message.delete();
-    if (!message.guild.me.permissions.has('MANAGE_MESSAGES')) return message.channel.send(`${message.author} \`Webhookları Yönet\` iznim yok.`).then(a => a.delete({timeout: 4500}));
+        message.delete();
+      message.channel
+          .createWebhook(kişi.username, {
+            avatar: kişi.avatarURL()
+          })
+          .then(hook => {
+            hook.send(yazi).then(() => hook.delete())
+          })
+          .catch(console.error);
+      } catch (err) {
+        console.error(err)
+      }
+    };
 
-    let ÇekilecekKullanıcı = args[0];
-    if (!ÇekilecekKullanıcı) return message.channel.send(`${message.author} Bir kullanıcı ID'si girmelisin.`).then(a => a.delete({timeout: 4500}));
-    if(!Number(ÇekilecekKullanıcı)) return message.channel.send(`${message.author} Kullanıcı ID'leri rakam ile yazılmalı.`).then(a => a.delete({timeout: 4500}));
+    exports.conf = {
+      enabled: true,
+      guildOnly: false,
+      aliases: [],
+      permLevel: 0
+    };
 
-    let YazılacakMesaj = args.slice(1).join(' ');
-    if (!YazılacakMesaj) return message.channel.send(`${message.author} ID'sini girdiğin kullanıcı ne yazsın?`).then(a => a.delete({timeout: 4500}));
-
-    if (YazılacakMesaj.includes("@everyone")) return message.channel.send(`${message.author} Everyone mu? Severiz, şaka şaka bir daha bunu yapma.`).then(a => a.delete({timeout: 4500}));
-    if (YazılacakMesaj.includes("@here")) return message.channel.send(`${message.author} Here mi? Severiz, şaka şaka bir daha bunu yapma.`).then(a => a.delete({timeout: 4500}));
-
-    let Kullanıcı = await client.users.fetch(ÇekilecekKullanıcı);
-    try { 
-    message.channel.createWebhook(Kullanıcı.username, {
-        avatar: Kullanıcı.avatarURL()}) 
-      .then(async (wb) => {
-          const Webhook = new Discord.WebhookClient(wb.id, wb.token);
-          await Webhook.send(YazılacakMesaj); 
-          setTimeout(() => {
-            Webhook.delete()
-          }, 2000);
-      })  
-    } catch (err) {
-      message.channel.send(err);
-  };
-  }
-
-  exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: [],
-    permLevel: 0,
-
-  };
-
-  exports.help = {
-    name: 'fake-mesaj',
-  };
+    exports.help = {
+      name: "fakemesaj",
+      description: "fakemesaj",
+      usage: "fakemesaj"
+    };
