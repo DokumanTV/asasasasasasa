@@ -1,33 +1,46 @@
-const Discord = require("discord.js");
-exports.run = async (client, message, args) => {
-    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-    if(!member) return message.channel.send('Lütfen birisini etiketle')
-    {
-        try {
-            const webhooks = await message.channel.fetchWebhooks();
+    const Discord = require("discord.js");
+    exports.run = async (client, message, args) => {
+      try {
+        let kişi = message.mentions.users.first();
+        const hataembed = new Discord.MessageEmbed()
         
-            const webhook = webhooks.first();
-            const msg = args.slice(1).join(" ");
-            if(!msg) return message.reply('bir şeyler yaz')
-              await webhook.send(msg , {
-                username: message.author.username,
-                avatarURL: message.author.avatarURL()(),
-              
-            });
-        } catch (error) {
-            console.error('Error trying to send: ', error);
-        }}
-};
+          .setColor("RED")
+        
+          .setTimestamp()
+          .addField("HATA:", "Lütfen Birisini Etiketle ve Bir Yazı Yaz!");
+        if (message.mentions.users.size < 1) return message.reply(hataembed);
+        let yazi = args.slice(1).join(" ");
+        if (!yazi) return message.reply(hataembed);
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0
-};
+        if (message.content.includes("@everyone")) return message.reply("Fakemesaj Everyone İçeremez Şakacı Jojuk Seni");
+            if (message.content.includes("@here")) return message.reply("Fakemesaj Here İçeremez Şakacı Jojuk Seni");
 
-exports.help = {
-  name: "fakemesaj",
-  description: "fakemesaj",
-  usage: "fakemesaj"
-};
+
+
+        message.delete();      
+      message.channel
+          .createWebhook(kişi.username, {
+            avatar: kişi.avatarURL()
+          })
+          .then(hook => {
+            hook.send(yazi).then(() => hook.delete())
+          })
+          .catch(console.error);
+      } catch (err) {
+        console.error(err)
+      }
+    };
+
+    exports.conf = {
+      enabled: true,
+      guildOnly: false,
+      aliases: ["fake-mesaj"],
+      permLevel: 0
+    };
+
+    exports.help = {
+      name: "fakemesaj",
+      description: "fakemesaj",
+      usage: "fakemesaj"
+    };
+ 
