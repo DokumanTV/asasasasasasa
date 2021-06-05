@@ -6,7 +6,7 @@ const matador = message.mentions.users.first();
 
 if (!matador)
 
-return message.reply("**Aduket Çekeceğin Kişiyi Etiketlemelisin**");
+return message.reply("**Korkutacağın Kişiyi Etiketlemelisin**");
 
 const Embedmatador = new Discord.MessageEmbed()
 
@@ -14,7 +14,7 @@ const Embedmatador = new Discord.MessageEmbed()
       `${matador} ` + `**${message.author.username}** Sizi Korkuttu`
     )
     .setImage(
-      "https://tenor.com/view/scary-conjuring-black-lady-horror-gif-5252759"
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fonedio.com%2Fhaber%2Fgece-gece-bakilmamasi-gereken-17-korkunc-gif-294313&psig=AOvVaw1MGWRkDlvV_8tMFkWbCJ0e&ust=1622998993019000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNClorb8gPECFQAAAAAdAAAAABAD"
     ) 
     .setFooter("Boş Durmıyacaksın Heralde Sende Korkut", client.user.avatarURL)
     

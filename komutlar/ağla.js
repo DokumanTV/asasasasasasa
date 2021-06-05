@@ -6,7 +6,7 @@ const matador = message.mentions.users.first();
 
 if (!matador)
 
-return message.reply("**Aduket Çekeceğin Kişiyi Etiketlemelisin**");
+return message.reply("**Ağlayacak Kişiyi Etiketlemelisin**");
 
 const Embedmatador = new Discord.MessageEmbed()
 
