@@ -14,9 +14,9 @@ const Embedmatador = new Discord.MessageEmbed()
       `${matador} ` + `**${message.author.username}** Sizi Korkuttu`
     )
     .setImage(
-      "https://img-s1.onedio.com/id-535c21efaf621d1f3522412c/rev-1/w-635/listing/o-50x46/f-jpg-gif-webp-webm-mp4/s-21f3c03ceb6cb4e1004b899d69142ca13bed1e97.webm"
+      "https://img-s2.onedio.com/id-54f1b2a3a9f574ad418a6e91/rev-0/w-900/h-384/f-gif/s-5b7fd6d845cda7cf610345ba45be1ea45c83f0c0.gif"
     ) 
-    .setFooter("Boş Durmıyacaksın Heralde Sende Korkut", client.user.avatarURL)
+    .setFooter("Korkutuldu", client.user.avatarURL)
     
 
 return message.channel.send(Embedmatador);
