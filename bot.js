@@ -114,27 +114,7 @@ client.on('message', async msg => {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
           
-				 msg.channel.send(new Discord.MessageEmbed()                  
-         .setTitle('Şarkı Seçimi')
-         .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
-         .setFooter('Lütfen 1-10 Arasında Bir Rakam Seçiniz 10 Saniye İçinde Liste İptal Edilecektir!')
-	 .setFooter('Örnek Kullanım 1')
-         .setColor('0x36393E'));
-          msg.delete(5000)
-					try {
-						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
-							maxMatches: 1,
-							time: 10000,
-							errors: ['time']
-						});
-					} catch (err) {
-						console.error(err);
-						 return msg.channel.send(new Discord.MessageEmbed()
-            .setColor('0x36393E')
-            .setDescription('❎ | **10 Saniye İçinde Şarkı Seçmediğiniz İçin seçim İptal Edilmiştir!**.'));
-                    }
-					const videoIndex = parseInt(response.first().content);
-					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
+	
 				} catch (err) {
 					console.error(err);
 					return msg.channel.send(new Discord.MessageEmbed()
