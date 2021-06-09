@@ -6,7 +6,7 @@ var p = ayarlar.prefix;
 let nicat = args[0]
 
 const embed  = new Discord.MessageEmbed()
-.setTitle(':hob: Eğlence Yardım Komutları :hob:')
+.setTitle('🎡 Eğlence Yardım Komutları 🎡')
 .setColor('0x36393e')
 .setDescription(`
 \**${p}yazan-kazanır <kişi> \** - Etiketlediğiniz Kişi İle Bir İddiaya Girersiniz. 3 Saniye Sonrasında Çıkan Kelimeyi İlk Yazmaya Çalışın!

@@ -6,7 +6,7 @@ var p = ayarlar.prefix;
 let nicat = args[0]
 
 const embed  = new Discord.MessageEmbed()
-.setTitle('🔸 Kayıt Yardım Komutları 🔸')
+.setTitle(':mailbox_with_mail: Kayıt Yardım Komutları :mailbox_with_mail:')
 .setColor('0x36393e')
 .setDescription(`
 \**${p}alınacak-rol <etiket>\** - Kayıt Olununca Alınacak Rol.

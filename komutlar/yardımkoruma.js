@@ -6,7 +6,7 @@ var p = ayarlar.prefix;
 let nicat = args[0]
 
 const embed  = new Discord.MessageEmbed()
-.setTitle(':small_orange_diamond: Koruma Yardım Komutları :small_orange_diamond:')
+.setTitle(':man_detective: Koruma Yardım Komutları :man_detective:')
 .addField("**__Not :__**", "**Botun Rolünü En Üste Almassanız Çalışmaz**")
 .setColor('0x36393e')
 .setDescription(`

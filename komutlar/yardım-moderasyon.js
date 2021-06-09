@@ -6,7 +6,7 @@ var p = ayarlar.prefix;
 let yardım = args[0]
 
 const embed  = new Discord.MessageEmbed()
-.setTitle('🔸 Moderasyon Yardım Komutları 🔸')
+.setTitle(':desktop: Moderasyon Yardım Komutları :desktop:')
 .addField("**__Not :__**", "**Botun Rolünü En Üste Almassanız Çalışmaz**")
 .setColor('0x36393e')
 .setDescription(`
