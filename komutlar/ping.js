@@ -21,7 +21,7 @@ try {
         .addField("💻 Bot Pingi", `${ping} ms`, true)
         .addField("📶 Mesaj Pingi", `${p2} ms`, true)
         if (p > 1000) embed = new Discord.MessageEmbed() //eğer yüksek ping uyarısı istemiyorsanız burayı kaldırın
-        .setColor("RED")
+        .setColor("0x36393e")
         .setDescription(`
         **!! YÜKSEK PİNG UYARISI !!**
         Şu anda bulunduğunuz sunucunun pingi: ${ping} ms

@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 exports.run = function(bot, message) {
     message.channel.send(new Discord.MessageEmbed()
-    .setColor(message.guild.me.displayHexColor)
+    .setColor("0x36393e")
     .setTitle(':game_die: Zarın: ' + narcoscode()));
 
     function narcoscode() {

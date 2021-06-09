@@ -10,7 +10,7 @@ exports.run = async (bot, message, args) => {
 
     let gifembed = new Discord.MessageEmbed()
         .setDescription(`${message.author} Tarafından ${member}'a Uçan Tekme Atıldı!`)
-        .setColor("#FF69B4")
+        .setColor("0x36393e")
         .setFooter(`Boş Durmıyacaksın Heralde ${member}`, message.author.avatarURL())
         .setImage(replies[result]);
 

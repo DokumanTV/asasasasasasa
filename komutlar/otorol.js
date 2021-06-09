@@ -77,11 +77,11 @@ const sıfırlama1 = new Discord.MessageEmbed()
 .setDescription(`${kanalMesaj} \n`)
    qdb.delete(`otorolkanali_${message.guild.id}`) 
   const sıfırlama2 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
   .setDescription(`${rolMesaj} \n`)
    qdb.delete(`otorol_${message.guild.id}`) 
   const sıfırlama3 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
   .setDescription(`${yazıMesaj} \n`)
   .setFooter(`${client.user.tag} | Oto Rol Sistemi!`)
    qdb.delete(`otorolyazi_${message.guild.id}`) 
@@ -92,7 +92,7 @@ return message.channel.send(sıfırlama3)
   }
   if(args[0] === "yardım"){
       const embedimsi = new Discord.MessageEmbed()
-    .setColor('#000000')
+    .setColor('0x36393e')
     .setAuthor(`${client.user.username} Otorol Paneli!`)
       .setDescription(`
     **otorol ayarla #kanal #rol**

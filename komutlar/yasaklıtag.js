@@ -19,7 +19,7 @@ await data.set(`banned-tag.${message.guild.id}`, args[1])
   
 message.channel.send(new Discord.MessageEmbed()
 .setDescription(`**${args[1]}** tagı yasaklı olarak listeye eklendi.`)
-.setColor('GREEN')
+.setColor('0x36393e')
 .setAuthor(message.author.username, message.author.avatarURL())) }
   
   
@@ -33,7 +33,7 @@ await data.delete(`banned-tag.${message.guild.id}`)
   
 message.channel.send(new Discord.MessageEmbed()
 .setDescription(`**${args[1]}** tagı artık yasaklı değil..`)
-.setColor('GREEN')
+.setColor('0x36393e')
 .setAuthor(message.author.username, message.author.avatarURL())) }
   
 

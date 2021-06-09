@@ -6,7 +6,7 @@ if(!message.member.roles.cache.some(r => ['833236280305123389'].includes(r.id)) 
 return message.channel.send(new MessageEmbed()
 .setAuthor(message.author.tag, message.author.avatarURL({dynamic:true}))
 .setDescription(`${message.author} bu komutu kullanmak için yetkin bulunmamakta.`)
-.setColor('#a22a2a')).then(x => x.delete({timeout: 5000}));
+.setColor('0x36393e')).then(x => x.delete({timeout: 5000}));
     
 //------------------------------------------------KAYITLAR-----------------------------------------------\\  
 
@@ -16,7 +16,7 @@ var sayi = 1
 let data = db.get(`isim.${message.guild.id}`)
 let rol = db.fetch(`rol.${message.guild.id}`)
 if(!data) return message.channel.send(new MessageEmbed()
-    .setColor("#a22a2a") 
+    .setColor("0x36393e") 
     .setThumbnail(user.user.avatarURL ({ dynamic: true}))      
     .setDescription(`${isim} Adlı Kullanıcı Daha Önce Kayıt Olmamış.`))
 
@@ -31,7 +31,7 @@ const embed = new MessageEmbed()
     .setThumbnail(user.user.avatarURL ({ dynamic: true}))     
     .setAuthor(`Bu Kullanıcı ${sayi-1} Kere Kayıt Olmuş`) 
     .setDescription(` Kullanıcının Eski İsimleri: ${isimler}`)
-    .setColor("#e6c47e")
+    .setColor("0x36393e")
         message.channel.send(embed)
 }
 

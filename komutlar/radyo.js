@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
         setTimeout(() => {
             let Embed = new Discord.MessageEmbed()
                 .setAuthor("Hangi radyoyu açmak istersiniz?")
-                .setColor("36393f")
+                .setColor("0x36393e")
                 .setDescription(`\`1️⃣ Radyo Fenomen\` \n\`2️⃣ Alem FM\` \n\`3️⃣ PowerHitz\` \n\`4️⃣ VIRGIN Radyo\` \nBu kadar dinlemek yeterli diyorsan \`-radyo durdur\` komutu ile radyoyu durdurabilirsin.`)
                 .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
                 await Collector.stop()
                 let Embed = new Discord.MessageEmbed()
                     .setAuthor("Radyo Fenomen", "https://i.hizliresim.com/plnrtoj.png")
-                    .setColor(`36393f`)
+                    .setColor(`0x36393e`)
                     .setDescription(`Şu anda \`Radyo Fenomen\` çalınıyor.`)
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -53,7 +53,7 @@ exports.run = async (client, message, args) => {
                 await Collector.stop()
                 let Embed = new Discord.MessageEmbed()
                     .setAuthor("Alem FM", "https://i.hizliresim.com/cp6mppl.png")
-                    .setColor(`36393f`)
+                    .setColor(`0x36393e`)
                     .setDescription(`Şu anda \`Alem FM\` çalınıyor.`)
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -69,7 +69,7 @@ exports.run = async (client, message, args) => {
                 await Collector.stop()
                 let Embed = new Discord.MessageEmbed()
                     .setAuthor("PowerHitz", "https://i.hizliresim.com/mkkv319.png")
-                    .setColor(`36393f`)
+                    .setColor(`0x36393e`)
                     .setDescription(`Şu anda \`PowerHitz\` çalınıyor.`)
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -85,7 +85,7 @@ exports.run = async (client, message, args) => {
                 await Collector.stop()
                 let Embed = new Discord.MessageEmbed()
                     .setAuthor("VIRGIN Radyo", "https://i.hizliresim.com/pi07yse.png")
-                    .setColor(`36393f`)
+                    .setColor(`0x36393e`)
                     .setDescription(`Şu anda \`VIRGIN Radyo\` çalınıyor.`)
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -96,12 +96,12 @@ exports.run = async (client, message, args) => {
                     }));
             }
          
-          if (reaction.emoji.name === ":five:") {
+          if (reaction.emoji.name === "5️⃣") {
                 await radio.reactions.removeAll()
                 await Collector.stop()
                 let Embed = new Discord.MessageEmbed()
                     .setAuthor("JoyTürk", "https://i.hizliresim.com/dquay7x.png")
-                    .setColor(`36393f`)
+                    .setColor(`0x36393e`)
                     .setDescription(`Şu anda \`JoyTürk\` çalınıyor.`)
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -112,12 +112,12 @@ exports.run = async (client, message, args) => {
                     }));
             }
            
-          if (reaction.emoji.name === ":six:") {
+          if (reaction.emoji.name === "6️⃣") {
                 await radio.reactions.removeAll()
                 await Collector.stop()
                 let Embed = new Discord.MessageEmbed()
                     .setAuthor("SlowTR", "https://i.hizliresim.com/8pjn0q5.png")
-                    .setColor(`36393f`)
+                    .setColor(`0x36393e`)
                     .setDescription(`Şu anda \`SlowTR\` çalınıyor.`)
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
@@ -128,12 +128,12 @@ exports.run = async (client, message, args) => {
                     }));
           }
           
-          if (reaction.emoji.name === ":seven:"){
+          if (reaction.emoji.name === "7️⃣"){
                 await radio.reactions.removeAll()
                 await Collector.stop()
                 let Embed = new Discord.MessageEmbed()
                     .setAuthor("Spor", "https://i.hizliresim.com/lg83m0i.png")
-                    .setColor(`36393f`)
+                    .setColor(`0x36393e`)
                     .setDescription(`Şu anda \`Spor\` çalınıyor.`)
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
