@@ -170,31 +170,39 @@ if (message.content.toLowerCase() === "talep kapat") {
 }
 });
 
-//---------------------ROL KORUMA----------------------\\
+//AFK
 
-client.on("roleDelete", async role => {
-  let kanal = await db.fetch(`rolk_${role.guild.id}`);
-  if (!kanal) return;
-  const entry = await role.guild
-    .fetchAuditLogs({ type: "ROLE_DELETE" })
-    .then(audit => audit.entries.first());
-  if (entry.executor.id == client.user.id) return;
-  if (entry.executor.id == role.guild.owner.id) return;
-  if(!entry.executor.hasPermission('ROLE_DELETE')) {
-      role.guild.roles.create({
-    name: role.name,
-    color: role.hexColor,
-    permissions: role.permissions
-  });
-   let emran = new Discord.MessageEmbed()
-   .setColor('0x36393E')
-   .setTitle(`Bir rol silindi !`)
-   .setDescription(`Silinen rol adı ${role.name}, Rol koruma sistemi açık olduğu için rol geri oluşturuldu!`)
-   client.channels.cache.get(kanal).send(emran)
+client.on("message" , async msg => {
+  
+  if(!msg.guild) return;
+  if(msg.content.startsWith(ayarlar.prefix+"afk")) return; 
+  
+  let afk = msg.mentions.users.first()
+  
+  const kisi = db.fetch(`afkid_${msg.author.id}_${msg.guild.id}`)
+  
+  const isim = db.fetch(`afkAd_${msg.author.id}_${msg.guild.id}`)
+ if(afk){
+   const sebep = db.fetch(`afkSebep_${afk.id}_${msg.guild.id}`)
+   const kisi3 = db.fetch(`afkid_${afk.id}_${msg.guild.id}`)
+   if(msg.content.includes(kisi3)){
+
+       msg.reply(`Etiketlediğiniz Kişi Afk \nSebep : ${sebep}`)
+   }
+ }
+  if(msg.author.id === kisi){
+
+       msg.reply(`Afk'lıktan Çıktınız`)
+   db.delete(`afkSebep_${msg.author.id}_${msg.guild.id}`)
+   db.delete(`afkid_${msg.author.id}_${msg.guild.id}`)
+   db.delete(`afkAd_${msg.author.id}_${msg.guild.id}`)
+    msg.member.setNickname(isim)
+    
   }
+  
 });
 
-//ROL KORUMA
+//AFK
 
 //--------------------ETİKET PREFİX--------------------\\
 
