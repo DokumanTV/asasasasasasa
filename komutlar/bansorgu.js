@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
         var sebep;
         if (reason === null) sebep = "Neden belirtilmemiş"
 const Embed = new Discord.RichEmbed()
- .setColor('#FFD100')
+ .setColor('0x36393e')
 .setAuthor('Ban Sorgulama', client.user.avatarURL)
 .setDescription(`${user.tag} adlı kullanıcının ban nedeni: \n\n**${reason}**`)
 message.channel.send(Embed)

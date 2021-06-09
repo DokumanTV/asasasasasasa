@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const qdb = require('quick.db');
 module.exports.run = async(client, message, args) => {
   const embedreis1 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
   .setTitle(`${client.user.username} Oto Rol Paneli`)
   .addField("Dostum, oto-rol kullanmayı bilmiyorsan;","**otorol yardım** yazmalısın")
   .setFooter(client.user.tag)
@@ -12,13 +12,13 @@ module.exports.run = async(client, message, args) => {
   var kanal = message.mentions.channels.first();
     var rol = message.mentions.roles.first();
     const embedreis2 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
   .setTitle(`${client.user.username} Oto Rol Paneli`)
   .setDescription("Dostum, bir kanal belirtmen gerekli!")
   .setFooter(client.user.tag)
     if(!kanal) return message.channel.send(embedreis2)
         const embedreis3 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
   .setTitle(`${client.user.username} Oto Rol Paneli`)
   .setDescription("Dostum, bir rol belirtmen gerekli!")
   .setFooter(client.user.tag)
@@ -26,7 +26,7 @@ module.exports.run = async(client, message, args) => {
   qdb.set(`otorolkanali_${message.guild.id}`, kanal.id)
   qdb.set(`otorol_${message.guild.id}`, rol.id)
       const embedreis4 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
   .setTitle(`${client.user.username} Oto Rol Paneli`)
  .setDescription(`
   Oto Rol kanalı <#${kanal.id}> kanalına ayarlandı!
@@ -43,7 +43,7 @@ if(args[0] === "yazı") {
  if(!yazı) return message.channel.send('Dostum yazı ayarlamayı seçtin ama yazı ayarlamadın değil mi :(') 
     qdb.set(`otorolyazi_${message.guild.id}`, yazı)
       const embedreis4 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
   .setTitle(`${client.user.username} Oto Rol Paneli`)
   .setDescription(`
   Oto Rol yazısı;
@@ -72,7 +72,7 @@ if(args[0] === "yazı") {
  
   }
 const sıfırlama1 = new Discord.MessageEmbed()
-  .setColor('BLACK')
+  .setColor('0x36393e')
 .setTitle(`${client.user.username} | Oto Rol Sistemi!`)  
 .setDescription(`${kanalMesaj} \n`)
    qdb.delete(`otorolkanali_${message.guild.id}`) 

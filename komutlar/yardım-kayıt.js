@@ -7,7 +7,7 @@ let nicat = args[0]
 
 const embed  = new Discord.MessageEmbed()
 .setTitle('🔸 Kayıt Yardım Komutları 🔸')
-.setColor('RANDOM')
+.setColor('0x36393e')
 .setDescription(`
 \**🔹${p}alınacak-rol <etiket>\** - Kayıt Olununca Alınacak Rol.
 \**🔹${p}erkek-rol <etiket>\** - Erkek Rolünü Ayarlarsınız.

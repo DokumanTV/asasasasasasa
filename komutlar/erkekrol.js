@@ -9,7 +9,7 @@ if (args[0] === "sıfırla") {
 const sıfırlandı = new discord.MessageEmbed()
 .setAuthor(client.user.username, client.user.avatarURL())  
 .setTitle(`${client.user.username} - Erkek Rol Sıfırla `)
-.setColor('BLACK')
+.setColor('0x36393e')
 .setDescription(`Sunucu İçin Ayarladığınız Erkek Rolü Başarıyla Sıfırlandı !`)
 .setThumbnail(client.user.avatarURL())
 .setFooter(`Komut ${message.author.tag} Tarafından Kullanıldı ! `)

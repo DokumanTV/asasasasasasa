@@ -4,11 +4,11 @@ exports.run = (client, message) => {
     let küfür = db.fetch(`küfür.${message.guild.id}.durum`)
 
     const member3 = new Discord.MessageEmbed()
-        .setColor("YELLOW")
+        .setColor("0x36393e")
         .setDescription(`**HATA** - Bu Sunucuda Yetkili Değilsin.`)
     if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.channel.send(member3)
     const member = new Discord.MessageEmbed()
-        .setColor("YELLOW")
+        .setColor("0x36393e")
         .setDescription(`**HATA** - Bir Kanal Etiketle.`)
     if (küfür) {
         let kanal = message.mentions.channels.first()

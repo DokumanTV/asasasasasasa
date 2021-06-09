@@ -3,7 +3,7 @@ const Discord = require("discord.js");
       try {
         let kişi = message.mentions.users.first();
         const hataembed = new Discord.MessageEmbed()
-          .setColor("RED")
+          .setColor("0x36393e")
           .setTimestamp()
           .addField("HATA:", "Lütfen Birisini Etiketle ve Bir Yazı Yaz!");
         if (message.mentions.users.size < 1) return message.reply(hataembed);

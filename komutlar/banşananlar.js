@@ -10,7 +10,7 @@ const bans = new Map();
                 let banlist = (`${bans[g.id].map(ge => `\n (${ge.user.tag}) (${ge.user.id})`).join('\n')}`)
                         try {     
                 let noembed = new Discord.MessageEmbed()
-  .setColor('#0070FF')
+  .setColor('0x36393e')
                 .setDescription(`Bu Sunucuda Yasaklı Kullanıcı Bulunmuyor.`)
                 .setAuthor(message.guild.name, message.guild.iconURL() ? message.guild.iconURL() : "https://images-ext-2.discord.net/external/hHow2gpD0uyL8WnA8ynAHuPbzm_lE1lNAaxkLqDT0Fs/https/images-ext-1.discord.net/external/rBk_abKMsqAKoATjXbtyqKJt2bTXI_shMEemVpbNtFw/http/www.kalahandi.info/wp-content/uploads/2016/05/sorry-image-not-available.png")
                .setFooter('Bu komutu kullanan kullanıcı ' + message.author.tag, message.author.avatarURL())
@@ -19,7 +19,7 @@ const bans = new Map();
                     .setDescription(banlist)
                     .setAuthor(message.guild.name, message.guild.iconURL() ? message.guild.iconURL() : "https://images-ext-2.discord.net/external/hHow2gpD0uyL8WnA8ynAHuPbzm_lE1lNAaxkLqDT0Fs/https/images-ext-1.discord.net/external/rBk_abKMsqAKoATjXbtyqKJt2bTXI_shMEemVpbNtFw/http/www.kalahandi.info/wp-content/uploads/2016/05/sorry-image-not-available.png")
    .setFooter('Bu komutu kullanan kullanıcı ' + message.author.tag, message.author.avatarURL())
-                .setColor('#0070FF')
+                .setColor('0x36393e')
  message.channel.send(embed)
                       } catch (err) {
         const embed = new Discord.MessageEmbed()

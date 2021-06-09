@@ -7,7 +7,7 @@ let nicat = args[0]
 
 const embed  = new Discord.MessageEmbed()
 .setTitle('🔸 Eğlence Yardım Komutları 🔸')
-.setColor('RANDOM')
+.setColor('0x36393e')
 .setDescription(`
 \**🔹${p}yazan-kazanır <kişi> \** - Etiketlediğiniz Kişi İle Bir İddiaya Girersiniz. 3 Saniye Sonrasında Çıkan Kelimeyi İlk Yazmaya Çalışın!
 \**🔹${p}xox @Oynayacağınız Kişi\** - Etiketlediğiniz Kişiyle XoX Oynarsınız.

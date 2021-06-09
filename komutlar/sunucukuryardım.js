@@ -8,7 +8,7 @@ let nicat = args[0]
 const embed  = new Discord.MessageEmbed()
 .setTitle('🔸 Sunucu Temaları 🔸')
 .addField("**__Not :__**", "**Botun Rolünü En Üste Almassanız Çalışmaz**")
-.setColor('RANDOM')
+.setColor('0x36393e')
 .setDescription(`
 \**🔹${p}sunucukur-oyun \** - Oyun & Sohbet Tema.
 `)

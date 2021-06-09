@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
             message.author.tag,
             message.author.avatarURL({ dynamic: true })
           )
-          .setColor("#c42828")
+          .setColor("0x36393e")
       )
       .then(x => x.delete({ timeout: 5000 }));
   let member =
@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
       .send(
         new MessageEmbed()
           .setDescription(`Geçerli Bir Kullanıcı Etiketlemelisin !`)
-          .setColor("RANDOM")
+          .setColor("0x36393e")
       )
       .then(msg => msg.delete({ timeout: 5000 }));
   if (message.member.roles.highest.position <= member.roles.highest.position)

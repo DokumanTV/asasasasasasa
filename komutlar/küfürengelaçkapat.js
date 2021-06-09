@@ -4,7 +4,7 @@ exports.run = (client, message) => {
 
     let küfür = db.fetch(`küfür.${message.guild.id}.durum`)
     const member3 = new Discord.MessageEmbed()
-        .setColor("YELLOW")
+        .setColor("0x36393e")
         .setDescription(`**HATA** - Bu Sunucuda Yetkili Değilsin.`)
     if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.channel.send(member3)
     if (küfür) {
@@ -27,12 +27,12 @@ exports.run = (client, message) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["küfür-engel"],
+    aliases: ["küfür-engell"],
     permLevel: 0
 };
 
 exports.help = {
-    name: 'küfürengel',
+    name: 'küfürengell',
     description: 'küfrü engel ab',
     usage: 'küfürengel'
 }

@@ -8,7 +8,7 @@ let yardım = args[0]
 const embed  = new Discord.MessageEmbed()
 .setTitle('🔸 Moderasyon Yardım Komutları 🔸')
 .addField("**__Not :__**", "**Botun Rolünü En Üste Almassanız Çalışmaz**")
-.setColor('RANDOM')
+.setColor('0x36393e')
 .setDescription(`
 \**🔹${p}yasaklı-tag \** - Eklediğiniz Taga Sahip Olup Sunucuya Gireni Atar Birdaha Girerse Banlar.
 \**🔹${p}ban <id-etiket> \** - Etiketlediğiniz Veya İdsini Girdiğiniz Kişiyi Sunucudan Banlar.

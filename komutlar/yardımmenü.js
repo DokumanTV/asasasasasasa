@@ -6,7 +6,7 @@ exports.run = function(client, message) {
 let prefix = ayarlar.prefix;
 const imdat = new Discord.MessageEmbed()
 .setThumbnail(message.author.avatarURL({ dynamic: true }))
-.setColor('RANDOM')
+.setColor('0x36393e')
 .setTitle(`🤖 » ${client.user.username} Yardım Menüsü`)
         .setDescription(`**Ping:** ${client.ws.ping} ms! \n**Yapımcım:** <@726482014877777980>\n **Prefixim:** ${prefix}\n Toplamda Botta **${client.commands.size}** Adet Komut Bulunuyor!`)
         .addField(`:white_check_mark: ・KATEGORİLER`,` > :mailbox_with_mail: **[${prefix}kayıt](https://www.youtube.com/dökümantv)** :  Kayıt Komutları\n> :desktop: **[${prefix}moderasyon](https://www.youtube.com/dökümantv)** : Moderasyon Komutları\n> :man_detective: **[${prefix}koruma](https://www.youtube.com/dökümantv)** : Sunucu Koruma Komutları\n> 🎡 **[${prefix}eğlence](https://www.youtube.com/dökümantv)** :  Eğlence Komutları\n> 🎉 **[${prefix}çekiliş](https://www.youtube.com/dökümantv)** :  Çekiliş Komutları (Yapılıyor)`)
