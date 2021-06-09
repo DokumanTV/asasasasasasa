@@ -30,7 +30,8 @@
     "canvacord": "^5.2.0",
     "cleverbot-free": "^1.1.6",
     "eris": "^0.15.1",
-    "dctr-antispam.js": "^0.1.0"
+    "dctr-antispam.js": "^0.1.0",
+    "ms": "^2.1.3"
   },
   "engines": {
     "node": "14.x"
