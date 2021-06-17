@@ -378,7 +378,7 @@ if (!process.env.CALLBACK) {
 
 var channelId = process.env.CHID || "UC9c6nECzH3N2tHELi1Bl47w";
 var topic =
-  "https://www.youtube.com/xml/feeds/videos.xml?channel_id=" + channelId;
+  "https://wwwyoutube.com/xml/feeds/videos.xml?channel_id=" + channelId;
 var hub = "https://pubsubhubbub.appspot.com/";
 
 var lastId = "";
