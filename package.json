@@ -36,7 +36,10 @@
     "google-tts-api": "^2.0.1",
     "ytdl-core": "^4.8.2",
     "simple-youtube-api": "^5.2.1",
-    "ytdl-core-discord": "^1.2.5"
+    "ytdl-core-discord": "^1.2.5",
+    "express": "^4.17.1",
+    "xml2js": "^0.4.23",
+    "pubsubhubbub": "^1.0.1"
   },
   "engines": {
     "node": "14.x"
