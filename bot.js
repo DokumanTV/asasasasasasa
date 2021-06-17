@@ -352,7 +352,7 @@ client.on('guildDelete', guild => {
 
 const expresss = require('express');
 const appp = expresss();
-const httpp = require('http');
+const httpp = require('https');
     appp.get("/", (request, response) => {
     response.sendStatus(200);
     });
@@ -376,7 +376,7 @@ if (!process.env.CALLBACK) {
   process.exit(1);
 }
 
-var channelId = process.env.CHID || "UCksJCCRy6Phc5W4MSp0Cjrg";
+var channelId = process.env.CHID || "UC9c6nECzH3N2tHELi1Bl47w";
 var topic =
   "https://www.youtube.com/xml/feeds/videos.xml?channel_id=" + channelId;
 var hub = "https://pubsubhubbub.appspot.com/";
@@ -442,7 +442,7 @@ pubSubSubscriber.on("listen", function() {
   });
 });
 
-pubSubSubscriber.listen(process.env.PORT || 8000);
+pubSubSubscriber.listen(process.env.PORT || 8080);
 
 function postToHook(entry) {
   console.log("Son", lastId, "Şuanki", entry["yt:videoId"][0]);
