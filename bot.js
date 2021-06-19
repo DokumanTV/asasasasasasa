@@ -462,7 +462,7 @@ function postToHook(entry) {
         url: process.env.HOOKURL,
         form: {
           content:
-            "Yeni Video Yüklendi: " +
+            "@here Yeni Video Yüklendi : " +
             entry["title"] +
             " - https://youtu.be/" +
             entry["yt:videoId"][0],
