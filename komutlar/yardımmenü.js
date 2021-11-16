@@ -12,6 +12,7 @@ const imdat = new Discord.MessageEmbed()
         .addField(`:white_check_mark: ・KATEGORİLER`,` > :mailbox_with_mail: **[${prefix}kayıt](https://www.youtube.com/dökümantv)** :  Kayıt Komutları\n> :desktop: **[${prefix}moderasyon](https://www.youtube.com/dökümantv)** : Moderasyon Komutları\n> :man_detective: **[${prefix}koruma](https://www.youtube.com/dökümantv)** : Sunucu Koruma Komutları\n> 🎡 **[${prefix}eğlence](https://www.youtube.com/dökümantv)** :  Eğlence Komutları\n> :boy: **[${prefix}kullanıcı](https://www.youtube.com/dökümantv)** :  Kullanıcı Komutları\n> 🎉 **[${prefix}çekiliş](https://www.youtube.com/dökümantv)** :  Çekiliş Komutları (Yapılıyor)`)
       .addField(`:speech_balloon: ・DİĞER KODLAR`, `> :one: **[${prefix}radyo  ](https://www.youtube.com/dökümantv)** : Radyo Açarsınız`)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=847022035510886430&scope=bot&permissions=8589934591) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
+.setImage("https://cdn.discordapp.com/attachments/910121358669783040/910121456741007400/standard.gif")
 .setTimestamp()
 message.channel.send(imdat)
 };
