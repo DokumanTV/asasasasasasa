@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
     message.member.highestRole.calculatedPosition
   )
     return message.channel.send(
-      `**Bu Kişinin \`ROLÜ/\` Senin \`ROLÜN/ROLLERİNDEN\` Daha Yüksek!**`
+      `**Bu Kişinin Rolü Senin Rolünden Daha Yüksek!**`
     );
 
   

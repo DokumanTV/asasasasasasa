@@ -47,7 +47,8 @@
     "https": "^1.0.0",
     "moment-duration-format": "^2.3.2",
     "fetch": "^1.1.0",
-    "croxydb": "^0.0.7"
+    "croxydb": "^0.0.7",
+    "generate-password": "^1.7.0"
   },
   "engines": {
     "node": "14.x"

@@ -209,6 +209,24 @@ client.on("message" , async msg => {
 
 //AFK
 
+//---------EKLENİNCE SAHİBE DM--------\\
+
+client.on("guildCreate", guild => {
+
+  let murphy = guild.owner
+  
+const dcs = new Discord.MessageEmbed()
+.setTitle(`Merhaba!`)
+.setThumbnail(client.user.avatarURL)
+.setTimestamp()
+.setColor("GREEN")
+.addField('Prefixim', ayarlar.prefix)
+.addField(`Destek Sunucusu`, `https://discord.gg/Jycf7FEZAa`)
+murphy.send(dcs)
+});
+
+//---------EKLENİNCE SAHİBE DM--------\\
+
 //--------------------ETİKET PREFİX--------------------\\
 
 client.on('message', message => {
