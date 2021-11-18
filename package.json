@@ -46,7 +46,8 @@
     "http": "^0.0.0",
     "https": "^1.0.0",
     "moment-duration-format": "^2.3.2",
-    "fetch": "^1.1.0"
+    "fetch": "^1.1.0",
+    "croxydb": "^0.0.7"
   },
   "engines": {
     "node": "14.x"
