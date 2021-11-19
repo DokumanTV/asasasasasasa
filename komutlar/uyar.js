@@ -21,12 +21,12 @@ const syı = await data.fetch(`uyarı.${message.guild.id}.${kullanıcı.id}`)
 
 if(!reason) {
 await message.channel.send(`${kullanıcı}, uyarıldı!\nToplam uyarı sayısı: ${syı}`)
-await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} sunucusunda sebepsiz bir şekilde uyarıldın. Dikkatli ol!`) 
+await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} Sunucusunda Sebepsiz bir şekilde uyarıldın. Dikkatli ol!`) 
 return}
 
 if(reason) {
 await message.channel.send(`${kullanıcı}, uyarıldı!\nToplam uyarı sayısı: ${syı}`)
-await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} sunucusunda ${reason} sebebiyle uyarıldın. Dikkatli ol!`) 
+await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} Sunucusunda ${reason} Sebebiyle Uyarıldın. Dikkatli Ol!`) 
 return} }
 
 if(args[0] === 'sil') {
