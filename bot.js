@@ -251,13 +251,13 @@ client.on('message', async message => {
     .setThumbnail(message.author.avatarURL)
     if(db.get('Linkler').map(Revenge => Revenge.url).includes(Link)) return message.channel.send(Revenge)
     const success = new Discord.MessageEmbed()
-    .setColor('GREEN')
+    .setColor('#2f3136')
     .setThumbnail(message.author.avatarURL)
     .setDescription(`
     
     **✅ Yazdığınız Proje Başarıyla Uptime Sistemimize Eklendi.**
     `)
-    .addField('```dd!linkler```','Komutunu Kullanarak Ekledigin Linkleri Görebilirsin!')//yDarKDayS
+    .addField('```-linkler```','Komutunu Kullanarak Ekledigin Linkleri Görebilirsin!')
     .setTimestamp()
     message.channel.send(success)
     db.push('Linkler', { url: Link, owner: message.author.id, owner2: message.author.tag})
@@ -266,7 +266,7 @@ client.on('message', async message => {
     db.add(`Proje`,1)
   }).catch(Hata => {
   const dijitaluptime = new Discord.MessageEmbed()
-  .setColor('#FF0000')
+  .setColor('#2f3136')
   .setDescription(`
 
   **❎ Hey Uptime Edeceğim URL Girmelisin! **
@@ -280,7 +280,7 @@ client.on('message', async message => {
   }
   if(Split[0] == prefix+'say') {
   const say = new Discord.MessageEmbed()
-  .setColor('RANDOM')
+  .setColor('#2f3136')
   .setThumbnail(message.author.avatarURL)
   .setDescription(`
   
@@ -293,22 +293,19 @@ client.on('message', async message => {
 
   if(Split[0] == prefix+'uptime') {
   const pxd = new Discord.MessageEmbed()
-  .setColor('GREEN')
+  .setColor('#2f3136')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
   
   .setDescription(`
-
-
-`)
-  .addField('** Pluto+ Uptime **',`
-- **-ekle (glitch show linki)** = Botunuzu 7/24 Aktif Tutar.
-- **-linkler** = 7/24 Tuttuğum linklerini gösterir.
-- **-say** = Tüm Uptime edilmiş bot sayısını gösterir.
-`)
+** Pluto+ Uptime **
+- **-uptime-ekle (Glitch Show Linki)** = Botunuzu 7/24 Aktif Tutar.
+- **-uptime-linkler** = 7/24 Tuttuğum linklerini gösterir.
+- **-uptime-say** = Tüm Uptime edilmiş bot sayısını gösterir.`)
   .addField('------------------------------------------------------',`
 [Destek Sunucu](https://discord.gg/Jycf7FEZAa)
-[Botu Davet Et]()`)
+[Botu Davet Et](https://discord.com/oauth2/authorize?client_id=847022035510886430&scope=bot&permissions=1099511627775)`)
+  .setImage('https://cdn.discordapp.com/attachments/910121358669783040/910121456741007400/standard.gif')
   message.channel.send(pxd)
   }
 
