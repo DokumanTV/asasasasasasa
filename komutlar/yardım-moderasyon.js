@@ -27,8 +27,9 @@ const embed  = new Discord.MessageEmbed()
 \**${p}uyar <kişi> <sebep> \** - Belirtilen Kişiye Uyarı Verir.
 \**${p}forceban <kişi id> <sebep> \** - Sunucuda Olmayan Kişiye Ban Atar.
 \**${p}kullanıcıadlarısıfırla \** - Sunucuda Yazılan Takma Adları Sıfırlar.
+\**${p}guild-reset \** - Sunucudaki Tüm Kanalları Silip Yeniden Oluşturur.
 `)
-.addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=847022035510886430&scope=bot&permissions=8589934591) | [Destek Sunucu!](https://discord.gg/tDvherygAe) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
+.addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=847022035510886430&scope=bot&permissions=8589934591) | [Destek Sunucu!](https://discord.gg/Jycf7FEZAa) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")
 .setImage("https://cdn.discordapp.com/attachments/910121358669783040/910121456741007400/standard.gif")
 if(!yardım) return message.channel.send(embed)
 if(yardım == 'moderasyon'){
