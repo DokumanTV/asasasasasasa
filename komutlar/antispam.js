@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['spamkoruması'],
+    aliases: ['anti-spam'],
     permLevel: 0
 }
 
