@@ -74,7 +74,6 @@ client.on('message', async msg => {
          .setFooter('Lütfen 1-10 Arasında Bir Rakam Seçiniz 10 Saniye İçinde Liste İptal Edilecektir!')
 	 .setFooter('Örnek Kullanım 1')
          .setColor('0x36393E'));
-          msg.delete(5000)
 					try {
 						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
 							maxMatches: 1,
