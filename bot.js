@@ -5,6 +5,7 @@ const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const express = require("express");
+const fetch = require('node-fetch');
 const app = express();
 const fs = require('fs');
 const ms = require('ms');
@@ -209,6 +210,8 @@ client.on("message" , async msg => {
 });
 
 //AFK
+
+
 
 //---------EKLENİNCE SAHİBE DM--------\\
 
