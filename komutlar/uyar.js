@@ -3,6 +3,7 @@ const data = require('quick.db')
 
 exports.run = async (client, message, args) => {
 let prefix = '-'
+
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(`Yetkin yok.`)
 if(!args[0]) return message.channel.send(`Sistemi kullanmak için, ${prefix}uyarı ekle/sil/bilgi komutlarını kullanın.`)
 
