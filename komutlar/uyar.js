@@ -1,125 +1,69 @@
-const Discord = require("discord.js");
-const fs = require("fs");
-const db = require("croxydb");
-const generator = require("generate-password");
+const Discord = require('discord.js')
+const data = require('quick.db')
 
-exports.run = (client, msg, args) => {
-  if (!msg.member.hasPermission("MANAGE_MESSAGES"))
-    return msg.reply(
-      `Bu Komutu Kullanabilmek İçin \`Mesajları Yönet\` İznine Sahip Olmalısın!`
-    );
+exports.run = async (client, message, args) => {
+let prefix = '-'
 
-  let user = msg.mentions.members.first();
-  let reason = args.slice(1).join(" ");
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(`Yetkin yok.`)
+if(!args[0]) return message.channel.send(`Sistemi kullanmak için, ${prefix}uyarı ekle/sil/bilgi komutlarını kullanın.`)
 
-  if (!user) return msg.reply("**Uyaracağın Kişiyi Etiketlemelisin!**");
-  if (!reason) return msg.reply("**Uyarma Sebebini Yazmalısın!**");
-  if (user.id === msg.author.id)
-    return msg.reply("**Kendini Uyaramazsın!**");
-  if (user.user.bot) return msg.reply("**Botları Uyaramazsın!**");
 
-  if (
-    msg.guild.members.get(user.id).highestRole.calculatedPosition >
-    msg.member.highestRole.calculatedPosition
-  )
-    return msg.channel.send(
-      `**Bu Kişinin Rolü Senin Rolünden Daha Yüksek!**`
-    );
+if(args[0] === 'ekle') {
+let kullanıcı = message.mentions.users.first()
+if(!args[1]) return message.channel.send(`Bir kişiyi etiketlemelisin.`)
+if(!kullanıcı) return message.channel.send(`${args[1]}, kullanıcısını sunucuda bulamıyorum.`)
+if(kullanıcı.bot) return message.channel.send(`Botları uyaramam.`)
+if(kullanıcı.id === message.author.id) return message.channel.send(`Kendini uyaramazsın.`)
+let reason = args.slice(2).join(' ')
 
-  
-    user.send(
-      `<@${user.id}>, \n**${msg.guild.name}** Adlı Sunucuda **${reason}** Sebebi İle Uyarıldın! \nKuralları Çiğnemeye Devam Eder İsen Susturulabilir, Atılabilir Veya Yasaklanabilirsin!`
-    );
+data.add(`uyarı.${message.guild.id}.${kullanıcı.id}`, +1)
+const syı = await data.fetch(`uyarı.${message.guild.id}.${kullanıcı.id}`)
 
-    const cse = new Discord.RichEmbed()
-      .setTitle("Code Share Uyarı Sistemi")
-      .setColor("BLUE")
-    .setThumbnail(msg.guild.iconURL)
-      .setDescription(
-        `<@${user.id}> Adlı Kullanıcı **${reason}** Sebebi İle Başarıyla Uyarıldı!`
-      )
-      .setTimestamp()
-      .setFooter("Made By. Code Share");
-    msg.channel.send(cse);
-  
-  db.add(`uyarılar_${user.id}`, 1);
+if(!reason) {
+await message.channel.send(`${kullanıcı}, uyarıldı!\nToplam uyarı sayısı: ${syı}`)
+await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} sunucusunda sebepsiz bir şekilde uyarıldın. Dikkatli ol!`) 
+return}
 
-  var password = generator.generate({
-    length: 10,
-    numbers: true
-  });
+if(reason) {
+await message.channel.send(`${kullanıcı}, uyarıldı!\nToplam uyarı sayısı: ${syı}`)
+await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} sunucusunda ${reason} sebebiyle uyarıldın. Dikkatli ol!`) 
+return} }
 
-  var array = [];
-  var kontrol2 = [];
-  let komutlar = JSON.parse(fs.readFileSync("./uyarılar.json", "utf8"));
-  var altkomut = "";
+if(args[0] === 'sil') {
+let kullanıcı = message.mentions.users.first()
+if(!args[1]) return message.channel.send(`Bir kişiyi etiketlemelisin.`)
+if(!kullanıcı) return message.channel.send(`${args[1]}, kullanıcısını sunucuda bulamıyorum.`)
+if(kullanıcı.id === message.author.id) return message.channel.send(`Kendini uyaramazsın.`)
 
-  if (komutlar[msg.guild.id + "-" + user.id]) {
-    for (
-      var i = 0;
-      i < Object.keys(komutlar[msg.guild.id + "-" + user.id]).length;
-      i++
-    ) {
-      if (
-        password ===
-        Object.keys(komutlar[msg.guild.id + "-" + user.id][i]).toString()
-      ) {
-        array.push(
-          JSON.parse(
-            `{"${
-              Object.keys(komutlar[msg.guild.id + "-" + user.id][i])[0]
-            }": "${reason}"}`
-          )
-        );
-      } else {
-        array.push(
-          JSON.parse(
-            `{"${
-              Object.keys(komutlar[msg.guild.id + "-" + user.id][i])[0]
-            }": "${
-              komutlar[msg.guild.id + "-" + user.id][i][
-                Object.keys(komutlar[msg.guild.id + "-" + user.id][i])
-              ]
-            }"}`
-          )
-)
-      }
-      kontrol2.push(
-        Object.keys(komutlar[msg.guild.id + "-" + user.id][i])[0].toString()
-      );
-    }
-    if (!kontrol2.includes(password)) {
-      array.push(JSON.parse(`{"${password}": "${reason}"}`));
-      komutlar[msg.guild.id + "-" + user.id] = array;
+let sayı = args[2]
+if(!sayı) return message.channel.send(`Silinecek uyarı sayısını yazmadın!`)
+if(isNaN(sayı)) return message.channel.send(`Silinecek uyarı sayısını yazmadın!`)
+if(sayı === '0') return message.channel.send(`Beni mi kandırmaya çalışıyorsun sen?`)
+const syı2 = await data.fetch(`uyarı.${message.guild.id}.${kullanıcı.id}`)
+if(syı2 < sayı) return message.channel.send(`${kullanıcı}, kullanıcısının uyarı sayısı: ${syı2}! Sadece bu kadar silebilirsin.`)
 
-      fs.writeFile("./uyarılar.json", JSON.stringify(komutlar), err => {
-        console.log(err);
-      });
+data.add(`uyarı.${message.guild.id}.${kullanıcı.id}`, -sayı)
+const syı = await data.fetch(`uyarı.${message.guild.id}.${kullanıcı.id}`)
+await message.channel.send(`${kullanıcı}, uyarısı silindi!\nToplam uyarı sayısı: ${syı ? syı : '0'}`)
+await kullanıcı.send(`${kullanıcı}, merhaba! ${message.guild.name} sunucusunda uyarın silindi. Daha dikkatli ol!`) }
 
-      return;
-    } else {
-      komutlar[msg.guild.id + "-" + user.id] = array;
-      fs.writeFile("./uyarılar.json", JSON.stringify(komutlar), err => {
-        
-        console.log(err);
-      });
-      return;
-    }
-  } else {
-    array.push(JSON.parse(`{"${password}": "${reason}"}`));
-    komutlar[msg.guild.id + "-" + user.id] = array;
-    fs.writeFile("./uyarılar.json", JSON.stringify(komutlar), err => {
-      console.log(err);
-    });
+if(args[0] === 'bilgi') {
+let kullanıcı = message.mentions.users.first()
+if(!args[1]) return message.channel.send(`Bir kişiyi etiketlemelisin.`)
+if(!kullanıcı) return message.channel.send(`${args[1]}, kullanıcısını sunucuda bulamıyorum.`)
 
-    return;
-  }
+const syı2 = await data.fetch(`uyarı.${message.guild.id}.${kullanıcı.id}`)
+if(!syı2) return message.channel.send(`${kullanıcı}, kullanıcısının hiç uyarısı yok.`)
+await message.channel.send(`${kullanıcı}:\nToplam uyarı sayısı: ${syı2 ? syı2 : '0'}`) }
 };
 
 exports.conf = {
-  aliases: ["warn", "uyarı-ver"]
-};
+enabled: true,
+guildOnly: false,
+aliases: ["warn", "uyar"],
+permLevel: 0,
+}
 
 exports.help = {
-  name: "uyar"
-};
+name: 'uyarı'
+}
