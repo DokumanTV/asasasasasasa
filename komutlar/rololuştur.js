@@ -1,5 +1,6 @@
 exports.run = async (client, message, args, level) => {
     try {
+          if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Bunun için gerekli iznin yok');
       if (!args[0]) return message.reply('Lütfen Rol Adını Yazınız!')
       if (!args[1]) return message.reply('Lütfen bir renk kodu girin!')
 

@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 
+
 exports.run = (client, message, args) => {
+      if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Bunun için gerekli iznin yok');
             message.channel.clone().then(knl => {
               let position = message.channel.position;
               knl.setPosition(position);

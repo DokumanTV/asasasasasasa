@@ -3,6 +3,7 @@ const qdb = require('quick.db');
 exports.run = async(client, message, args) => {
     if(args[0] !== "sıfırla"){
       var kanal = message.mentions.channels.first();
+          if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Bunun için gerekli iznin yok');
       if(!kanal) return message.reply("Kanalı Etiketlermisin")
       var sayı = args[1]
       if(!sayı) return message.reply("Bir Sayı Ayarlayın")
