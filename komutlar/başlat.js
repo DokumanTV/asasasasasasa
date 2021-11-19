@@ -5,17 +5,20 @@ const YoutubeAPI = require("simple-youtube-api");
 const youtube = new YoutubeAPI(YOUTUBE_API_KEY);
 const Discord = require('discord.js')
 const { play } = require("../system/music.js") 
-
-exports.run = async (client, message, args) => {
+module.exports = {
+  name: "oynat",
+  description: "PLAY THE SOFTNESS OF THE SOUND",
+  async execute(client, message, args) {
 
     if (!args.length) {
-      return message.channel.send("**Şarkı ismi veya link girmelisin.**");
+ //yDarKDayS Youtube kanalında paylaşılmış altyapı
+      return message.channel.send("**Ben Zane akıllı asistan şarkı ismi veya link girmelisin.**");
     }
 
     const { channel } = message.member.voice;
     if (!channel) {
       
-      return message.channel.send("**Herhangi bir ses kanalına girmelisin.**");
+      return message.channel.send("**Ben Zane akıllı asistan herhangi bir ses kanalına girmelisin.**");
     }
 
 
@@ -26,7 +29,7 @@ exports.run = async (client, message, args) => {
     const urlcheck = videoPattern.test(args[0]);
 
     if (!videoPattern.test(args[0]) && playlistPattern.test(args[0])) {
-      return message.channel.send("**Oynatma listesi oynatılamıyor.**");
+      return message.channel.send("**Ben Zane akıllı asistan oynatma listesi oynatılamıyor.**");
     }
 
     const serverQueue = message.client.queue.get(message.guild.id);
@@ -64,11 +67,12 @@ exports.run = async (client, message, args) => {
           falses :songData.videoDetails.dislikes.toLocaleString()
          }
         };
+    //yDarKDayS Youtube kanalında paylaşılmış altyapı
 
       } catch (error) {
         if (message.include === "copyright") {
           return message
-            .reply("**Bu video telif hakları nedeni ile oynatılamıyor.**")
+            .reply("**Ben Zane akıllı asistan bu video telif hakları nedeni ile oynatılamıyor.**")
             .catch(console.error);
         } else {
           console.error(error);
@@ -77,7 +81,7 @@ exports.run = async (client, message, args) => {
     } else {
       try {
          const result = await youtube.searchVideos(targetsong, 1)
-        if(!result[0]) return message.channel.send('**Arama sonucu bulunamadı.**')
+        if(!result[0]) return message.channel.send('**Ben Zane akıllı asistan arama sonucu bulunamadı.**')
         songData = await ytdl.getInfo(result[0].url)
          song = {
            title: songData.videoDetails.title,
@@ -101,20 +105,21 @@ exports.run = async (client, message, args) => {
     if(serverQueue) {
       serverQueue.songs.push(song)
       return serverQueue.textChannel.send( new Discord.MessageEmbed()
-        .setAuthor('Sıraya Eklendi!',message.author.avatarURL({format : "png",dynamic : true}))
+        .setAuthor('Ben Zane akıllı asistan sıraya Eklendi!',message.author.avatarURL({format : "png",dynamic : true}))
         .setTitle(song.title)
         .setURL(song.url)
         .setThumbnail(song.thumbnail)
-        .addField('Kanal',song.author,true)
-        .addField('Şarkı Saniyesi',song.duration,true)
+        .addField('Hangi Kanal',song.author,true)
+        .addField('Saniyesi',song.duration,true)
         .addField('İzlenme Sayısı',song.wiews.toLocaleString(),true)
-        .addField('Like 👍',song.likes.trues,true)
-        .addField('Dislike 👎',song.likes.falses,true))
+        .addField('Beğenme 👍',song.likes.trues,true)
+        .addField('Beğenmeme  👎',song.likes.falses,true))
         .setColor("ff0a0a")
       .catch(console.error)
     } else {
       queueConstruct.songs.push(song);
     }
+     //yDarKDayS Youtube kanalında paylaşılmış altyapı
     if(!serverQueue) message.client.queue.set(message.guild.id, queueConstruct)
     
      if (!serverQueue) {
@@ -129,19 +134,8 @@ exports.run = async (client, message, args) => {
         return message.channel.send({embed: {"description": `Kanala giriş yapamıyorum.: ${error}`, "color": "GREEN"}}).catch(console.error);
       }
     }
-    
+     //yDarKDayS Youtube kanalında paylaşılmış altyapı
     
   }
-exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: ["oynat"],
-    permLevel: 0
-   };
-   
-  exports.help = {
-    name: 'oynat',
-    description: '',
-    usage: ''
-   }
+};
   
