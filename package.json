@@ -49,7 +49,8 @@
     "fetch": "^1.1.0",
     "croxydb": "^0.0.7",
     "generate-password": "^1.7.0",
-    "pretty-ms": "^7.0.1"
+    "pretty-ms": "^7.0.1",
+    "discord-buttons": "^4.0.0"
   },
   "engines": {
     "node": "14.x"

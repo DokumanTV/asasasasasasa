@@ -1,37 +1,20 @@
+const { MessageEmbed } = require('discord.js');
 
-const Eris = require('eris');
-
-exports.run = async (client, message, args) => {// can#0002
-
-function embedCreator(content) {
-return client.createMessage(message.channel.id, { embed: { description: content, author: { name: client.user.username, icon_url: client.user.avatarURL } } });
+exports.run = async (client, message, args) => {
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(new MessageEmbed().setDescription(`:x: Yetkin yeterli değil!`))
+    let user = args[0];
+    const banList = await message.guild.fetchBans();
+    if (!user || isNaN(user) || !banList.has(user)) {
+        return message.channel.send(new MessageEmbed().setDescription(`:x: Kullanıcı id hatalı veya kullanıcı yasaklı değil!`))
+    }
+    message.guild.members.unban(user);
+    message.channel.send(new MessageEmbed().setDescription(`:white_check_mark: Başarılı!`))
 };
 
-if(!args[0]) return embedCreator('Banını açmak istediğin kullanıcının ID numarasını gir..');
-if(isNaN(args[0])) return embedCreator('Geçerli bir ID girmelisin.');
-
-if(client.guilds.get(message.guildID).members.get(args[0])) return embedCreator(`**${args[0]}** zaten sunucuda bulunuyor.
-Sunucuda olan birinin nasıl banını açabilirim?`);
-
-const bans = await client.getGuildBans(message.guildID);
-if(!bans.map(a => a.user.id).some(x => x.includes(args[0]))) return embedCreator(`**${args[0]}** zaten banlı değil.`);
-
-var reason = 'Sebep belirtilmedi.';
-if(args[1]) reason = args.slice(1).join(' ');
-
-client.unbanGuildMember(message.guildID, args[0], reason);
-const executors = bans.map(a => a).find(x => x.user.id === args[0]).user;
-return embedCreator(`**${executors.username}#${executors.discriminator}** isimli kullanıcının banı kaldırıldı.
-Geçerli sebep: **${reason}**`);
-
-}; 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0
+    aliases: ["un-ban"]
 };
- 
+
 exports.help = {
-  name: 'unban'
+    name: 'unban'
 };

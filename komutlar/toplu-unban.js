@@ -87,9 +87,11 @@ const onayEmbed = new Discord.MessageEmbed()
               });
             }
             
-exports.config = {
-enabled: true,
-aliases: ['toplu-unbann'],
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
 };
 
 exports.help = {
