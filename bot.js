@@ -211,7 +211,7 @@ client.on("message" , async msg => {
 
 //AFK
 
-//-----------UPTİME------\\
+//-----------UPTİME----------\\
 
 setInterval(() => {
 const Linkler = db.get('Linkler')
@@ -237,11 +237,11 @@ client.on('message', async message => {
   if(message.author.bot) return;
   var Split = message.content.split(' ')
 
-  if(Split[0] == prefix+'ekle') {
+  if(Split[0] == prefix+'uptime-ekle') {
   var Link = Split[1]
   fetch(Link).then(() => {
     const Revenge = new Discord.MessageEmbed()
-    .setColor('#FF0000')
+    .setColor('#2f3136')
     .setDescription(`
     
    ❎ **Proje Sistemimizde Zaten Bulunuyor ** 
@@ -271,14 +271,14 @@ client.on('message', async message => {
 
   **❎ Hey Uptime Edeceğim URL Girmelisin! **
 
-> dd!ekle (Glitch Show Linki)
+> -ekle (Glitch Show Linki)
   `)
 .setImage("https://media.discordapp.net/attachments/833584110483013642/906501816013959218/unknown.png?width=177&height=247")
   .setThumbnail(message.author.avatarURL)
   message.channel.send(dijitaluptime)
   })
   }
-  if(Split[0] == prefix+'say') {
+  if(Split[0] == prefix+'uptime-say') {
   const say = new Discord.MessageEmbed()
   .setColor('#2f3136')
   .setThumbnail(message.author.avatarURL)
@@ -309,13 +309,13 @@ client.on('message', async message => {
   message.channel.send(pxd)
   }
 
-    if(Split[0] == prefix+'linkler') {
+    if(Split[0] == prefix+'uptime-linkler') {
     const Linkleri = db.fetch(`Projesi_${message.author.id}`)
     if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.MessageEmbed().setColor('#2f3136').setDescription(`\<:argenova_katilcivciv:854298085924667422> **Hiç link eklememişsin. Üzdün Beni Dostum Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
     message.channel.send(new Discord.MessageEmbed().setColor('#2f3136').setDescription(`- **7/24 Aktfi Tuttuğum botlarınızın linklerini daha güvenli olduğunda DM üzerinden gönderdim ${message.author}**`).setThumbnail(message.author.avatarURL))
     message.author.send(new Discord.MessageEmbed().setColor('#2f3136').setDescription(`- ** Uptime Ettigin Linklerin:** \n\n\``+Linkleri.join('\n')+`\`
 
- [Destek Sunucu](https://discord.gg/tDpq2SAEF4)`).setThumbnail(message.author.avatarURL))
+ [Destek Sunucu](https://discord.gg/Jycf7FEZAa)`).setThumbnail(message.author.avatarURL))
     }
 
 })
