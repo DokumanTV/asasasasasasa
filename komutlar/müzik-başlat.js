@@ -115,7 +115,6 @@ exports.run = async (client, message, args) => {
     } else {
       queueConstruct.songs.push(song);
     }
-     //yDarKDayS Youtube kanalında paylaşılmış altyapı
     if(!serverQueue) message.client.queue.set(message.guild.id, queueConstruct)
     
      if (!serverQueue) {
@@ -130,7 +129,7 @@ exports.run = async (client, message, args) => {
         return message.channel.send({embed: {"description": `Kanala giriş yapamıyorum.: ${error}`, "color": "GREEN"}}).catch(console.error);
       }
     }
-     //yDarKDayS Youtube kanalında paylaşılmış altyapı
+    
     
   }
 exports.conf = {
