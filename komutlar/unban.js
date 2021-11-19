@@ -1,6 +1,7 @@
+
 const Eris = require('eris');
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {// can#0002
 
 function embedCreator(content) {
 return client.createMessage(message.channel.id, { embed: { description: content, author: { name: client.user.username, icon_url: client.user.avatarURL } } });

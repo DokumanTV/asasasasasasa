@@ -13,6 +13,7 @@ const embed  = new Discord.MessageEmbed()
 \**${p}yasaklı-tag \** - Eklediğiniz Taga Sahip Olup Sunucuya Gireni Atar Birdaha Girerse Banlar.
 \**${p}ban <id-etiket> \** - Etiketlediğiniz Veya İdsini Girdiğiniz Kişiyi Sunucudan Banlar.
 \**${p}unban <id> \** - İdsini Girdiğiniz Kişi'nin Sunucudaki Banını Kaldırır.
+\**${p}toplu-unban \** - Herkesin Sunucudaki Banını Kaldırır.
 \**${p}banlist \** - Sunucudaki Banlananları Listeler.
 \**${p}bansorgu <id> \** - İdsini Girdiğiniz Kullanıcının Neden Banlandığını Gösterir.
 \**${p}kick <id-etiket> \** - Etiketlediğiniz Veya İdsini Girdiğiniz Kullanıcıyı Sunucudan Atar.
