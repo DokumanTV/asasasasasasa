@@ -902,3 +902,4 @@ client.on('error', e => {
 });
 
 client.login(process.env.token);
+require('discord-buttons')(client);

@@ -1,50 +1,26 @@
 const Discord = require('discord.js');
+const { MessageButton } = require('discord-buttons');
 
-exports.run = (client, message, args) => { 
-let mention = message.mentions.users.first();
-let sender = "";
-if (message.channel.guild.member(message.author).nickname == null) {
-  sender = message.author.username;
-} else {
-  sender = message.channel.guild.member(message.author).nickname;
-}
-if (mention != null || mention != undefined) {
-  var name = mention.username + "'s ";
-  if (mention.username.endsWith("s")) {
-    name = mention.username + "' ";
-  }
-  const avatarEmbedOther = new Discord.MessageEmbed()
-  .setAuthor(mention.username, mention.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-  .setColor('RED')
-  .setImage(mention.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-  .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL())
- // .setDescription(`[Avatarın büyük halini göster!](${message.author.avatarURL})`);
-  message.channel.send(avatarEmbedOther);
-  return;
-} else {
-  const avatarEmbedYou = new Discord.MessageEmbed()
-  .setAuthor(sender, message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-  .setColor('RED')
-  .setImage(message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-  .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL())
-  //.setDescription(`[Avatarın büyük halini göster!](${message.author.avatarURL})`);
-  message.channel.send(avatarEmbedYou);
-  return;
-}
-message.channel.send("Render hatası yada bilinmeyen bir hata oldu.");
-} 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['avatarım'],
-    kategori: 'kullanıcı',
-  permLevel: 0
+exports.run = async (client, message, args) => {
+
+  if(message.mentions.users.first()) message.author = message.mentions.users.first();
+
+  const embed = new Discord.MessageEmbed()
+  .setImage(message.author.displayAvatarURL({ dynamic: true, size: 4096, format: 'png' }))
+  .setColor('#2f3136');
+
+  const button = new MessageButton()
+  .setLabel('Avatar URL')
+  .setStyle('url')
+  .setURL(message.author.displayAvatarURL({ dynamic: true, size: 4096, format: 'png' }));
+
+  return message.channel.send({ embed: embed, component: button });
+
 };
-exports.help = {
-  name: 'avatar',
-  isim: 'Avatar',
-  süre: 'Yok',
+exports.conf = {
+  aliases: []
+};
 
-  description: 'Avatarınızı gösterir ve ya birini etiketlerseniz o kişinin avatarını gösterir.',
-  usage: 'avatar <@kullanıcı>'
+exports.help = {
+  name: 'avatar'
 };

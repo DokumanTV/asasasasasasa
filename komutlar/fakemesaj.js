@@ -15,19 +15,6 @@ const Discord = require("discord.js");
         if (message.content.includes("@everyone")) return message.reply("Everyone mu? Severiz, şaka şaka bir daha bunu yapma.");
             if (message.content.includes("@here")) return message.reply("Here mi? Severiz, şaka şaka bir daha bunu yapma.");
 
-
-  try { 
-  message.channel
-    .createWebhook(kişi.username, {
-      avatar: kişi.avatarURL()}) 
-    .then(async (wb) => {
-        const Webhook = new Discord.WebhookClient(wb.id, wb.token);
-        await Webhook.send(YazılacakMesaj); 
-        setTimeout(() => {
-          Webhook.delete()
-        }, 2000);
-
-        
        message.delete();      
       message.channel
           .createWebhook(kişi.username, {
@@ -36,8 +23,9 @@ const Discord = require("discord.js");
           .then(hook => {
             hook.send(yazi).then(() => hook.delete())
           })
+        
           .catch(console.error);
-      } 
+      } catch (err) {
         console.error(err)
       }
     };
