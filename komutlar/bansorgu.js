@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     message.guild.fetchBan(kullanici).then(({ user, reason }) => {
         var sebep;
         if (reason === null) sebep = "Neden belirtilmemiş"
-const Embed = new Discord.RichEmbed()
+const Embed = new Discord.MessageEmbed()
  .setColor('0x36393e')
 .setAuthor('Ban Sorgulama', client.user.avatarURL)
 .setDescription(`${user.tag} adlı kullanıcının ban nedeni: \n\n**${reason}**`)
