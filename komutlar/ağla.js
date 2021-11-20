@@ -11,7 +11,7 @@ return message.reply("**Ağlayacak Kişiyi Etiketlemelisin**");
 const Embedmatador = new Discord.MessageEmbed()
 
     .setDescription(
-      `${matador} ` + `**${message.author.username}** Size Aduket Çekti`
+      `${matador} ` + `**${message.author.username}** Ne Söylediyse Sizi Ağlattı.`
     )
     .setImage(
       "https://media4.giphy.com/media/8wcFnJ71xxXNJSSxb6/200.gif"

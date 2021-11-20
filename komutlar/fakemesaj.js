@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
     exports.run = async (client, message, args) => {
       try {
-        let kişi = message.mentions.users.first();
-        const hataembed = new Discord.MessageEmbed()
+         if (message.deletable) await message.delete();
+         if (!message.guild.me.permissions.has('MANAGE_MESSAGES')) return message.channel.send(`${message.author} \`Webhookları Yönet\` iznim yok.`).then(a => a.delete({timeout: 4500}));
+         let kişi = message.mentions.users.first();
+         const hataembed = new Discord.MessageEmbed()
           .setColor("0x36393e")
           .setTimestamp()
           .addField("HATA:", "Lütfen Birisini Etiketle ve Bir Yazı Yaz!");
@@ -10,13 +12,23 @@ const Discord = require("discord.js");
         let yazi = args.slice(1).join(" ");
         if (!yazi) return message.reply(hataembed);
 
-        if (message.content.includes("@everyone")) return message.reply("Fakemesaj Everyone İçeremez Şakacı Jojuk Seni");
-            if (message.content.includes("@here")) return message.reply("Fakemesaj Here İçeremez Şakacı Jojuk Seni");
+        if (message.content.includes("@everyone")) return message.reply("Everyone mu? Severiz, şaka şaka bir daha bunu yapma.");
+            if (message.content.includes("@here")) return message.reply("Here mi? Severiz, şaka şaka bir daha bunu yapma.");
 
 
+  try { 
+  message.channel
+    .createWebhook(kişi.username, {
+      avatar: kişi.avatarURL()}) 
+    .then(async (wb) => {
+        const Webhook = new Discord.WebhookClient(wb.id, wb.token);
+        await Webhook.send(YazılacakMesaj); 
+        setTimeout(() => {
+          Webhook.delete()
+        }, 2000);
 
-
-        message.delete();      
+        
+       message.delete();      
       message.channel
           .createWebhook(kişi.username, {
             avatar: kişi.avatarURL()
@@ -25,7 +37,7 @@ const Discord = require("discord.js");
             hook.send(yazi).then(() => hook.delete())
           })
           .catch(console.error);
-      } catch (err) {
+      } 
         console.error(err)
       }
     };
