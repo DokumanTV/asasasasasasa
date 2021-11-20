@@ -19,7 +19,7 @@ let isim = args[1]
 if (!isim) return message.channel.send(`İsmini Belirtmelisin ! `)
 let yaş = args[2]
 if (!yaş) return message.channel.send(`Yaşını Belirtmelisin ! `)
-member.setNickname(`♌︎ ${isim} - ${yaş}`)
+member.setNickname(`${isim} - ${yaş}`)
 member.roles.remove(alınacakrol)
 member.roles.add(kızrol) 
 const başarılı = new discord.MessageEmbed()
