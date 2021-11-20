@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "Belirtilmemiş"
     try {
-        await member.user.send(`${message.guild.name} İsimli Sunucudan ${reason} Sebebiyle Atıldınız!`); //eğer bu satırı silerseniz banlanan kişiye mesaj göndermez
+        await member.user.send(`${message.guild.name} İsimli Sunucudan ${reason} Sebebiyle Atıldınız!`);
         await member.kick(reason);
     } catch (error) {
         return message.channel.send(`**${member.user.tag}** Sunucudan Atılamadı! Hata: ${error}`);

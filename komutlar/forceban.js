@@ -4,8 +4,7 @@ if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Yetersiz 
   let dcs_user = args[0];
   if (isNaN(dcs_user)) return message.reply("Doğru ID Girmelisiniz!");
 
-  message.guild
-    .ban(dcs_user)
+  message.guild.members.ban(dcs_user)
     message.channel.send(`\`${dcs_user}\` Sunucudan Banlandı!`);
 
 };  

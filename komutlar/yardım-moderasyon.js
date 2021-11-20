@@ -24,7 +24,7 @@ const embed  = new Discord.MessageEmbed()
 \**${p}herkestenrolal <rol> \** - Herkesten Belirtilen Rolü Alır.
 \**${p}herkeserolver <rol> \** - Herkese Belirtilen Rolü Verir.
 \**${p}rololuştur <isim> \** - Belirtilen İsimde Rol oluşturur.
-\**${p}uyarı <kişi> <sebep> \** - Belirtilen Kişiye Uyarı Verir.
+\**${p}uyarı \** - Uyarı Yardım Menüsü.
 \**${p}forceban <kişi id> <sebep> \** - Sunucuda Olmayan Kişiye Ban Atar.
 \**${p}kullanıcıadlarısıfırla \** - Sunucuda Yazılan Takma Adları Sıfırlar.
 \**${p}guild-reset \** - Sunucudaki Tüm Kanalları Silip Yeniden Oluşturur.
