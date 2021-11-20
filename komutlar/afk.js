@@ -23,13 +23,13 @@ exports.run = async (client, message, args) => {
       `afkSebep_${message.author.id}_${message.guild.id}`
     );
  
-    message.channel.send(`Başarıyla Afk Oldunuz \n Sebep: ${a}`);
+    message.channel.send(`Başarıyla Afk Oldunuz \n Sebep: ${a} (Eğer AFK Moduna Geçemediyseniz Botun Rolünün En Üstte Olduğunu Kontrol Ediniz!)`);
  
     message.member.setNickname(`[AFK] ` + b);
   }
   if (args[0]) {
     let sebep = args.join(" ");
-    let kullanıcı = message.guild.members.get(message.author.id);
+    let kullanıcı = message.guild.members.cache.get(message.author.id);
     const b = kullanıcı.displayName;
     await db.set(`afkSebep_${message.author.id}_${message.guild.id}`, sebep);
     await db.set(
