@@ -1,60 +1,41 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
+const Discord = require('discord.js');
+const data = require('quick.db');
+const ms = require('ms')
+const moment = require('moment')
 exports.run = async (client, message, args) => {
-  const kisi = db.fetch(`afkid_${message.author.id}_${message.guild.id}`);
-  if (kisi) return;
-  const sebep = args[0];
-  if (!args[0]) {
-    let kullanıcı = message.guild.members.cache.get(message.author.id);
-    const b = kullanıcı.displayName;
 
-    await db.set(
-      `afkSebep_${message.author.id}_${message.guild.id}`,
-      "Sebep Girilmemiş"
-    );
-    await db.set(
-      `afkid_${message.author.id}_${message.guild.id}`,
-      message.author.id
-    );
-    await db.set(`afkAd_${message.author.id}_${message.guild.id}`, b);
+let sebep;
+if(!args[0]) sebep = 'Sebep girilmemiş';
+if(args[0]) sebep = args.slice(0).join(' ');
 
-    const a = await db.fetch(
-      `afkSebep_${message.author.id}_${message.guild.id}`
-    );
+  
 
-    message.channel.send(`Başarıyla Afk Oldunuz Sebep: ${a}`);
 
-    message.member.setNickname(`[AFK] ` + b);
-  }
-  if (args[0]) {
-    let sebep = args.join(" ");
-    let kullanıcı = message.guild.members.cache.get(message.author.id);
-    const b = kullanıcı.displayName;
-    await db.set(`afkSebep_${message.author.id}_${message.guild.id}`, sebep);
-    await db.set(
-      `afkid_${message.author.id}_${message.guild.id}`,
-      message.author.id
-    );
-    await db.set(`afkAd_${message.author.id}_${message.guild.id}`, b);
-    const a = await db.fetch(
-      `afkSebep_${message.author.id}_${message.guild.id}`
-    );
+  let atılmaay = moment(Date.now()+10800000).format("MM")
+  let atılmagün = moment(Date.now()+10800000).format("DD")
+  let atılmasaat = moment(Date.now()+10800000).format("HH:mm:ss")
+  let atılma = `\`${atılmagün} ${atılmaay.replace(/01/, 'Ocak').replace(/02/, 'Şubat').replace(/03/, 'Mart').replace(/04/, 'Nisan').replace(/05/, 'Mayıs').replace(/06/, 'Haziran').replace(/07/, 'Temmuz').replace(/08/, 'Ağustos').replace(/09/, 'Eylül').replace(/10/, 'Ekim').replace(/11/, 'Kasım').replace(/12/, 'Aralık')} ${atılmasaat}\``
+  
+  
+  moment.locale('tr');
+  
+let display = message.guild.members.cache.get(message.author.id).displayName;
+data.set(`display.${message.author.id}.${message.guild.id}`, display)
+data.set(`afk.${message.author.id}.${message.guild.id}`, 'afksın knk')
+data.set(`giriş.${message.author.id}.${message.guild.id}`, atılma)
+data.set(`sebep.${message.author.id}.${message.guild.id}`, sebep)
 
-    message.channel.send(`Başarıyla Afk Oldunuz Sebep: ${a}`);
+message.channel.send(new Discord.MessageEmbed().setTitle(`${message.author.username}, tebrikler!`).setColor('GREEN').setDescription(`${sebep} sebebiyle afk moduna giriş yaptın.`))
+message.guild.members.cache.get(message.author.id).setNickname(`AFK - ${display}`)
 
-    message.member.setNickname(`[AFK] ` + b);
-  }
-};
-
+}
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0
-};
+enabled: 'true',
+guildOnly: 'true',
+aliases: [''],
+permLevel: 0
+}
 
 exports.help = {
-  name: "afk",
-  description: "Afk Olmanızı Sağlar.",
-  usage: "afk / afk "
-};
+name: 'afk'
+}
