@@ -139,76 +139,6 @@ client.on("message", async msg => {
 
 //////////////////////////////////////////////////
 
-
-client.elevation = message => {
-  if (!message.guild) {
-    return;
-  }
-  let permlvl = 0;
-  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
-  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
-  if (message.author.id === ayarlar.sahip) permlvl = 4;
-  return permlvl;
-};
-
-client.on("guildMemberRemove", async member => {
-  const channel = db.fetch(`sayaçKanal_${member.guild.id}`);
-  if (db.has(`sayacsayı_${member.guild.id}`) == false) return;
-  if (db.has(`sayaçKanal_${member.guild.id}`) == false) return;
-
-  member.guild.channels.cache
-    .get(channel)
-    .send(
-      `📤 **${member.user.tag}** Sunucudan ayrıldı! \`${db.fetch(
-        `sayacsayı_${member.guild.id}`
-      )}\` üye olmamıza son \`${db.fetch(`sayacsayı_${member.guild.id}`) -
-        member.guild.memberCount}\` üye kaldı!`
-    );
-});
-
-
-//////çekiliş/////////..
-if(!db.get("giveaways")) db.set("giveaways", []);
-
-const GiveawayManagerWithOwnDatabase = class extends GiveawaysManager {
-
-    async getAllGiveaways(){
-        return db.get("giveaways");
-    }
-
-    async saveGiveaway(messageID, giveawayData){
-        db.push("giveaways", giveawayData);
-        return true;
-    }
-
-    async editGiveaway(messageID, giveawayData){
-        const giveaways = db.get("giveaways");
-        const newGiveawaysArray = giveaways.filter((giveaway) => giveaway.messageID !== messageID);
-        newGiveawaysArray.push(giveawayData);
-        db.set("giveaways", newGiveawaysArray);
-        return true;
-    }
-
-    async deleteGiveaway(messageID){
-        const newGiveawaysArray = db.get("giveaways").filter((giveaway) => giveaway.messageID !== messageID);
-        db.set("giveaways", newGiveawaysArray);
-        return true;
-    }
-  
-  
-};
-const manager = new GiveawayManagerWithOwnDatabase(client, {
-  storage: false,
-  updateCountdownEvery: 5000,
-  default: {
-    botsCanWin: false,
-    embedColor: "#0a99ff",
-    reaction: "🎉"
-  }
-});
-client.giveawaysManager = manager;
-
-
 client.login(process.env.token);
 
 client.on('message', msg => {
@@ -216,8 +146,8 @@ client.on('message', msg => {
   var cevap = [
     
     "Aleyküm Selam Kardeşim",
-    "\<:Aas:758613884403449876>",
-    "Ve aleyküm selam ve rahmetullahi ve berekatü"
+    "Ve aleyküm selam ve rahmetullahi ve berekatü",
+    "<:argenova_as:836289440107462758>"
 ];
 
 var cevaplar = cevap[Math.floor(Math.random() * cevap.length)];
@@ -247,7 +177,7 @@ client.on("message", async msg => {
             if (!msg.member.hasPermission("MANAGE_GUILD")) {
                   msg.delete();
                           
-                    return msg.channel.send(`\<a:Dblobshake:758618031642771506> **Sakin Ol Kardişim !!!**`).then(msg => msg.delete({ timeout: 5000}));
+                    return msg.channel.send(`<:argenova_katilcivciv:854298085924667422> **Sakin Ol Kardişim !!!**`).then(msg => msg.delete({ timeout: 5000}));
             }          
                 } catch(err) {
                   console.log(err);
@@ -271,7 +201,7 @@ client.on("message", async msg => {
             if (!msg.member.hasPermission("MANAGE_GUILD")) {
                   msg.delete();
                           
-                    return msg.channel.send(`\<a:aniblobconfused:758618039368417300> **Napim Demek Bu Sunucuda Yasak Ağla !!!**`).then(msg => msg.delete({ timeout: 5000}));
+                    return msg.channel.send(`<:argenova_katilcivciv:854298085924667422> **Napim Demek Bu Sunucuda Yasak Ağla !!!**`).then(msg => msg.delete({ timeout: 5000}));
             }          
                 } catch(err) {
                   console.log(err);
@@ -293,7 +223,7 @@ client.on("message", async message => {
         if (!message.member.permissions.has('KICK_MEMBERS')) {
           message.delete();
           
-          return message.reply('\<a:Bbankedisi:758618008184160299> **Hey Dur! Bu Sunucuda Reklamı Engelliyorumda ehheh**').then(message => message.delete(6000));
+          return message.reply('<:argenova_katilcivciv:854298085924667422> **Hey Dur! Bu Sunucuda Reklamı Engelliyorumda ehheh**').then(message => message.delete(6000));
           
         }
       } catch(err) {
@@ -313,7 +243,7 @@ client.on("messageUpdate", async message => {
         if (!message.member.permissions.has('KICK_MEMBERS')) {
           message.delete();
           
-          return message.reply('\<a:Bbankedisi:758618008184160299> **Hey Dur! Bu Sunucuda Reklamı Engelliyorumda eheh**').then(message => message.delete(6000));
+          return message.reply('<:argenova_katilcivciv:854298085924667422> **Hey Dur! Bu Sunucuda Reklamı Engelliyorumda eheh**').then(message => message.delete(6000));
           
         }
       } catch(err) {

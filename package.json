@@ -52,7 +52,8 @@
     "xml2js": "^0.4.23",
     "ytdl-core": "^4.9.1",
     "ytdl-core-discord": "^1.2.5",
-    "giveaways": "^1.2.3"
+    "giveaways": "^1.2.3",
+    "discord-giveaways": "^5.0.1"
   },
   "engines": {
     "node": "14.x"
