@@ -12,7 +12,7 @@
   "dependencies": {
     "@freezegold/anime.js": "^2.0.4",
     "axios": "^0.21.1",
-    "canvacord": "^5.2.0",
+    "canvacord": "^5.2.3",
     "canvas": "^2.8.0",
     "chalk": "^4.1.0",
     "cleverbot-free": "^1.1.6",
