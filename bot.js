@@ -68,6 +68,263 @@ client.load = command => {
   });
 };
 
+//-------------------NAPİM ENGEL VS------------------\\
+client.on("message", async msg => {
+  if (msg.author.bot) return;
+
+  let i = await db.fetch(`reklamFiltre_${msg.guild.id}`);
+  if (i == "acik") {
+    const reklam = [
+      "https://",
+      "http://",
+      "discord.gg",
+      "discord.gg",
+      ".com",
+      ".net",
+      ".xyz",
+      ".tk",
+      ".pw",
+      ".io",
+      ".me",
+      ".gg",
+      "www.",
+      "https",
+      "http",
+      ".gl",
+      ".org",
+      ".com.tr",
+      ".biz",
+      ".party",
+      ".rf.gd",
+      ".az"
+    ];
+    if (reklam.some(word => msg.content.toLowerCase().includes(word))) {
+      try {
+        if (!msg.member.hasPermission("MANAGE_GUILD")) {
+          msg.delete();
+          return msg.channel
+            .send(`${msg.author.tag}, Reklam Yapmak Yasak!`)
+            .then(msg => msg.delete(10000));
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
+  if (!i) return;
+});
+
+client.on("message", async msg => {
+  const i = await db.fetch(`ssaass_${msg.guild.id}`);
+  if (i == "acik") {
+    if (
+      msg.content.toLowerCase() == "sa" ||
+      msg.content.toLowerCase() == "s.a" ||
+      msg.content.toLowerCase() == "selamun aleyküm" ||
+      msg.content.toLowerCase() == "sea" ||
+      msg.content.toLowerCase() == "selam"
+    ) {
+      try {
+        return msg.reply("Aleyküm Selam, Hoş Geldin");
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  } else if (i == "kapali") {
+  }
+  if (!i) return;
+});
+
+
+
+//////////////////////////////////////////////////
+
+
+client.elevation = message => {
+  if (!message.guild) {
+    return;
+  }
+  let permlvl = 0;
+  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+  if (message.author.id === ayarlar.sahip) permlvl = 4;
+  return permlvl;
+};
+
+client.on("guildMemberRemove", async member => {
+  const channel = db.fetch(`sayaçKanal_${member.guild.id}`);
+  if (db.has(`sayacsayı_${member.guild.id}`) == false) return;
+  if (db.has(`sayaçKanal_${member.guild.id}`) == false) return;
+
+  member.guild.channels.cache
+    .get(channel)
+    .send(
+      `📤 **${member.user.tag}** Sunucudan ayrıldı! \`${db.fetch(
+        `sayacsayı_${member.guild.id}`
+      )}\` üye olmamıza son \`${db.fetch(`sayacsayı_${member.guild.id}`) -
+        member.guild.memberCount}\` üye kaldı!`
+    );
+});
+
+
+//////çekiliş/////////..
+if(!db.get("giveaways")) db.set("giveaways", []);
+
+const GiveawayManagerWithOwnDatabase = class extends GiveawaysManager {
+
+    async getAllGiveaways(){
+        return db.get("giveaways");
+    }
+
+    async saveGiveaway(messageID, giveawayData){
+        db.push("giveaways", giveawayData);
+        return true;
+    }
+
+    async editGiveaway(messageID, giveawayData){
+        const giveaways = db.get("giveaways");
+        const newGiveawaysArray = giveaways.filter((giveaway) => giveaway.messageID !== messageID);
+        newGiveawaysArray.push(giveawayData);
+        db.set("giveaways", newGiveawaysArray);
+        return true;
+    }
+
+    async deleteGiveaway(messageID){
+        const newGiveawaysArray = db.get("giveaways").filter((giveaway) => giveaway.messageID !== messageID);
+        db.set("giveaways", newGiveawaysArray);
+        return true;
+    }
+  
+  
+};
+const manager = new GiveawayManagerWithOwnDatabase(client, {
+  storage: false,
+  updateCountdownEvery: 5000,
+  default: {
+    botsCanWin: false,
+    embedColor: "#0a99ff",
+    reaction: "🎉"
+  }
+});
+client.giveawaysManager = manager;
+
+
+client.login(process.env.token);
+
+client.on('message', msg => {
+  
+  var cevap = [
+    
+    "Aleyküm Selam Kardeşim",
+    "\<:Aas:758613884403449876>",
+    "Ve aleyküm selam ve rahmetullahi ve berekatü"
+];
+
+var cevaplar = cevap[Math.floor(Math.random() * cevap.length)];
+
+
+
+  let deneme1 = msg.content.toLowerCase()
+  if (deneme1 === 'sa' || deneme1 === 'Sa' || deneme1 === 'sea' ) {
+  msg.channel.send(`${cevaplar}`)
+  
+     }
+  })
+
+//--------------------------------KOMUTLAR-------------------------------\\
+
+/////////küfür engel
+client.on("message", async msg => {
+  
+  
+  let a = await db.fetch(`kufur_${msg.guild.id}`)
+    if (a == 'acik') {
+      const küfür = [
+        "yarak","mk", "amk", "aq", "orospu", "Oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git","ebenin","sikerim","sik","sikiyim","Amk","Mq","SİKTİR","OROSPU","SİKİK","YARRAM","YARRAK","PİÇ","SİK","SİKERİM","AMK","AM","SG","MQ","MAL","Amq","siq","s2iş","s2ik","Phiç","phiç","Piç","fuck"
+                  ]
+            if (küfür.some(word => msg.content.includes(word))) {
+          try {
+            if (!msg.member.hasPermission("MANAGE_GUILD")) {
+                  msg.delete();
+                          
+                    return msg.channel.send(`\<a:Dblobshake:758618031642771506> **Sakin Ol Kardişim !!!**`).then(msg => msg.delete({ timeout: 5000}));
+            }          
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+          }
+          if (!a) return;
+          })
+
+/////////napim engel
+client.on("message", async msg => {
+  
+  
+  let a = await db.fetch(`napim_${msg.guild.id}`)
+    if (a == 'acik') {
+      const napim = [
+        "napim","Napim", "NAPİM", "nApim", "nAPİM", "napım", "napiyim", "napam", "Napam", "npm", "n a p i m", "npim", "Napım", "napiim", "Napiim"
+                  ]
+            if (napim.some(word => msg.content.includes(word))) {
+          try {
+            if (!msg.member.hasPermission("MANAGE_GUILD")) {
+                  msg.delete();
+                          
+                    return msg.channel.send(`\<a:aniblobconfused:758618039368417300> **Napim Demek Bu Sunucuda Yasak Ağla !!!**`).then(msg => msg.delete({ timeout: 5000}));
+            }          
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+          }
+          if (!a) return;
+          })
+
+///reklamengel
+
+client.on("message", async message => {
+  
+  const lus = await db.fetch(`reklamengel_${message.guild.id}`)
+  if (lus) {
+    const reklamengel = ["discord.app", "discord.gg", ".party", ".com", ".az", ".net", ".io", ".gg", ".me", "https", "http", ".com.tr", ".org", ".tr", ".gl", "glicht.me/", ".rf.gd", ".biz", "www.", "www"];
+    if (reklamengel.some(word => message.content.toLowerCase().includes(word))) {
+      try {
+        if (!message.member.permissions.has('KICK_MEMBERS')) {
+          message.delete();
+          
+          return message.reply('\<a:Bbankedisi:758618008184160299> **Hey Dur! Bu Sunucuda Reklamı Engelliyorumda ehheh**').then(message => message.delete(6000));
+          
+        }
+      } catch(err) {
+        console.log(err);
+    }
+  }
+}
+if (!lus) return;
+});
+client.on("messageUpdate", async message => {
+  
+  const lus = await db.fetch(`reklamengel_${message.guild.id}`)
+  if (lus) {
+    const reklamengel = ["discord.app", "discord.gg", ".party", ".com", ".az", ".net", ".io", ".gg", ".me", "https", "http", ".com.tr", ".org", ".tr", ".gl", "glicht.me/", ".rf.gd", ".biz", "www.", "www"];
+    if (reklamengel.some(word => message.content.toLowerCase().includes(word))) {
+      try {
+        if (!message.member.permissions.has('KICK_MEMBERS')) {
+          message.delete();
+          
+          return message.reply('\<a:Bbankedisi:758618008184160299> **Hey Dur! Bu Sunucuda Reklamı Engelliyorumda eheh**').then(message => message.delete(6000));
+          
+        }
+      } catch(err) {
+        console.log(err);
+    }
+  }
+}
+if (!lus) return;
+});
+
+//--------------------------------------------\\
 
 //--------------------DESTEK KANAL--------------------\\
 
@@ -677,69 +934,6 @@ if (message.content === `<@${client.user.id}>` || message.content === `<@!${clie
 });
 
 //--------------------ETİKET PREFİX--------------------\\
-
-//--------------------KÜFÜR ENGEL----------------\\
-
-const küfür = ["ambiti", "am biti", "amc\u0131\u011f\u0131", "amc\u0131\u011f\u0131n", "amc\u0131\u011f\u0131n\u0131", "amc\u0131\u011f\u0131n\u0131z\u0131", "amc\u0131k", "amc\u0131k ho\u015faf\u0131", "amc\u0131klama", "amc\u0131kland\u0131", "amcik", "amck", "amckl", "amcklama", "amcklaryla", "amckta", "amcktan", "amcuk", "am\u0131k", "am\u0131na", "am\u0131nako", "am\u0131na koy", "am\u0131na koyar\u0131m", "am\u0131na koyay\u0131m", "am\u0131nakoyim", "am\u0131na koyyim", "am\u0131na s", "am\u0131na sikem", "am\u0131na sokam", "am\u0131n feryad\u0131", "am\u0131n\u0131", "am\u0131n\u0131 s", "am\u0131n oglu", "am\u0131no\u011flu", "am\u0131n o\u011flu", "am\u0131s\u0131na", "am\u0131s\u0131n\u0131", "amina", "amina g", "amina k", "aminako", "aminakoyarim", "amina koyarim", "amina koyay\u0131m", "amina koyayim", "aminakoyim", "aminda", "amindan", "amindayken", "amini", "aminiyarraaniskiim", "aminoglu", "amin oglu", "amiyum", "amk", "amkafa", "amk \u00e7ocu\u011fu", "amlarnzn", "aml\u0131", "amm", "ammak", "ammna", "amn", "amna", "amnda", "amndaki", "amngtn", "amnn", "amona", "amq", "ams\u0131z", "amsiz", "amsz", "amteri", "amugaa", "amu\u011fa", "amuna", "ana", "anaaann", "anal", "analarn", "anam", "anamla", "anan", "anana", "anandan", "anan\u0131", "anan\u0131", "anan\u0131n", "anan\u0131n am", "anan\u0131n am\u0131", "anan\u0131n d\u00f6l\u00fc", "anan\u0131nki", "anan\u0131sikerim", "anan\u0131 sikerim", "anan\u0131sikeyim", "anan\u0131 sikeyim", "anan\u0131z\u0131n", "anan\u0131z\u0131n am", "anani", "ananin", "ananisikerim", "anani sikerim", "ananisikeyim", "anani sikeyim", "anann", "ananz", "anas", "anas\u0131n\u0131", "anas\u0131n\u0131n am", "anas\u0131 orospu", "anasi", "anasinin", "anay", "anayin", "angut", "anneni", "annenin", "annesiz", "anuna", "aq", "a.q", "a.q.", "aq.", "ass", "atkafas\u0131", "atm\u0131k", "att\u0131rd\u0131\u011f\u0131m", "ayklarmalrmsikerim",  "babaannesi ka\u015far", "baban\u0131", "baban\u0131n", "babani", "babas\u0131 pezevenk", "baca\u011f\u0131na s\u0131\u00e7ay\u0131m", "bac\u0131na", "bac\u0131n\u0131", "bac\u0131n\u0131n", "bacini", "bacn", "bacndan", "bacy", "bastard", "basur", "b\u0131z\u0131r","dkerim","eben", "ebeni", "ebenin", "ebeninki", "ebleh", "ecdad\u0131n\u0131", "ecdadini", "embesil", "emi", "ferre", "fuck", "fucker", "fuckin", "fucking","godumun", "gotelek", "gotlalesi", "gotlu", "gotten", "gotundeki", "gotunden", "gotune", "gotunu", "gotveren", "goyiim", "goyum", "goyuyim", "goyyim", "g\u00f6t", "g\u00f6t deli\u011fi", "g\u00f6telek", "g\u00f6t herif", "g\u00f6tlalesi", "g\u00f6tlek", "g\u00f6to\u011flan\u0131", "g\u00f6t o\u011flan\u0131", "g\u00f6to\u015f", "g\u00f6tten", "g\u00f6t\u00fc", "g\u00f6t\u00fcn", "g\u00f6t\u00fcne", "g\u00f6t\u00fcnekoyim", "g\u00f6t\u00fcne koyim", "g\u00f6t\u00fcn\u00fc", "g\u00f6tveren", "g\u00f6t veren", "g\u00f6t verir", "gtelek", "gtn", "gtnde", "gtnden", "gtne", "gtten", "gtveren", "hasiktir", "hassikome", "hassiktir", "has siktir", "hassittir", "ho\u015faf\u0131", "h\u00f6d\u00fck", "hsktr", "huur", "\u0131bnel\u0131k", "ibina", "iserim", "i\u015ferim", "ito\u011flu it", "koca g\u00f6t", "kodu\u011fmun", "kodu\u011fmunun", "kodumun", "kodumunun", "koduumun", "koyarm", "koyay\u0131m", "koyiim", "koyiiym", "koyim", "koyum", "koyyim", "memelerini", "mezveleli", "minaamc\u0131k", "mincikliyim", "mna", "monakkoluyum", "motherfucker", "mudik", "oc", "ocuu", "ocuun", "O\u00c7", "o\u00e7", "o. \u00e7ocu\u011fu", "o\u011flan", "o\u011flanc\u0131", "o\u011flu it", "orosbucocuu", "orospu", "orospucocugu", "orospu cocugu", "orospu \u00e7oc", "orospu\u00e7ocu\u011fu", "orospu \u00e7ocu\u011fu", "orospu \u00e7ocu\u011fudur", "orospu \u00e7ocuklar\u0131", "orospudur", "orospular", "orospunun", "orospunun evlad\u0131", "orospuydu", "orospuyuz", "orostoban", "orostopol", "orrospu", "oruspu", "oruspu\u00e7ocu\u011fu", "oruspu \u00e7ocu\u011fu", "\u00f6k\u00fcz", "\u00f6\u015fex", "patlak zar", "penis", "pezevek", "pezeven", "pezeveng", "pezevengi", "pezevengin evlad\u0131", "pezevenk", "pezo", "pic", "pici", "picler", "pi\u00e7", "pi\u00e7in o\u011flu", "pi\u00e7 kurusu", "pi\u00e7ler", "pipi", "pipi\u015f", "pisliktir", "porno", "pussy", "pu\u015ft", "pu\u015fttur", "rahminde", "revizyonist", "s1kerim", "s1kerm", "s1krm", "sakso", "saksofon", "salaak", "salak", "saxo", "sekis", "serefsiz", "sevgi koyar\u0131m", "sevi\u015felim", "sexs", "s\u0131\u00e7ar\u0131m", "s\u0131\u00e7t\u0131\u011f\u0131m", "s\u0131ecem", "sicarsin", "sie", "sik", "sikdi", "sikdi\u011fim", "sike", "sikecem", "sikem", "siken", "sikenin", "siker", "sikerim", "sikerler", "sikersin", "sikertir", "sikertmek", "sikesen", "sikesicenin", "sikey", "sikeydim", "sikeyim", "sikeym", "siki", "sikicem", "sikici", "sikien", "sikienler", "sikiiim", "sikiiimmm", "sikiim", "sikiir", "sikiirken", "sikik", "sikil", "sikildiini", "sikilesice", "sikilmi", "sikilmie", "sikilmis", "sikilmi\u015f", "sikilsin", "sikim", "sikimde", "sikimden", "sikime", "sikimi", "sikimiin", "sikimin", "sikimle", "sikimsonik", "sikimtrak", "sikin", "sikinde", "sikinden", "sikine", "sikini", "sikip", "sikis", "sikisek", "sikisen", "sikish", "sikismis", "siki\u015f", "siki\u015fen", "siki\u015fme", "sikitiin", "sikiyim", "sikiym", "sikiyorum", "sikkim", "sikko", "sikleri", "sikleriii", "sikli", "sikm", "sikmek", "sikmem", "sikmiler", "sikmisligim", "siksem", "sikseydin", "sikseyidin", "siksin", "siksinbaya", "siksinler", "siksiz", "siksok", "siksz", "sikt", "sikti", "siktigimin", "siktigiminin", "sikti\u011fim", "sikti\u011fimin", "sikti\u011fiminin", "siktii", "siktiim", "siktiimin", "siktiiminin", "siktiler", "siktim", "siktim", "siktimin", "siktiminin", "siktir", "siktir et", "siktirgit", "siktir git", "siktirir", "siktiririm", "siktiriyor", "siktir lan", "siktirolgit", "siktir ol git", "sittimin", "sittir", "skcem", "skecem", "skem", "sker", "skerim", "skerm", "skeyim", "skiim", "skik", "skim", "skime", "skmek", "sksin", "sksn", "sksz", "sktiimin", "sktrr", "skyim", "slaleni", "sokam", "sokar\u0131m", "sokarim", "sokarm", "sokarmkoduumun", "sokay\u0131m", "sokaym", "sokiim", "soktu\u011fumunun", "sokuk", "sokum", "soku\u015f", "sokuyum", "soxum", "sulaleni", "s\u00fclaleni", "s\u00fclalenizi", "s\u00fcrt\u00fck", "\u015ferefsiz", "\u015f\u0131ll\u0131k", "taaklarn", "taaklarna", "tarrakimin", "tasak", "tassak", "ta\u015fak", "ta\u015f\u015fak", "tipini s.k", "tipinizi s.keyim", "tiyniyat", "toplarm", "topsun", "toto\u015f", "vajina", "vajinan\u0131", "verdiimin", "weledizina", "xikeyim", "yaaraaa", "yalama", "yalar\u0131m", "yalarun", "yaraaam", "yarak", "yaraks\u0131z", "yaraktr", "yaram", "yaraminbasi", "yaramn", "yararmorospunun", "yarra", "yarraaaa", "yarraak", "yarraam", "yarraam\u0131", "yarragi", "yarragimi", "yarragina", "yarragindan", "yarragm", "yarra\u011f", "yarra\u011f\u0131m", "yarra\u011f\u0131m\u0131", "yarraimin", "yarrak", "yarram", "yarramin", "yarraminba\u015f\u0131", "yarramn", "yarran", "yarrana", "yarrrak", "yavak", "yav\u015f", "yav\u015fak", "yav\u015fakt\u0131r", "yavu\u015fak", "y\u0131l\u0131\u015f\u0131k", "yilisik", "yogurtlayam", "yo\u011furtlayam", "yrrak", "z\u0131kk\u0131m\u0131m", "zibidi", "zigsin", "zikeyim", "zikiiim", "zikiim", "zikik", "zikim", "ziksiiin", "ziksiin"];
-
-client.on("messageUpdate", async (old, nev) => {
-
-    if (old.content != nev.content) {
-        let i = await db.fetch(`küfür.${nev.member.guild.id}.durum`);
-        let y = await db.fetch(`küfür.${nev.member.guild.id}.kanal`);
-        if (i) {
-
-            if (küfür.some(word => nev.content.includes(word))) {
-                if (nev.member.hasPermission("BAN_MEMBERS")) return;
-                //if (ayarlar.gelistiriciler.includes(nev.author.id)) return ;
-                const embed = new Discord.MessageEmbed().setColor("#ff7e00").setDescription(`${nev.author} , **Ben varken küfürmü emteye çalıştın?**`)
-                    .addField("Küfür:", nev)
-
-                nev.delete();
-                const embeds = new Discord.MessageEmbed().setColor("#ff7e00").setDescription(`${nev.author} , **Mesajı editle küfür etmekmi?**`)
-                client.channels.cache.get(y).send(embed)
-                nev.channel.send(embeds).then(msg => msg.delete({
-                    timeout: 5000
-                }));
-
-            }
-        } else {}
-        if (!i) return;
-    }
-});
-
-client.on("message", async msg => {
-
-
-    if (msg.author.bot) return;
-    if (msg.channel.type === "dm") return;
-    let y = await db.fetch(`küfür.${msg.member.guild.id}.kanal`);
-
-    let i = await db.fetch(`küfür.${msg.member.guild.id}.durum`);
-    if (i) {
-        if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
-            try {
-                if (!msg.member.hasPermission("MANAGE_GUILD")) {
-                    //  if (!ayarlar.gelistiriciler.includes(msg.author.id)) return ;
-                    msg.delete({
-                        timeout: 750
-                    });
-                    const embeds = new Discord.MessageEmbed().setColor("#ff7e00").setDescription(`<@${msg.author.id}> , **Küfür etmeye çalıştı ama ben varken asla!**`)
-                    msg.channel.send(embeds).then(msg => msg.delete({
-                        timeout: 5000
-                    }));
-                    const embed = new Discord.MessageEmbed().setColor("#ff7e00").setDescription(`${msg.author} , **Küfür etmeye çalıştı ama ben varken asla!**`).addField("Mesajı:", msg)
-                    client.channels.cache.get(y).send(embed)
-                }
-            } catch (err) {
-                console.log(err);
-            }
-        }
-    }
-    if (!i) return;
-});
-
-//------------------KÜFÜR ENGEL---------------\\
 
 //-------------------ANTİ RAİD-------------------\\
 
