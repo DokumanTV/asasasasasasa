@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const data = require('quick.db')
 const ms = require('ms')
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {// chimp#0110
   
   function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -38,13 +38,13 @@ exports.run = async (client, message, args) => {
   let zaman = []
   
 if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send(`Gerekli yetkiye sahip değilsin.`)
-const asd = await data.fetch(`..başladı.${message.guild.id}`);
-if(asd) return message.channel.send('Bu sunucuda aktif bir çekiliş zaten var.');
 if(!args[0]) return message.channel.send(`Bir argüman girmelisin: !çekiliş başlat/tekrar`)
 let arg = ['başlat', 'tekrar']
 if(!arg.includes(args[0])) return message.channel.send(`Sadece !çekiliş başlat/tekrar kullanabilirsin.`)
+  
 if(args[0] === 'başlat') {
 try {
+  
 const filter = m => m.author.id == message.author.id;
      
 message.channel.send(`Önce bir ödül yazmalısın.`).then(() => {
@@ -68,6 +68,7 @@ let az = collected.first().content;
 message.channel.send(`Süre: ${az}`).then(() => zaman.push(collected.first().content)).then(()=> {
   const sure = zaman.slice(0).join(' ')
     const bitecegizamanms = Date.now() + ms(sure.replace(' dakika', 'm').replace(' saat', 'h').replace(' saniye', 's').replace(' gün', 'd'))
+
   
     const embed = new Discord.MessageEmbed()
   .setAuthor(client.user.username, client.user.avatarURL())
@@ -82,10 +83,9 @@ Katılmak için 🎉 tepkisine tıklayın.`)
   .setTitle(`Bir çekiliş başladı!`)
 message.guild.channels.cache.get(kanal[0]).send(embed).then(async c => {
 message.delete()
-data.set(`çk.${c.id}`)
-data.set(`ödü.${c.id}`, ödül.slice(0).join(' '))
-data.set(`ma.${c.id}`, message.author.id)
-data.set(`..başladı.${message.guild.id}`, {ödül: ödül, host: message.author.username, host1: message.author.tag, message: c.id, channel: kanal[0], süre: bitecegizamanms})
+data.delete(`çk.${c.id}`)
+data.delete(`ödü.${c.id}`)
+data.delete(`ma.${c.id}`)
 c.react('🎉').then(async reaction => {
 const interval = setInterval(async function(){
 const kalanzaman = bitecegizamanms - Date.now()   
@@ -108,7 +108,9 @@ c.edit(embed)
 let asd = c.reactions.get(`🎉`).users.random()
 message.guild.channels.cache.get(kanal[0]).send(`Tebrikler, ${asd}! Bizden ${ödül[0]} kazandın.
 Ödülünü alabilmek için: ${message.author.tag} kişisine ulaş.`)
-data.delete(`..başladı.${message.guild.id}`)
+data.set(`çk.${c.id}`, 'codare')
+data.set(`ma.${c.id}`, message.author)
+data.set(`ödü.${c.id}`, ödül.slice(0).join(' '))
 } else {
 const kalanzamanyazi = destructMS(kalanzaman)
 embed.setDescription(`**Ödül**: ${ödül.slice(0).join(' ')}
@@ -147,33 +149,4 @@ c.edit(embed)
 if(args[0] === 'tekrar') {
 let channel = message.mentions.channels.first()
 if(!args[1]) return message.channel.send(`Çekilişin yapıldığı kanalı etiketle.`)
-if(!channel) return message.channel.send(`Etiktlediğin kanalı bulamıyorum.`)
-
-let mesaj = args[2]
-if(!mesaj) return message.channel.send(`Bir mesaj ID'si girmeyi unuttun.`)
-if(isNaN(mesaj)) return message.channel.send(`Bir mesaj ID'si girmelisin.`)
-
-let asd = channel.messages.fetch(mesaj).then(async msg => {
-const ads = await data.fetch(`çk.${msg.id}`)
-const ödü = await data.fetch(`ödü.${msg.id}`)
-const ma = await data.fetch(`ma.${msg.id}`)
-if(!ads) return message.channel.send(`Hala bitmemiş olan veya çekiliş mesajı olmayan bir mesajın ID'sini girdin.`)
-let asdd = msg.reactions.get(`🎉`).users.random()
-let arc = msg.reactions.get(`🎉`);
-if(!arc) return message.channel.send(`Bu mesaja kimse tepki vermemiş.`)
-channel.send(`Tebrikler, ${asdd}! Bizden ${ödü} kazandın.
-Ödülünü alabilmek için: ${client.users.cache.get(ma)} kişisine ulaş.`)
-})}
-  
-  
-};
-exports.conf = {
-  enabled: true,
-  guildOnly: true,
-  aliases: [],
-  permLevel: 0
-}
-
-exports.help = {
-  name: 'çekiliş'
-};
+if(!channel) return message
