@@ -8,18 +8,6 @@ exports.run = async (bot, message, args) => {
   const duration = moment.duration(bot.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   const msg = message
 
-  var en = require("../../language/english");
-  var tr = require("../../language/turkish");
-
-  var dil = db.fetch(`language_${msg.guild.id}`)
-
-if(dil == "en") {
-  var lang = en
-} 
-if(!dil) {
-var lang = tr
-}
-
    const bunemq = moment.duration(bot.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
    const annencilermaldır = new Discord.MessageEmbed()
 
