@@ -944,6 +944,25 @@ let kanal = await db.fetch(`antiraidK_${member.guild.id}`)== "anti-raid-aç"
 
 //-------------------ANTİ RAİD-------------------\\
 
+//---------------REKLAM İSİM BAN---------------\\
+
+  // İsim Reklam Koruma
+  client.on('guildMemberAdd', youthanasia => {
+    if (db.has(`isimreklamkoruma.${youthanasia.guild.id}`) && youthanasia.user.username.toLowerCase().replace(/ /g, '').includes('discord.gg')) {
+      youthanasia.send('İsminde reklam içerikli bir şey olabileceğinden dolayı seni yasakladım.').catch(err => console.warn('Bir kişiyi reklam içerikli isimden banladım ancak o kişiye mesaj yollayamadım.'));
+      youthanasia.ban({ reason: 'Reklam içerikli kullanıcı adı.' });
+    };
+  });
+
+  client.on('guildMemberUpdate', (rifleman, youthanasia) => {
+    if (db.has(`isimreklamkoruma.${youthanasia.guild.id}`) && youthanasia.displayName.toLowerCase().replace(/ /g, '').includes('discord.gg')) {
+      youthanasia.send('İsminde reklam içerikli bir şey olabileceğinden dolayı seni yasakladım.').catch(err => console.warn('Bir kişiyi reklam içerikli isimden banladım ancak o kişiye mesaj yollayamadım.'));
+      youthanasia.ban({ reason: 'Reklam içerikli kullanıcı adı.' });
+    };
+  });
+
+//---------------REKLAM İSİM BAN---------------\\
+
 //--------------EKLENDİM ATILDIM---------------\\
 
 client.on('guildDelete', guild => {

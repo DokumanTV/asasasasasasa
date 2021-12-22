@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args) => {
 };
 
 exports.conf = {
-  aliases: ['seviye', 'seviyesistemi'],
+  aliases: ['seviye', 'level'],
   guildOnly: true,
   enabled: true,
   permLevel: 0

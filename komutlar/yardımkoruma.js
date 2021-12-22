@@ -10,6 +10,7 @@ const embed  = new Discord.MessageEmbed()
 .addField("**__Not :__**", "**Botun Rolünü En Üste Almassanız Çalışmaz**")
 .setColor('0x36393e')
 .setDescription(`
+\**${p}isimreklamkoruma aç/kapat \** -  İsminde Reklam Olan Kişileri Banlar.
 \**${p}napimengel aç/kapat \** - Napim Engeli Açar.
 \**${p}reklamengel aç/kapat \** - Reklam Engel Açar.
 \**${p}küfürengel aç/kapat \** - Küfür Engel Açar.
