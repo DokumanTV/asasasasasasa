@@ -53,7 +53,8 @@
     "ytdl-core": "^4.9.1",
     "ytdl-core-discord": "^1.2.5",
     "giveaways": "^1.2.3",
-    "discord-giveaways": "^5.0.1"
+    "discord-giveaways": "^5.0.1",
+    "aki-api": "^6.0.8"
   },
   "engines": {
     "node": "14.x"

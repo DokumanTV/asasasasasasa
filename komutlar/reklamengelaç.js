@@ -9,7 +9,7 @@ exports.run = async(client, message, args) => {
   if (!message.member.permissions.has('KICK_MEMBERS')) return message.channel.send(`**Hey Sen** Evet Sen! Bu Komut İçin Yeterli Yetkin Yok!`)
 if (!args[0])  {
     const küfürcu0k = new Discord.MessageEmbed()
-    .setColor('GREEN')
+    .setColor('#2f3136')
     .setTitle('Reklam Engel')
     .setDescription(`** Kullanmak için :** \n ${prefix}reklam-engel aç/kapat `)
       return message.channel.send(küfürcu0k)
@@ -20,7 +20,7 @@ if (!args[0])  {
     let lus = await db.fetch(`reklamengel_${message.guild.id}`)
     
     const reklamengelcim = new Discord.MessageEmbed()
-    .setColor('GREEN')
+    .setColor('#2f3136')
     .setTitle('Başarılı')
     .setDescription('**Reklam Engeli Açtım**')
     return message.channel.send(reklamengelcim)
@@ -50,5 +50,5 @@ exports.conf = {
 };
 
 exports.help = {
- name: 'reklam-engelle'
+ name: 'reklamengel'
 };
