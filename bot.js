@@ -963,6 +963,9 @@ let kanal = await db.fetch(`antiraidK_${member.guild.id}`)== "anti-raid-aç"
 
 //---------------REKLAM İSİM BAN---------------\\
 
+//MUTE
+
+
 //--------------EKLENDİM ATILDIM---------------\\
 
 client.on('guildDelete', guild => {
