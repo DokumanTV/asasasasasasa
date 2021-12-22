@@ -865,6 +865,32 @@ if (message.content === `<@${client.user.id}>` || message.content === `<@!${clie
 
 //--------------------ETİKET PREFİX--------------------\\
 
+//----EKLENİNCE KANAL ACIP MESAJ GONDERME----\\
+
+client.on('guildCreate', guild => {
+    const embed = new Discord.MessageEmbed()
+        .setTitle('BAŞLIK') // başlık
+        .setColor('RANDOM') // renk
+        .setDescription('AÇIKLAMA') // açıklama
+        .setFooter('ALT KISIMA GELECEK YAZI') // alt kısım
+        .setImage('RESİM LİNKİ')// resim
+
+    if (guild.me.hasPermission('MANAGE_CHANNELS')) {
+        guild.channels.create(client.user.username, {
+            type: 'text',
+            topic: '**__Beni Ekldeiğinz İçin Teşekkür Ederim__**! ❤ \n Tüm Komutlara Erişmek İçin -yardım Yazabilirsiniz! ❤ \n Bota Oy Vermek İçin https://top.gg/bot/847022035510886430/vote Oy Verirseniz Mutlu Oluruz! ❤ \n Botun Destek Sunucusu ',
+            permissionOverwrites: [{ id: guild.id, deny: ['VIEW_CHANNEL'] }]
+        }).then(c => {
+            c.send(`**Beni eklediğiniz için teşekkür ederim ❤**`, embed)
+            setTimeout(() => {
+                c.send('@everyone').then(m => m.delete({ timeout: 500 }))
+            }, 3000)
+        });
+    };
+});
+
+//----EKLENİNCE KANAL ACIP MESAJ GONDERME----\\
+
 //-------------------ANTİ RAİD-------------------\\
 
 client.on("guildMemberAdd", async member => {
