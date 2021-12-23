@@ -12,6 +12,7 @@ const embed  = new Discord.MessageEmbed()
 .setDescription(`
 \**${p}sunucukur-oyun \** - Oyun & Sohbet Tema.
 \**${p}sunucukur-gelişmiş \** - Gelişmiş Tema.
+\**${p}sunucukur-normal \** - Normal Tema.
 \**${p}sunucukur-public \** - Public Tema.
 `)
 .addField(":link:・LİNKLER", "> [Botu Ekle!](https://discord.com/oauth2/authorize?client_id=847022035510886430&scope=bot&permissions=8589934591) | [Destek Sunucu!](https://discord.gg/Jycf7FEZAa) | [YouTube!](https://youtube.com/channel/UC9c6nECzH3N2tHELi1Bl47w)")

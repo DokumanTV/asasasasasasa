@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
 if(message.author.id !== message.guild.owner.user.id) return message.channel.send(new Discord.MessageEmbed().setThumbnail(message.author.avatarURL() ? message.author.avatarURL({dynamic: true}) : 'https://cdn.glitch.com/8e70d198-9ddc-40aa-b0c6-ccb4573f14a4%2F6499d2f1c46b106eed1e25892568aa55.png').setImage('https://cdn.glitch.com/0c8ef551-5187-48a8-9daf-f2cc35630f21%2Fyoneticigif.gif').setTitle('Bir hata oldu!').setDescription(`• \`${client.ayarlar.prefix}sunucu-kur\` **kullanmak için,** \`Sunucu Sahibi\` **olmanız gerekiyor.**`).addField('Sunucu Sahibi', message.guild.owner.user.tag).setImage('https://cdn.glitch.com/6f5bb25b-c11b-4003-8a39-69490341df18%2FScreenshot_1.png'));
 
 message.channel.send(new Discord.MessageEmbed()
-.setTitle('Oyun & Sohbet Tema')
+.setTitle('Normal Tema')
 .setThumbnail('https://cdn.discordapp.com/avatars/686185592899633200/6499d2f1c46b106eed1e25892568aa55.webp?size=512')
 .setFooter(`Ping: ${client.ws.ping.toFixed(0)}`, client.user.avatarURL({dynamic: true}))
 .setDescription(`${message.author} **Sunucunun** kurulmasını onaylıyor musun? 😇
@@ -80,16 +80,27 @@ message.guild.channels.create('「👑」Yönetici', {type: 'voice'}).then(a => 
 message.guild.channels.create('「🌠」Moderatör', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
 });
 
-message.guild.channels.create('●▬▬▬▬๑「🎰 Oyun Alanı」๑▬▬▬▬●', {type: 'category'}).then(parent => {
-message.guild.channels.create('👥・oyun-chat', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🎮・League Of Legends', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('🎮・ZULA', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(15));
-message.guild.channels.create('🎮・CSGO', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('🎮・PUBG', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('🎮・FORTNİTE', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('🎮・MİNECRAFT', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(15));
-message.guild.channels.create('🎮・ROBLOX', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('🎮・APEX', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
+message.guild.channels.create('💬 | SOHBET ODALARI', {type: 'category'}).then(parent => {
+message.guild.channels.create('「💬」Sesli Sohbet 1', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(99));
+message.guild.channels.create('「💬」Sesli Sohbet 2', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(99));
+message.guild.channels.create('「💬」Sesli Sohbet 3', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(99));
+});
+  
+message.guild.channels.create('💬 | MÜZİK ODALARI', {type: 'category'}).then(parent => {
+message.guild.channels.create('「🎶」Müzik Odası 1', {type: 'voice'}).then(a => a.setParent(parent.id))
+message.guild.channels.create('「🎶」Müzik Odası 2', {type: 'voice'}).then(a => a.setParent(parent.id))
+message.guild.channels.create('「🎶」Müzik Odası 3', {type: 'voice'}).then(a => a.setParent(parent.id))
+});
+  
+message.guild.channels.create('🎰 | OYUN ODALARI', {type: 'category'}).then(parent => {
+message.guild.channels.create('「👥」oyun-chat', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「🎮」Oyun Odası 1', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
+message.guild.channels.create('「🎮」Oyun Odası 2', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(15));
+message.guild.channels.create('「🎮」Oyun Odası 3', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
+});
+
+message.guild.channels.create('💤 | AFK', {type: 'category'}).then(parent => {
+message.guild.channels.create('「💤」AFK', {type: 'voice'}).then(a => a.setParent(parent.id))
 });
 });
 
