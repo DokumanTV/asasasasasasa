@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
 if(message.author.id !== message.guild.owner.user.id) return message.channel.send(new Discord.MessageEmbed().setThumbnail(message.author.avatarURL() ? message.author.avatarURL({dynamic: true}) : 'https://cdn.glitch.com/8e70d198-9ddc-40aa-b0c6-ccb4573f14a4%2F6499d2f1c46b106eed1e25892568aa55.png').setImage('https://cdn.glitch.com/0c8ef551-5187-48a8-9daf-f2cc35630f21%2Fyoneticigif.gif').setTitle('Bir hata oldu!').setDescription(`• \`${client.ayarlar.prefix}sunucu-kur\` **kullanmak için,** \`Sunucu Sahibi\` **olmanız gerekiyor.**`).addField('Sunucu Sahibi', message.guild.owner.user.tag).setImage('https://cdn.glitch.com/6f5bb25b-c11b-4003-8a39-69490341df18%2FScreenshot_1.png'));
 
 message.channel.send(new Discord.MessageEmbed()
-.setTitle('Gelişmiş Tema')
+.setTitle('Oyun & Sohbet Tema')
 .setThumbnail('https://cdn.discordapp.com/avatars/686185592899633200/6499d2f1c46b106eed1e25892568aa55.webp?size=512')
 .setFooter(`Ping: ${client.ws.ping.toFixed(0)}`, client.user.avatarURL({dynamic: true}))
 .setDescription(`${message.author} **Sunucunun** kurulmasını onaylıyor musun? 😇
@@ -36,16 +36,9 @@ role.setPermissions(['MANAGE_GUILD', 'MANAGE_ROLES', 'MANAGE_NICKNAMES', 'MANAGE
 role.setColor('#ff4000  ');
 });
 message.guild.roles.create({ data: { name: '⛩ ・ Rehber' }, reason: 'ayn' }).then(s => s.setColor('#955aab'))
-message.guild.roles.create({ data: { name: '📚 ・ Kayıt Sorumlusu' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
-message.guild.roles.create({ data: { name: 'Tagınız ・ Tagımızı Alan' }, reason: 'ayn' }).then(s => s.setColor('GREEN'))
-message.guild.roles.create({ data: { name: '⭐️ ・ Boost Basan' }, reason: 'ayn' }).then(s => s.setColor('#ff00ff'))
-message.guild.roles.create({ data: { name: '⭐️ ・ Özel Üye' }, reason: 'ayn' }).then(s => s.setColor('#00fafa'))
-message.guild.roles.create({ data: { name: '👥 ・ Partner' }, reason: 'ayn' }).then(s => s.setColor('#2e9afe'))
-message.guild.roles.create({ data: { name: '👦 ・ Erkek' }, reason: 'ayn' }).then(s => s.setColor('#955aab'))
-message.guild.roles.create({ data: { name: '🌸 ・ Kız' }, reason: 'ayn' }).then(s => s.setColor('PURPLE'))
-message.guild.roles.create({ data: { name: '🎥 ・ Yayıncı' }, reason: 'ayn' }).then(s => s.setColor('#f52121'))
-message.guild.roles.create({ data: { name: '🔮 ・ Botlar' }, reason: 'ayn' }).then(s => s.setColor('#e77e2e'))
-message.guild.roles.create({ data: { name: '❌ ・ Kayıtsız' }, reason: 'ayn' }).then(s => s.setColor('GREEN'))
+message.guild.roles.create({ data: { name: '🌸 ・ Özel Üye' }, reason: 'ayn' }).then(s => s.setColor('#2e9afe'))
+message.guild.roles.create({ data: { name: '💛 ・ Üye' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
+message.guild.roles.create({ data: { name: '🔮・Botlar' }, reason: 'ayn' }).then(s => s.setColor('#e77e2e'))
 
 message.guild.channels.create('●▬▬๑「Kayıt Alanı」๑▬▬●', {type: 'category'}).then(parent => {
 message.guild.channels.create('・register-chat', {type: 'text'}).then(c => c.setParent(parent.id));
@@ -54,27 +47,17 @@ message.guild.channels.create('🎤 | Teyit ²', {type: 'voice'}).then(a => a.se
 message.guild.channels.create('🎤 | Teyit ³', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(5));
 });
 
-message.guild.channels.create('§▬▬▬「GENEL」▬▬▬§', {type: 'category'}).then(parent => {
+message.guild.channels.create('📜 | BİLGİLENDİRME', {type: 'category'}).then(parent => {
 message.guild.channels.create('📃・kurallar', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('📢・duyurular', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('💾・sunucu-log', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('📊・çekilişler', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('👥・partnerler', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🎁・boost-bilgi ', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
-message.guild.channels.create('☆▬▬「GENEL」▬▬☆', {type: 'category'}).then(parent => {
+message.guild.channels.create('☆▬▬「BİLGİLENDİRME」▬▬☆', {type: 'category'}).then(parent => {
 message.guild.channels.create('💬・sohbet', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('📷・galeri', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('🤖・bot-komut', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('📌・öneri-şikayet', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🔊・Sesli Sohbet', {type: 'voice'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🔊・Özel Sohbet', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(2));
-message.guild.channels.create('🔊・Özel Sohbet 2', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(3));
-});
-message.guild.channels.create('☆▬▬▬▬「YETKİLİ ALIM」▬▬▬▬☆', {type: 'category'}).then(parent => {
-message.guild.channels.create('📋・yetkili-alım', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('📋・yetkili-alım-kuralları', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('🎁・boost-bilgi ', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
 message.guild.channels.create('☆▬▬▬▬「🖨」▬▬▬▬☆', {type: 'category'}).then(parent => {
@@ -83,7 +66,7 @@ message.guild.channels.create('🚪・giriş-çıkış', {type: 'text'}).then(c 
 });
 
 message.guild.channels.create('♢▬▬▬「YÖNETİM」▬▬▬♢', {type: 'category'}).then(parent => {
-message.guild.channels.create('💬・yetkili-chat', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('📌・şikayet-öneri', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('🏆・Yönetici Odası', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
 message.guild.channels.create('🏆・Kurucu Odası', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
 });
@@ -93,7 +76,7 @@ message.guild.channels.create('●▬▬▬▬๑「🎵 Müzik Alanı」๑▬�
 message.guild.channels.create('🎵 ・ Music Room', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
 message.guild.channels.create('🎤 ・ Live Music', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(15));
 message.guild.channels.create('🔓 ・ Free Style', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('💫 ・ Starbucks', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
+message.guild.channels.create('💫・ Starbucks', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
 });
 
 message.guild.channels.create('●▬▬▬▬๑「Eğlence Alanı」๑▬▬▬▬●', {type: 'category'}).then(parent => {
@@ -102,8 +85,6 @@ message.guild.channels.create('🚫・bir-söz-bırak', {type: 'text'}).then(c =
 message.guild.channels.create('🔎・instagram', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('🎆・sayı-sayma', {type: 'text'}).then(c => c.setParent(parent.id));
 message.guild.channels.create('📘・şarkı-türet', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('💡・kelime-türetme', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('💣・bom', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
 message.guild.channels.create('●▬▬▬▬๑「🎰 Oyun Alanı」๑▬▬▬▬●', {type: 'category'}).then(parent => {
@@ -135,5 +116,5 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'sunucukur-public'
+  name: 'sunucukur-oyun'
 };

@@ -11,7 +11,7 @@ message.channel.send(new Discord.MessageEmbed()
 .setFooter(`Ping: ${client.ws.ping.toFixed(0)}`, client.user.avatarURL({dynamic: true}))
 .setDescription(`${message.author} **Sunucunun** kurulmasını onaylıyor musun? 😇
 
-**Dipnot:** Bazı kanllar silinmemiş gibi görünebilir. Discord dan çıkıp girin düzelir.`)).then(resulter => {
+**Dipnot:** Bazı kanallar silinmemiş gibi görünebilir. Discord dan çıkıp girin düzelir.`)).then(resulter => {
 resulter.react('✅').then(() => resulter.react('❌'));
 
 const yesFilter = (reaction, user) => { return reaction.emoji.name === '✅' && user.id === message.guild.owner.user.id; };
