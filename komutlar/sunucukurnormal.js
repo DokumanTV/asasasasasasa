@@ -40,24 +40,17 @@ message.guild.roles.create({ data: { name: '🌸 ・ Özel Üye' }, reason: 'ayn
 message.guild.roles.create({ data: { name: '💛 ・ Üye' }, reason: 'ayn' }).then(s => s.setColor('#00ff40'))
 message.guild.roles.create({ data: { name: '🔮・Botlar' }, reason: 'ayn' }).then(s => s.setColor('#e77e2e'))
 
-message.guild.channels.create('●▬▬๑「Kayıt Alanı」๑▬▬●', {type: 'category'}).then(parent => {
-message.guild.channels.create('・register-chat', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🎤 | Teyit ¹', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(5));
-message.guild.channels.create('🎤 | Teyit ²', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(5));
-message.guild.channels.create('🎤 | Teyit ³', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(5));
-});
-
 message.guild.channels.create('📜 | BİLGİLENDİRME', {type: 'category'}).then(parent => {
-message.guild.channels.create('📃・kurallar', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('📢・duyurular', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('💾・sunucu-log', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「📋」kurallar', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「📢」・duyurular', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「📊」anketler', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「👥」partnerler', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
-message.guild.channels.create('☆▬▬「BİLGİLENDİRME」▬▬☆', {type: 'category'}).then(parent => {
-message.guild.channels.create('💬・sohbet', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('📷・galeri', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🤖・bot-komut', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🎁・boost-bilgi ', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('👋 | HOŞ GELDİNİZ', {type: 'category'}).then(parent => {
+message.guild.channels.create('「🚪」gelen-giden', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「⏱」sayaç', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「📥」otorol', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
 message.guild.channels.create('☆▬▬▬▬「🖨」▬▬▬▬☆', {type: 'category'}).then(parent => {
@@ -65,26 +58,26 @@ message.guild.channels.create('📥・sayaç', {type: 'text'}).then(c => c.setPa
 message.guild.channels.create('🚪・giriş-çıkış', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
-message.guild.channels.create('♢▬▬▬「YÖNETİM」▬▬▬♢', {type: 'category'}).then(parent => {
-message.guild.channels.create('📌・şikayet-öneri', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🏆・Yönetici Odası', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('🏆・Kurucu Odası', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
+message.guild.channels.create('📝 | METİN KANALLARI', {type: 'category'}).then(parent => {
+message.guild.channels.create('「💬」genel-sohbet', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「🤖」bot-komutları', {type: 'text'}).then(c => c.setParent(parent.id)) 
+message.guild.channels.create('「📷」photo-chat', {type: 'text'}).then(c => c.setParent(parent.id))
+message.guild.channels.create('「📬」şikayet-öneri', {type: 'text'}).then(c => c.setParent(parent.id))
 });
 
-
-message.guild.channels.create('●▬▬▬▬๑「🎵 Müzik Alanı」๑▬▬▬▬●', {type: 'category'}).then(parent => {
-message.guild.channels.create('🎵 ・ Music Room', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('🎤 ・ Live Music', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(15));
-message.guild.channels.create('🔓 ・ Free Style', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
-message.guild.channels.create('💫・ Starbucks', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
+message.guild.channels.create('🎡 | EĞLENCE KANALLARI', {type: 'category'}).then(parent => {
+message.guild.channels.create('「💼」tuttu-tutmadı', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「🚫」bir-söz-bırak', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「💣」bom', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「🎆」sayı-sayma', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('「📘」şarkı-türet', {type: 'text'}).then(c => c.setParent(parent.id));
 });
 
-message.guild.channels.create('●▬▬▬▬๑「Eğlence Alanı」๑▬▬▬▬●', {type: 'category'}).then(parent => {
-message.guild.channels.create('💼・tuttu-tutmadı', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🚫・bir-söz-bırak', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🔎・instagram', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('🎆・sayı-sayma', {type: 'text'}).then(c => c.setParent(parent.id));
-message.guild.channels.create('📘・şarkı-türet', {type: 'text'}).then(c => c.setParent(parent.id));
+message.guild.channels.create('🏆 | YETKİLİ ODALARI', {type: 'category'}).then(parent => {
+message.guild.channels.create('「💼」yetkili-sohbet', {type: 'text'}).then(c => c.setParent(parent.id))
+message.guild.channels.create('「🏆」Kurucu', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(15));
+message.guild.channels.create('「👑」Yönetici', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
+message.guild.channels.create('「🌠」Moderatör', {type: 'voice'}).then(a => a.setParent(parent.id) && a.setUserLimit(10));
 });
 
 message.guild.channels.create('●▬▬▬▬๑「🎰 Oyun Alanı」๑▬▬▬▬●', {type: 'category'}).then(parent => {
