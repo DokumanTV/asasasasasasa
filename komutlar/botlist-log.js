@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
   
 if(!message.member.hasPermission("ADMINISTRATOR")) {
 const embed = new Discord.MessageEmbed()
-.setColor('RED')
+.setColor('#2f3136')
 .setDescription('**Log kanalını ayarlamak için `Yönetici` İznine sahip olmalısın!')
 return message.channel.send(embed)
 }
@@ -23,7 +23,7 @@ db.delete(`ardeeks_${message.guild.id}`)
 let kinal = db.fetch(`ardeeks_${message.guild.id}`)
 if(db.has(`ardeeks_${message.guild.id}`)) {
 const embed = new Discord.MessageEmbed()
-.setColor('BLUE')
+.setColor('#2f3136')
 .setDescription(`**Bot Log kanalı <#${kinal}> Kanalına Ayarlı! \n Kapatmak için** \`${ayarlar.prefix}botlog sıfırla Yazınız. \``)
 return message.channel.send(embed)
 }
@@ -31,15 +31,14 @@ let kanal = message.mentions.channels.first();
   
 if(!kanal) {
 const embed = new Discord.MessageEmbed()
-.setColor('RED')
+.setColor('#2f3136')
 .setDescription(`** Bot Log kanalın etiketlemedin! \`Doğru kullanım: ${ayarlar.prefix}botlog #kanal\`**`)
 return message.channel.send(embed)
 }
 db.set(`ardeeks_${message.guild.id}`, kanal.id);
- //youtube.com/Ardééks
-// Teşekkürler xFixxy
+
 const embed = new Discord.MessageEmbed()
-.setColor('GREEN')
+.setColor('#2f3136')
 .setDescription(`** Bot Log Kanalını ${kanal} Olarak Ayarlandı!**`)   
 message.channel.send(embed)                                                                                                                                      
 };

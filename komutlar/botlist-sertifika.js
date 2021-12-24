@@ -16,7 +16,7 @@ let log = db.fetch(`sa1_${message.guild.id}`)
         .then(msg => msg.delete(5000));
 
     let embed2 = new Discord.MessageEmbed()
-      .setColor("#ffff00")
+      .setColor("#2f3136")
 
       .setDescription(
         `>  :load:` +
@@ -31,8 +31,7 @@ let log = db.fetch(`sa1_${message.guild.id}`)
       .then(msg => msg.delete(3000));
   }
 };
-//youtube.com/Ardééks
-//teşekkürler xFixxy
+
 exports.conf = {
   enabled: true,
   guildOnly: false,

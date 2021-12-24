@@ -24,7 +24,7 @@ exports.run = function(client, message, args) {
         .then(msg => msg.delete(10000));
     message.delete();
     const embed = new Discord.MessageEmbed()
-      .setColor("PURPLE")
+      .setColor("#2f3136")
       .setDescription(
         `[0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=0) | ` + ` | [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=8)`,true)
       .setTitle(":white_small_square: Bot Başvurusu ")
@@ -39,8 +39,7 @@ exports.run = function(client, message, args) {
     message.channel.send(`:white_small_square:__**Bot ekleme isteğiniz alındı.**__`).then(msg => msg.delete(3000));
 }
 };
-//youtube.com/Ardééks
-//teşekkürler xFixxy
+
 exports.conf = {
   enabled: true,
   guildOnly: false,

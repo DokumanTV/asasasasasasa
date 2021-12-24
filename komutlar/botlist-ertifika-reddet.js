@@ -14,13 +14,13 @@ let log = db.fetch(`sa1_${message.guild.id}`)
       `:no_entry: Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`
     );
   let embed2 = new Discord.MessageEmbed()
-    .setColor("#7f0000")
+    .setColor("#2f3136")
     .setDescription(
       ` :white_small_square: |**Maalesef!** ${botisim} **adlı botunun sertifikası reddedildi.** \n  :white_small_square: | **Sebep =** \`${sebep}\` \n  :white_small_square: | **Reddeden yetkili =** ${yetkili} `
     );
 
   let embed = new Discord.MessageEmbed()
-    .setColor("#7f0000")
+    .setColor("#2f3136")
     .setDescription(
       `  :white_small_square: | ${sahip} **Adlı Üyemizin** ${botisim} **İsimli Botunun Sertifikası Reddedilmiştir.** \n :white_small_square:  | **Sebep =** \`${sebep}\` \n :white_small_square:  | **Reddeden yetkili =** ${yetkili} `
     );
@@ -41,8 +41,7 @@ let log = db.fetch(`sa1_${message.guild.id}`)
   client.channels.cache.get(log).send(embed);
   sahip.send(embed2);
 };
-//youtube.com/Ardééks
-//teşekkürler xFixxy
+
 exports.conf = {
   enabled: true,
   guildOnly: false,

@@ -12,8 +12,7 @@ let rol = db.fetch(`botlistyetkilirol_${message.guild.id}`)
 db.delete(`botlistyetkilirol_${message.guild.id}`)
   return;
 }
-//youtube.com/Ardééks
-//teşekkürler xFixxy
+
 let rol = message.mentions.roles.first()
 if(!rol) return message.channel.send(`:white_small_square:  Ayarlayacağınız Botlist Yetkili Rolü Belirtiniz!`)
 

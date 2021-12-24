@@ -18,22 +18,22 @@ const sebep = args.slice(1).join(" ");
   let kanal = await db.fetch(`hgK9_${message.guild.id}`); 
   if (!kanal) return;
   const embed = new Discord.MessageEmbed()
-    .setColor("RED")
+    .setColor("#2f3136")
     .setDescription(`<@${sahip}> kullanıcının botu başarıyla reddedildi!`);
   message.channel.send(embed).then(msg => msg.delete(5000));
   const embed3 = new Discord.MessageEmbed()
-  .setColor("RED")
+  .setColor("#2f3136")
   .setDescription(`Botunuz ${sebep} sebebinden reddedildi!`)
   const embed2 = new Discord.MessageEmbed()
-  .setColor("RED")
+  .setColor("#2f3136")
   .setDescription(
     `:red_circle: | ${message.author} adlı yetkili tarafından <@${sahip}> adlı kullanıcının botu \`${sebep}\` sebebinden dolayı reddedldi!`
   );
-  client.channels.cache.get(kanal).send(embed2); // Kanal ID
+  client.channels.cache.get(kanal).send(embed2);
   let yetkilikanal = await db.fetch(`hgK2_${message.guild.id}`); 
   if (!yetkilikanal) return;
   const yetkili = new Discord.MessageEmbed()
-  .setColor("RED")
+  .setColor("#2f3136")
   .setTitle("Reddedildi")
   .setDescription(`**Yetkili**\n${message.author}\n**Bot Sahibi**\n<@${sahip}>\n**Sebep**\n${sebep}`)
   client.channels.cache.get(yetkilikanal).send(yetkili);

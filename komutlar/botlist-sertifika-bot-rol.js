@@ -7,15 +7,14 @@ exports.run = async(client, message, args) => {
 
 if (args[0] === 'sıfırla') {
 let rol = db.fetch(`selam12_${message.guild.id}`)  
-  if (!rol) return message.channel.send(`:white_small_square: Sertifika BOT Rolü Ayarlanmadık`)
-  message.channel.send(`:white_small_square: Sertifika BOT ROLU SİLDİM TEKRAR OLUSTUR!`)
+  if (!rol) return message.channel.send(`:white_small_square: Rol Zaten Ayarlanmamış!`)
+  message.channel.send(`:white_small_square: Sıfırlandı!`)
 db.delete(`selam12_${message.guild.id}`)
   return;
 }
-//youtube.com/Ardééks
-//teşekkürler xFixxy
+
 let rol = message.mentions.roles.first()
-if(!rol) return message.channel.send(`:white_small_square: Ayarlayacağınız Sertifika verilcek bot rolünü Belirtiniz!`)
+if(!rol) return message.channel.send(`:white_small_square: Ayarlayacağınız Sertifika Verilcek Bot Rolünü Belirtiniz!`)
 
 db.set(`selam12_${message.guild.id}`, rol.id)
 

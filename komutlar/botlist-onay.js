@@ -32,14 +32,13 @@ let b = db.fetch(`xfixxy-ardeeks_${message.guild.id}`)
     ` :white_small_square: | **Tebrikler!** ${botisim} **İsimli Botun Onaylandı.Developer Rolün Başarı ile Verildi** \n\n  :white_small_square: | **Onaylayan Yetkilimiz =** ${yetkili} ` );
   sahip.send(embedd);
   let embed2 = new Discord.MessageEmbed()
-    .setColor("#5fbf00")
+    .setColor("#2f3136")
     .setDescription(
       ` :white_small_square: | ${sahip} **İsimli kişinin** ${botisim} **adlı botu onaylandı.** \n\n  :white_small_square: | **Onaylayan Yetkilimiz =** ${yetkili} `
 );
   client.channels.cache.get(log).send(embed2);
 };
-//youtube.com/Ardééks
-//teşekkürler xFixxy
+
 exports.conf = {
   enabled: true,
   guildOnly: false,

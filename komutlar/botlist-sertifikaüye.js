@@ -7,20 +7,19 @@ exports.run = async(client, message, args) => {
 
 if (args[0] === 'sıfırla') {
 let rol = db.fetch(`sa7_${message.guild.id}`)  
-  if (!rol) return message.channel.send(`:white_small_square: Sertifika Üye Rolü Ayarlanmadık`)
-  message.channel.send(`:white_small_square: Sertifika Üye ROLU SİLDİM TEKRAR OLUSTUR!`)
+  if (!rol) return message.channel.send(`:white_small_square: Sertifika Üye Rolü Zaten Ayarlı Değil!`)
+  message.channel.send(`:white_small_square: Sertifika Üye Rolü Sıfırlandı!`)
 db.delete(`sa7_${message.guild.id}`)
   return;
 }
 
 let rol = message.mentions.roles.first()
-if(!rol) return message.channel.send(`:white_small_square: Ayarlayacağınız Sertifika üye rolünü Belirtiniz!`)
+if(!rol) return message.channel.send(`:white_small_square: Ayarlayacağınız Sertifika Üye Rolünü Belirtiniz!`)
 
 db.set(`sa7_${message.guild.id}`, rol.id)
 
 message.channel.send(`:white_small_square: Sertifika üye rolünüz ${rol} Olarak Ayarlandı!`)
-//youtube.com/Ardééks
-//teşekkürler xFixxy  
+ 
 }
 exports.conf = {
   name: true,
