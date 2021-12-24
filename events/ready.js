@@ -8,8 +8,10 @@ var prefix = ayarlar.prefix;
 module.exports = client => {
 var oyun = [
         "-yardım",
-        "Kayıt & Koruma & Moderasyon & Sunucu Kur & Eğlence & Radyo & Müzik(Ekleniyor) & Çekiliş(Ekleniyor)",
-        "Bot Yapım Aşamasındadır Az Kod Bulunmaktadır Kodların Bazıları Çalışmaya Bilir Destek Sunucusundan Bildirebilirsiniz"  
+        "Youtube / Döküman TV",
+        "Öneri Ve Şikayetlerinizi Destek Sunucumuzdan İletebilirsiniz.",
+        "Botumuzda Botlist, Kayıt, Moderasyon, Koruma, Eğlence, Radyo Ve Uptime Gibi Gelişmiş Komutlar Mevcuttur.",
+        "Aşk iki kişiyle oynanır, iyi olan kaybeder!"
     ];
 
     setInterval(function() {
