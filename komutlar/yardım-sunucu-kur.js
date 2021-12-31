@@ -23,7 +23,7 @@ if(nicat == 'sunucukur'){
 }
 exports.conf = {
 enabled: true,
-aliases: [''],
+aliases: [],
 permLevel: 0
 }
 exports.help = {
