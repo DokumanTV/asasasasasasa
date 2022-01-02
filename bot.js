@@ -580,58 +580,8 @@ client.on('message', message => {
   if(codemarefireklamliste.some(codemarefi => message.content.includes(codemarefi))){
    
     message.delete()
-
-   
-    const keslan = new Discord.MessageEmbed()
-    .setDescription(`- **Projeniz 3 4 dakika içinde eklenicektir :) ${message.author}**
-Lütfen spam ATMAYINIZ`  )
-    .setColor('#F32b39')
-    message.channel.send(keslan) .then(msg => msg.delete({ timeout: 9000}));
   }
 })
-
-//------------ANTİSPAM-----------\\
-const userMap = new Map();
-client.on("message", async message => {
-   if(!message.guild) return;
-const TheSid = db.get(`antispam_${message.guild.id}`)
-    if(message.author.bot) return;
-if(TheSid === "acik") { 
-
-    if(message.member.permissions.has("MANAGE_MESSAGES") || message.member.permissions.has("ADMINISTRATOR")) return;
-    if(userMap.has(message.author.id)) {
-    const userdata = userMap.get(message.author.id);
-    let msgcount = userdata.msgcount;
-    ++msgcount;
-    if(parseInt(msgcount) === 5) {
-      message.channel.bulkDelete('5')
-    message.channel.send(`<@${message.author.id}> Bu sunucuda Spam yapmak yasak!`)
-    
-    } else {
-    
-    userdata.msgcount = msgcount;
-    userMap.set(message.author.id, userdata)
-    
-         }
-         
-        }else {
-    userMap.set(message.author.id, {
-    msgcount: 1,
-    lastMessage: message,
-    timer: null
-    
-     });
-    setTimeout(() => {
-      userMap.delete(message.author.id);
-    }, 5000);
-    }
-  
-
-} else return;
-
-});
-
-//------------ANTİSPAM-----------\\
 
 //---------EKLENİNCE SAHİBE DM--------\\
 
