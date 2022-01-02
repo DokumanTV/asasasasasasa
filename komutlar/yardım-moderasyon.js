@@ -21,10 +21,11 @@ const embed  = new Discord.MessageEmbed()
 \**${p}sayaç \** - Sayaçı Ayarlarsınız.
 \**${p}patlat \** - Yazdığınız Kanalı Siler Ve Yeniden Oluşturur.
 \**${p}sunucukur \** - Sunucu Kurar.
+\**${p}emojikur \** - Emoji Kurar.
 \**${p}herkestenrolal <rol> \** - Herkesten Belirtilen Rolü Alır.
 \**${p}herkeserolver <rol> \** - Herkese Belirtilen Rolü Verir.
 \**${p}rololuştur <isim> \** - Belirtilen İsimde Rol oluşturur.
-\**${p}uyarı \** - Uyarı Yardım Menüsü.
+\**${p}uyarı \** - Etiketlediğiniz Kişiyi Uyarırsınız.
 \**${p}forceban <kişi id> <sebep> \** - Sunucuda Olmayan Kişiye Ban Atar.
 \**${p}kullanıcıadlarısıfırla \** - Sunucuda Yazılan Takma Adları Sıfırlar.
 \**${p}guild-reset \** - Sunucudaki Tüm Kanalları Silip Yeniden Oluşturur.
