@@ -50,7 +50,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
       message.channel.send("Kurulum Başlatılıyor..");
 
       message.guild
-        .emojis.create(`https://i.imgyukle.com/2020/05/05/riXHCn.gif`, "tik1")
+        .emojis.create(`https://discordsunucu.com/images/emoji_list/ban.png`, "banned")
         .then(tm => {
           message.channel.send("Emoji oluşturuldu");
         })
@@ -59,7 +59,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         })
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riXY6h.gif`, "tik2")
+            .emojis.create(`https://emoji.discord.st/emojis/65033a38-b3bd-4aa5-8783-63fcfc07171d.gif`, "kedi")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -69,7 +69,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         )
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riXSOx.gif`, "kalp")
+            .emojis.create(`https://minecrafttr.com/data/attachments/16/16107-53434a7c3fb191763aba60ed51d9c7ce.jpg`, "neblm")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -80,8 +80,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riXCRv.png`,
-              "budur"
+              `https://minecrafttr.com/data/attachments/5/5044-78ddeec2035825f95695ce3513b1b167.jpg`,
+              "bosyapma"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
@@ -92,7 +92,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         
         
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riXJyq.png`, "yok")
+            .emojis.create(`https://minecrafttr.com/data/attachments/5/5045-a0c1809a7da9faf8a6759af1899391dd.jpg`, "hanımcılık")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -103,8 +103,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         .then(Emoji =>
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riXV6P.png`,
-              "kapak"
+              `https://minecrafttr.com/data/attachments/16/16109-fda2351c44230ab5a5c400acc0806915.jpg`,
+              "lancazyapma"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
@@ -115,7 +115,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         )
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riY38p.gif`, "no1")
+            .emojis.create(`https://emoji.gg/assets/emoji/4862-ban-hammer.png`, "ban")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -125,7 +125,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         )
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riYlEy.gif`, "tik3")
+            .emojis.create(`https://emoji.gg/assets/emoji/1391_fail.png`, "fail")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -136,8 +136,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         .then(Emoji =>
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riYtLM.gif`,
-              "budur"
+              `https://emoji.gg/assets/emoji/4426_number4.png`,
+              "number4"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
@@ -162,8 +162,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         .then(Emoji =>
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riYM7n.gif`,
-              "alarm"
+              `https://emoji.gg/assets/emoji/2635_number1.png`,
+              "number1"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
@@ -187,7 +187,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         )
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riYfrU.gif`, "pin")
+            .emojis.create(`http://clipart.coolclips.com/480/vectors/tf05185/CoolClips_vc016111.png`, "rip")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -198,8 +198,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         .then(Emoji =>
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riYwhH.gif`,
-              "alkis"
+              `https://emoji.gg/assets/emoji/6079_Na_ni.png`,
+              "nani"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
@@ -211,8 +211,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         .then(Emoji =>
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riak7G.gif`,
-              "biciku"
+              `https://emoji.gg/assets/emoji/3946_DeadChat.png`,
+              "deadchat"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
@@ -223,7 +223,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         )
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riaEIS.gif`, "no2")
+            .emojis.create(`https://emoji.gg/assets/emoji/6203_well_fuck.png`, "wellfuck")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -234,8 +234,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         .then(Emoji =>
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riaRGb.png`,
-              "satis"
+              `https://store.donanimhaber.com/b2/c5/bd/b2c5bda29aebafdb143c1a893d088198.png`,
+              "türkiye"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
@@ -246,7 +246,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         )
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riaV4s.png`, "eyw")
+            .emojis.create(`https://stickerly.pstatic.net/sticker_pack/nTMoF8lzdyKiGGXldvxwPg/TRTQB2/7/89561ae1-3ef4-4a7b-9f35-e5c44734d0a5.png`, "eyw")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -256,7 +256,7 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         )
         .then(Emoji =>
           message.guild
-            .emojis.create(`https://i.imgyukle.com/2020/05/05/riaJyQ.gif`, "tik4")
+            .emojis.create(`https://minecrafttr.com/data/attachments/16/16108-3a3758e9b6f9887e526366a6de366400.jpg`, "içiyonmu")
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
             })
@@ -267,8 +267,8 @@ message.channel.send("Lütfen -emojikur bilgi kullanınız.")
         .then(Emoji =>
           message.guild
             .emojis.create(
-              `https://i.imgyukle.com/2020/05/05/riarlc.gif`,
-              "hayde"
+              `https://preview.redd.it/vl4ftf6mghr51.png?width=640&crop=smart&auto=webp&s=b0059006aee7cf014fac5d1557421fe69a86b70f`,
+              "utangaç"
             )
             .then(tm => {
               message.channel.send("Emoji oluşturuldu");
