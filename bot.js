@@ -593,7 +593,7 @@ const dcs = new Discord.MessageEmbed()
 .setTitle(`Merhaba!`)
 .setThumbnail(client.user.avatarURL)
 .setTimestamp()
-.setColor("GREEN")
+.setColor("RANDOM")
 .addField('Prefixim', ayarlar.prefix)
 .addField(`Destek Sunucusu`, `https://discord.gg/Jycf7FEZAa`)
 murphy.send(dcs)
@@ -615,19 +615,19 @@ if (message.content === `<@${client.user.id}>` || message.content === `<@!${clie
 
 client.on('guildCreate', guild => {
     const embed = new Discord.MessageEmbed()
-        .setTitle('BAŞLIK') // başlık
-        .setColor('RANDOM') // renk
-        .setDescription('AÇIKLAMA') // açıklama
-        .setFooter('ALT KISIMA GELECEK YAZI') // alt kısım
-        .setImage('RESİM LİNKİ')// resim
+        .setTitle('Pluto+ Bot') // başlık
+        .setColor('#2f3136') // renk
+        .setDescription('Pluto+ Bot') // açıklama
+        .setFooter('Sunucuya Aldığınız İçin Teşekkürler!') // alt kısım
+        .setImage('https://cdn.discordapp.com/attachments/910121358669783040/910121456741007400/standard.gif')// resim
 
     if (guild.me.hasPermission('MANAGE_CHANNELS')) {
         guild.channels.create(client.user.username, {
             type: 'text',
-            topic: '**__Beni Ekldeiğinz İçin Teşekkür Ederim__**! ❤ \n Tüm Komutlara Erişmek İçin -yardım Yazabilirsiniz! ❤ \n Bota Oy Vermek İçin https://top.gg/bot/847022035510886430/vote Oy Verirseniz Mutlu Oluruz! ❤ \n Botun Destek Sunucusu https://discord.gg/Jycf7FEZAa Herhangi Bir Sıkıntı Olursa Buradan Destek Alabilirsiniz! ❤',
+            topic: 'Pluto+ Bot! ❤',
             permissionOverwrites: [{ id: guild.id, deny: ['VIEW_CHANNEL'] }]
         }).then(c => {
-            c.send(`**Beni eklediğiniz için teşekkür ederim ❤**`, embed)
+            c.send(`**__Beni Eklediğiniz İçin Teşekkür Ederim__**! ❤ \n Tüm Komutlara Erişmek İçin -yardım Yazabilirsiniz! ❤ \n Bota Oy Vermek İçin https://top.gg/bot/847022035510886430/vote Oy Verirseniz Mutlu Oluruz! ❤ \n Botun Destek Sunucusu https://discord.gg/Jycf7FEZAa Herhangi Bir Sıkıntı Olursa Buradan Destek Alabilirsiniz! ❤`, embed)
             setTimeout(() => {
                 c.send('@everyone').then(m => m.delete({ timeout: 500 }))
             }, 3000)
