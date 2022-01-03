@@ -439,6 +439,7 @@ fetch(Link)
 console.error(e)
 }
 })
+console.log(`${client.user.username} | ${db.get('Proje') || 1} Proje Hostandı`)
 }, 60000)
 
 client.on('ready', () => {
